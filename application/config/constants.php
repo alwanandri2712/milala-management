@@ -86,8 +86,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 define('TARGET_SUARA',150000);
 
-define("APP_NAME", "BOBBY BATUBARA CENTER");
-define("TOKEN_OCR", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsImlkIjo3OTcsImtleSI6LTExMjI1MjMxMzUsImlhdCI6MTcwNDA4NzAwOH0.5juxKsikvgK3pgkCBFrxB1T0v3u0M9yLDRBHBKEsqWE");
+define("APP_NAME", "MILALA AUTO SERVICES");
 
 $socket['socket_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 $socket['socket_url'] .= "://".$_SERVER['HTTP_HOST'].":5000";

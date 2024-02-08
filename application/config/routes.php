@@ -54,15 +54,4 @@ $route['default_controller']   = 'login';
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
 
-/* Master Data Administrator */
-$route["news/newslist"] = "News/index";
-$route["jobs/jobslist"] = "Jobs/index";
-// $route["logout"] = "Login/logout";
-
-$route['general_settings'] = "Pages/setting_general";
-$route['pages/pimpinan']  = "Pimpinan";
-$route['Syarat_ketentuan'] = "Settings/syarat_ketentuan";
-
-/* login administrator */
-$route["LoginDisnakerUhuy"] = "Login";
 
