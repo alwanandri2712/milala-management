@@ -78,8 +78,8 @@ $db['default'] = array(
 
 	/* db pusat */
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '1234',
+	'username' => 'alwan',
+	'password' => 'kontol2712',
 	'database' => 'milala-dashboard',
 
 	'dbdriver'     => 'mysqli',
