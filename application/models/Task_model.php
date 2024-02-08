@@ -106,12 +106,24 @@ class Task_model extends CI_Model
     public function edit($id)
     {
         $data = array(
-            'nama_role'     => $this->security->xss_clean($this->input->post('nama_role')),
-            'is_delete'     => $this->input->post('is_active'),
+            'judul'       => $this->security->xss_clean($this->input->post('judul')),
+            'description' => $this->security->xss_clean($this->input->post('description')),
+            'status'      => $this->input->post('status'),
         );
         $this->db->where('id_ticket', $id);
         $this->db->update($this->vtable, $data);
         // return $this->db->last_query();
+        return $this->db->affected_rows();
+    }
+
+    public function change_status($id,$status)
+    {
+        $data = [
+            'status' => $status
+        ];
+        
+        $this->db->where('id_ticket',$id);
+        $this->db->update($this->vtable, $data);
         return $this->db->affected_rows();
     }
 }

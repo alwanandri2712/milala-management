@@ -232,8 +232,8 @@
         type: 'POST',
         data: {
           id: id_role,
-          nama_role: sanitizeHTML(nama_role),
-          is_delete: sanitizeHTML(status)
+          nama_role: nama_role,
+          is_delete: status
         },
         success: function(response) {
           Swal.fire("Yeay! Your data has been saved!", {

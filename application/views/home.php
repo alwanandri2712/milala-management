@@ -38,6 +38,33 @@
             </div>
         </div>
 
+        <div class="col-sm-4 col-lg-4 mg-t-10">
+            <div class="card card-body">
+                <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Tugas Selesai </h6>
+                <div class="d-flex d-lg-block d-xl-flex align-items-end">
+                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= '100' ?></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-4 mg-t-10">
+            <div class="card card-body">
+                <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Tugas On Proggres </h6>
+                <div class="d-flex d-lg-block d-xl-flex align-items-end">
+                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= '20' ?></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-4 mg-t-10">
+            <div class="card card-body">
+                <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Tugas Pending </h6>
+                <div class="d-flex d-lg-block d-xl-flex align-items-end">
+                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= '10' ?></h3>
+                </div>
+            </div>
+        </div>
+
         <div class="col-lg-12 col-xl-12 mg-t-10">
             <div class="card">
                 <div class="card-header pd-b-0 pd-x-20 bd-b-0">
@@ -45,9 +72,9 @@
                 </div>
                 <div class="card-body pd-t-25">
                     <?php foreach ($data_hari_libur as $key => $value) { ?>
-                        <div class="alert alert-primary d-flex align-items-center" role="alert">
+                        <div class="alert alert-outline alert-primary d-flex align-items-center" role="alert">
                             <i data-feather="info" class="mg-r-10"></i> 
-                            <?= formatDate($value->holiday_date) ?> - <?= $value->holiday_name ?> - [Nasional ? <?= $value->is_national_holiday == 1 ? 'Ya' : 'Tidak' ?>]
+                            <?= formatDate($value->holiday_date) . " [" .$value->holiday_date. "]" ?> - <?= $value->holiday_name ?> - [Nasional ? <?= $value->is_national_holiday == 1 ? 'Ya' : 'Tidak' ?>]
                         </div>
                     <?php }  ?>
                 </div>

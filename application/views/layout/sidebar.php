@@ -46,12 +46,12 @@
         <li class="nav-item <?= $this->uri->segment(2) == 'role' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/role') ?>" class="nav-link"><i data-feather="activity"></i> <span>Role</span></a></li>
 
         <li class="nav-label mg-t-25">Task </li>
-        <li class="nav-item <?= $this->uri->segment(1) == 'foto' ? 'task' : null ?>"><a href="<?= base_url('Task') ?>" class="nav-link"><i data-feather="bookmark"></i> <span>List Tugas</span></a></li>
-        <li class="nav-item <?= $this->uri->segment(1) == 'foto' ? 'remainder' : null ?>"><a href="<?= base_url('Remainder') ?>" class="nav-link"><i data-feather="clock"></i> <span>Remainder</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Task' ? 'active' : null ?>"><a href="<?= base_url('Task') ?>" class="nav-link"><i data-feather="bookmark"></i> <span>List Tugas</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Remainder' ? 'active' : null ?>"><a href="<?= base_url('Remainder') ?>" class="nav-link"><i data-feather="clock"></i> <span>Remainder</span></a></li>
 
         <!-- Section Reservasi -->
         <li class="nav-label mg-t-25">Reservasi</li>
-        <li class="nav-item <?= $this->uri->segment(2) == 'foto' ? 'active' : null ?>"><a href="<?= base_url('Reservasi_mobil') ?>" class="nav-link"><i data-feather="award"></i> <span>Reservasi Mobil</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(2) == 'Reservasi_mobil' ? 'active' : null ?>"><a href="<?= base_url('Reservasi_mobil') ?>" class="nav-link"><i data-feather="award"></i> <span>Reservasi Mobil</span></a></li>
 
         <!-- Section Document -->
         <!-- <li class="nav-label mg-t-25">Document</li>

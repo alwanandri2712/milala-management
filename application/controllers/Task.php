@@ -44,9 +44,9 @@ class Task extends CI_Controller
             ';
 
             $status = "
-            <select class='form-control change-status' name='status' id='status' data-id='" . $id_ticket . "'>
+            <select class='form-control change-status' name='status' id='status' data-id='" . $field->id_ticket . "'>
                 <option value='0' " . ($field->status == '0' ? 'selected' : '') . " style='color:red;'>Pending</option>
-                <option value='1' " . ($field->status == '1' ? 'selected' : '') . ">Progress</option>
+                <option value='1' " . ($field->status == '1' ? 'selected' : '') . ">On Progress</option>
                 <option value='2' " . ($field->status == '2' ? 'selected' : '') . ">Selesai</option>
             </select>
             ";
@@ -71,18 +71,59 @@ class Task extends CI_Controller
 
     public function add()
     {
+
+        if ($this->input->post('judul') == '') {
+            $response = [
+                'code'    => 400,
+                'status'  => 'error',
+                'message' => 'Judul harus diisi',
+                'meta'    => [
+                    'header_status_code' => 400,
+                ]
+            ];
+
+            toJson($response, $response['meta']['header_status_code']);
+        }
+
+        if ($this->input->post('description') == '') {
+            $response = [
+                'code'    => 400,
+                'status'  => 'error',
+                'message' => 'Deskripsi harus diisi',
+                'meta'    => [
+                    'header_status_code' => 400,
+                ]
+            ];
+
+            toJson($response, $response['meta']['header_status_code']);
+        }
+
+        if ($this->input->post('status') == '') {
+            $response = [
+                'code'    => 400,
+                'status'  => 'error',
+                'message' => 'Status harus diisi',
+                'meta'    => [
+                    'header_status_code' => 400,
+                ]
+            ];
+
+            toJson($response, $response['meta']['header_status_code']);
+        }
+
         $data = array(
-            'nama_role'          => $this->security->xss_clean($this->input->post('nama_role')),
-            'created_by'         => $this->session->userdata('fullname'),
-            'created_date'       => date('Y-m-d H:i:s'),
-            'is_delete'          => $this->input->post('is_delete'),
+            'judul'        => $this->security->xss_clean($this->input->post('judul')),
+            'description'  => $this->security->xss_clean($this->input->post('description')),
+            'status'       => $this->input->post('status'),
+            'created_by'   => $this->session->userdata('fullname'),
+            'created_date' => date('Y-m-d H:i:s'),
         );
 
         $insert = $this->Task_model->add($data);
 
         if ($insert) {
             $response = array(
-                'id'      => $insert,
+                'code'    => 200,
                 'status'  => 'success',
                 'message' => 'Data berhasil ditambahkan',
                 'data'    => $data,
@@ -92,9 +133,10 @@ class Task extends CI_Controller
             );
         } else {
             $response = array(
+                'code'    => 400,
                 'status'  => 'error',
                 'message' => 'Data gagal ditambahkan',
-                'data'    => $data,
+                'data'    => [],
                 'meta'    => [
                     'header_status_code' => 400,
                 ]
@@ -179,6 +221,35 @@ class Task extends CI_Controller
                 ]
             );
         }
+        toJson($response, $response['meta']['header_status_code']);
+    }
+
+    public function change_status(){
+        $id     = $this->input->post('id');
+        $status = $this->input->post('status');
+
+        $update = $this->Task_model->change_status($id, $status);
+
+        if ($update) {
+            $response = array(
+                'code'    => 200,
+                'status'  => 'success',
+                'message' => 'Berhasil Ganti Status',
+                'meta'    => [
+                    'header_status_code' => 200,
+                ]
+            );
+        } else {
+            $response = array(
+                'code'    => 400,
+                'status'  => 'error',
+                'message' => 'Data gagal diubah',
+                'meta'    => [
+                    'header_status_code' => 400,
+                ]
+            );
+        }
+
         toJson($response, $response['meta']['header_status_code']);
     }
 }
