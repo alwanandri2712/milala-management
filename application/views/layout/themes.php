@@ -121,7 +121,7 @@
 
 </head>
 
-<body  onload="getLocationInterval()">
+<body>
 
   <!-- <div class="preloader">
     <div class="loading">
@@ -187,79 +187,6 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="<?= base_url('assets/tinymce/js/tinymce/tinymce.min.js') ?>"></script>
   
-  <script src="https://maps.google.com/maps/api/js?key=AIzaSyC87fftpSPt2ttOpm3kvzwdfyOmZX9Mu9A" async defer></script>
-
-  <script type='text/javascript'>
-
-    /* Get Location Interval */
-    var options = {
-      enableHighAccuracy: true,
-      maximumAge: 10000,
-      timeout: 5000
-    };
-    function getLocationInterval() {
-      setInterval(() => {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition, showError, options);
-        } else {
-          // console.log("Geolocation is not supported by this browser");
-          // x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-      }, 2000);
-    }
-
-    /* Get Location Tanpa Interval */
-    function getLocationNoneInterval() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError, options);
-      } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-
-    /* Show Postion */
-    function showPosition(position) {
-      // x.innerHTML = "Latitude: " + position.coords.latitude +
-      // "<br>Longitude: " + position.coords.longitude +
-      // "<br>Accuracy: " + position.coords.accuracy ;
-      console.log(position.coords.latitude + ',' + position.coords.longitude)
-      $('#lat_long_login').val(position.coords.latitude + ',' + position.coords.longitude)
-      $('#kordinat_lat_long').val(position.coords.latitude + ',' + position.coords.longitude)
-
-      console.log(position.coords.latitude + ',' + position.coords.longitude + ',' + position.coords.accuracy);
-      var lat_long = position.coords.latitude + ',' + position.coords.longitude
-
-      /* Function Check Geolocation Realtime */
-      // checkGeolocationData(lat_long);
-    }
-
-    function showError(error) {
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          $('#button-absen').prop("disabled", true)
-          $('#button-absen-out').prop("disabled", true)
-          // Swal.fire({
-          //   title: 'GPS Tidak Aktif',
-          //   text: 'Silahkan Aktifkan Gps/Lokasi Anda,Jika Sudah Silahkan Refresh',
-          //   icon: 'warning',
-          //   timer: 10000,
-          //   showConfirmButton: true
-          //  })
-          break;
-        case error.POSITION_UNAVAILABLE:
-          x.innerHTML = "Location information is unavailable."
-          break;
-        case error.TIMEOUT:
-          x.innerHTML = "The request to get user location timed out."
-          break;
-        case error.UNKNOWN_ERROR:
-          x.innerHTML = "An unknown error occurred."
-          break;
-      }
-    }
-
-  </script>
-
   <script>
     $(document).ready(function() {
       // $(".preloader").delay(700).fadeOut();
