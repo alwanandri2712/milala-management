@@ -68,7 +68,7 @@
         <li class="nav-item <?= $this->uri->segment(1) == 'Task' ? 'active' : null ?>"><a href="<?= base_url('Task') ?>" class="nav-link"><i data-feather="bookmark"></i> <span>List Tugas</span></a></li>
       <?php endif; ?>
 
-      <button class="btn btn-danger btn-block mt-3" id="logout"><i data-feather="log-out" class="text-white"></i> LOGOUT</button>
+      <a href="<?= base_url('Logout') ?>" class="btn btn-danger btn-block mt-3" id="logout"><i data-feather="log-out" class="text-white"></i> LOGOUT</a>
     </ul>
   </div>
 </aside>

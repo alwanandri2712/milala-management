@@ -123,13 +123,13 @@
 
 <body>
 
-  <!-- <div class="preloader">
+  <div class="preloader">
     <div class="loading">
-      <img src="<?= base_url('assets/img/logo_muara_enim.png') ?>" class="wd-150 shadow-moses">
+      <img src="<?= base_url('assets/img/milala_logo.png') ?>" class="wd-300 shadow-moses">
       <br><br>
-      <h1>Bobby Batubara Center</h1>
+      <h1>MILALA AUTO SERVICES</h1>
     </div>
-  </div> -->
+  </div>
   <?php $this->load->view('layout/sidebar') ?>
 
   <div class="content ht-100v pd-0">
@@ -189,7 +189,7 @@
   
   <script>
     $(document).ready(function() {
-      // $(".preloader").delay(700).fadeOut();
+      $(".preloader").delay(700).fadeOut();
     })
 
 
