@@ -17,6 +17,10 @@ class Task_model extends CI_Model
 
     private function _get_datatables_query()
     {
+        if ($this->session->userdata('id_role') != 1) {
+            $this->db->where('id_user', $this->session->userdata('id_user'));
+        }
+
         $this->db->from($this->vtable);
         $i = 0;
         foreach ($this->column_search as $item) {
