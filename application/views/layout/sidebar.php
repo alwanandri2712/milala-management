@@ -64,19 +64,8 @@
       <?php endif; ?>
       
       <?php if ($users->id_role == 5) : ?>
-        <li class="nav-label mg-t-25">Data</li>
-        <li class="nav-item <?= $this->uri->segment(2) == 'user' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/user') ?>" class="nav-link"><i data-feather="users"></i> <span>Sub Koordinator</span></a></li>
-        <li class="nav-item <?= $this->uri->segment(2) == 'Calon_pemilih' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/Calon_pemilih') ?>" class="nav-link"><i data-feather="users"></i> <span>Input Calon Pemilih</span></a></li>
-      <?php endif; ?>
-
-      <?php if ($users->id_role == 7) : ?>
-        <li class="nav-label mg-t-25">Data</li>
-        <li class="nav-item <?= $this->uri->segment(2) == 'Calon_pemilih' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/Calon_pemilih') ?>" class="nav-link"><i data-feather="users"></i> <span>Input Calon Pemilih</span></a></li>
-      <?php endif; ?>
-
-      <?php if ($users->id_role == 8) : ?>
-        <li class="nav-label mg-t-25">Data Saksi TPS</li>
-        <li class="nav-item <?= $this->uri->segment(1) == 'suara_tps' ? 'active' : null ?>"><a href="<?= base_url('suara_tps') ?>" class="nav-link"><i data-feather="users"></i> <span>Input Suara TPS</span></a></li>
+        <li class="nav-label mg-t-25">Task </li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Task' ? 'active' : null ?>"><a href="<?= base_url('Task') ?>" class="nav-link"><i data-feather="bookmark"></i> <span>List Tugas</span></a></li>
       <?php endif; ?>
 
       <button class="btn btn-danger btn-block mt-3" id="logout"><i data-feather="log-out" class="text-white"></i> LOGOUT</button>
