@@ -18,34 +18,24 @@ class Home_model extends CI_Model
         return $this->db->get('user')->num_rows();
     }
 
-    public function count_gender($where)
+    public function count_task()
     {
-        $this->db->where('jenis_kelamin', $where);
-        return $this->db->get('calon_pemilih')->num_rows();
+        return $this->db->get('list_task')->num_rows();
     }
 
-    public function count_calon_pemilih()
-    {
-        return $this->db->get('calon_pemilih')->num_rows();
+    public function count_task_done(){
+        $this->db->where('status', '2');
+        return $this->db->get('list_task')->num_rows();
     }
 
-    public function count_announcement()
-    {
-        if ($this->session->userdata('id_role') == 1) {
-            return $this->db->get('pengumuman')->num_rows();
-        } else {
-            return $this->db->get_where('pengumuman', array('user_id' => $this->session->userdata('id_users')))->num_rows();
-        }
+    public function count_task_onproggress(){
+        $this->db->where('status', '1');
+        return $this->db->get('list_task')->num_rows();
     }
 
-    public function count_mitra()
-    {
-        return $this->db->get('mitra')->num_rows();
-    }
-
-    public function count_document()
-    {
-        return $this->db->get('document')->num_rows();
+    public function count_task_pending(){
+        $this->db->where('status', '0');
+        return $this->db->get('list_task')->num_rows();
     }
 
     public function count_gallery_foto()

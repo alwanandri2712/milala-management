@@ -24,7 +24,7 @@
             <div class="card card-body">
                 <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Total Tugas</h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"><?= '50' ?></h3>
+                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"><?= $total_tugas ?></h3>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
             <div class="card card-body">
                 <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Total User</h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= '1' ?></h3>
+                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= $count_users ?></h3>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
             <div class="card card-body">
                 <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Tugas Selesai </h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= '100' ?></h3>
+                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= $total_tugas_completed ?></h3>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
             <div class="card card-body">
                 <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Tugas On Proggres </h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= '20' ?></h3>
+                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= $total_tugas_progress ?></h3>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
             <div class="card card-body">
                 <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">Tugas Pending </h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= '10' ?></h3>
+                    <h3 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1"> <?= $total_tugas_pending ?></h3>
                 </div>
             </div>
         </div>

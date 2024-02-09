@@ -88,6 +88,9 @@ define('TARGET_SUARA',150000);
 
 define("APP_NAME", "MILALA AUTO SERVICES");
 
+define("WATZAP_API_KEY", "KBMLSKVCWSGPAEQ4");
+define("WATZAP_NUMBER_KEY", "VsTrDLQRRX6aXZ3u");
+
 $socket['socket_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 $socket['socket_url'] .= "://".$_SERVER['HTTP_HOST'].":5000";
 $socket['socket_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);

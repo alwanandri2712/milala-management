@@ -50,7 +50,7 @@ class Task extends CI_Controller
                 <option value='2' " . ($field->status == '2' ? 'selected' : '') . ">Selesai</option>
             </select>
             ";
-            
+
             $row[]  = $field->judul;
             $row[]  = substr($field->description, 0, 30) . ' ...';
             $row[]  = $status;
@@ -152,6 +152,7 @@ class Task extends CI_Controller
             $update = $this->Task_model->edit($this->input->post('id'));
             if ($update) {
                 $response = array(
+                    'code'    => 200,
                     'status'  => 'success',
                     'message' => 'Data berhasil diubah',
                     'data'    => $update,
@@ -162,6 +163,7 @@ class Task extends CI_Controller
                 toJson($response, $response['meta']['header_status_code']);
             } else {
                 $response = array(
+                    'code'    => 400,
                     'status'  => 'error',
                     'message' => 'Data gagal diubah',
                     'data'    => $update,
@@ -178,6 +180,7 @@ class Task extends CI_Controller
         $getData = $this->Task_model->get_all(0, 1, 'id_ticket', 'desc', $param);
         if (!$getData['results']) {
             $response = array(
+                'code'    => 404,
                 'status'  => 'error',
                 'message' => 'Data tidak ditemukan',
                 'data'    => new stdClass(),
@@ -188,6 +191,7 @@ class Task extends CI_Controller
             toJson($response, $response['meta']['header_status_code']);
         } else {
             $response = array(
+                'code'    => 200,
                 'status'  => 'success',
                 'message' => 'Data ditemukan',
                 'data'    => $getData['results'],
@@ -224,7 +228,10 @@ class Task extends CI_Controller
         toJson($response, $response['meta']['header_status_code']);
     }
 
-    public function change_status(){
+    public function change_status()
+    {
+        $getGroup = $this->whatsapp->watzap_get_group();
+
         $id     = $this->input->post('id');
         $status = $this->input->post('status');
 
@@ -239,6 +246,33 @@ class Task extends CI_Controller
                     'header_status_code' => 200,
                 ]
             );
+
+
+            $getData     = $this->db->query("SELECT judul,description,status,created_by FROM list_task WHERE id_ticket = $id ")->result();
+
+            $judul       = $getData[0]->judul;
+            $desc        = $getData[0]->description;
+            $status      = $getData[0]->status;
+            $dibuat_oleh = $getData[0]->created_by;
+
+            if ($status == '0') {
+                $text_stat = 'Pending 🕑';
+            } else if ($status == '1') {
+                $text_stat = 'On Progress 🕒';
+            } else if ($status == '2') {
+                $text_stat = 'Selesai ✅';
+            } else if ($status == '3') {
+                $text_stat = 'Cancel ❌';
+            }
+
+            
+            if ($status == '1' || $status == '2') {
+                /* Group MILALA  */
+                // $this->whatsapp->watzap_send_group('120363181634308281', "🔔*MANAGEMENT TASK*🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : " . $desc . "\nStatus : $text_stat\nDibuat oleh : " . $dibuat_oleh . "\nTanggal : " . date("Y-m-d H:i:s")  . "\n\nDitangani Oleh : " . $this->session->userdata('fullname') . "\n\n");
+
+                /* Nomor Alwan */
+                // $this->whatsapp->watzap_send('62895327120214', "🔔 * LIST TASK * 🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : " . $desc . "\nStatus : $text_stat\ndibuat oleh : " . $dibuat_oleh . "\n\nDitangani Oleh : " . $this->session->userdata('username') . "\n\n");
+            }
         } else {
             $response = array(
                 'code'    => 400,
