@@ -24,7 +24,7 @@
       </div>
       <div class="collapse" id="loggedinMenu">
         <ul class="nav nav-aside mg-b-0">
-          <li class="nav-item"><a href="<?= base_url('myprofile') ?>" class="nav-link"><i data-feather="edit"></i> <span>Edit Profile</span></a></li>
+          <li class="nav-item"><a href="<?= base_url('MyProfile') ?>" class="nav-link"><i data-feather="edit"></i> <span>Edit Profile</span></a></li>
           <li class="nav-item"><a href="<?= base_url('HistoryLogin') ?>" class="nav-link"><i data-feather="refresh-ccw"></i> <span>History Login</span></a></li>
           <li class="nav-item"><a href="<?= base_url('logout') ?>" class="nav-link"><i data-feather="log-out"></i> <span>Log Out</span></a></li>
         </ul>
