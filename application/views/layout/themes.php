@@ -189,7 +189,7 @@
   
   <script>
     $(document).ready(function() {
-      $(".preloader").delay(700).fadeOut();
+      $(".preloader").delay(1000).fadeOut();
     })
 
 
