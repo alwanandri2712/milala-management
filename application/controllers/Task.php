@@ -112,6 +112,7 @@ class Task extends CI_Controller
         }
 
         $data = array(
+            'id_user'      => $this->session->userdata('id_user'),
             'judul'        => $this->security->xss_clean($this->input->post('judul')),
             'description'  => $this->security->xss_clean($this->input->post('description')),
             'status'       => $this->input->post('status'),
