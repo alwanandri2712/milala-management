@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_model extends CI_Model
+class Kompetensi_model extends CI_Model
 {
 
-    var $vtable        = 'v_users';
-    var $table         = 'user';
-    var $column_order  = array('img_usr', 'fullname', 'username', 'nama_role' , 'phone', 'is_delete','last_login');
-    var $column_search = array('img_usr', 'fullname', 'username', 'nama_role' , 'phone', 'is_delete','last_login');
-    var $order         = array('last_login' => 'desc');
+    var $table         = 'kompetensi';
+    var $vtable        = 'vkompetensi';
+    var $column_order  = array('fullname', 'description','created_by', 'created_date');
+    var $column_search = array('fullname', 'description','created_by', 'created_date');
+    var $order         = array('id_kompetensi' => 'desc');
 
     public function __construct()
     {
@@ -16,18 +16,13 @@ class User_model extends CI_Model
         $this->load->database();
     }
 
-    private function _get_datatables_query($role = null)
+    private function _get_datatables_query()
     {
+        if ($this->session->userdata('id_role') != 1) {
+            $this->db->where('id_user', $this->session->userdata('id_user'));
+        }
+
         $this->db->from($this->vtable);
-
-        if ($role != null) {
-            $this->db->where('id_role', $role);
-        }
-
-        if ($this->session->userdata('id_role') == 5 ) {
-            $this->db->where('created_id', $this->session->userdata('id_user'));
-        }
-
         $i = 0;
         foreach ($this->column_search as $item) {
             if (@$_POST['search']['value']) {
@@ -50,30 +45,29 @@ class User_model extends CI_Model
         }
     }
 
-    function get_datatables($role = null)
+    function get_datatables()
     {
-        $this->_get_datatables_query($role);
+        $this->_get_datatables_query();
         if (@$_POST['length'] != -1)
             $this->db->limit(@$_POST['length'], @$_POST['start']);
         $query = $this->db->get();
-        // print_r($this->db->last_query()); die;
         return $query->result();
     }
 
-    function count_filtered($role = null)
+    function count_filtered()
     {
-        $this->_get_datatables_query($role);
+        $this->_get_datatables_query();
         $query = $this->db->get();
         return $query->num_rows();
     }
 
-    public function count_all($role = null)
+    public function count_all()
     {
         $this->db->from($this->vtable);
         return $this->db->count_all_results();
     }
 
-    function get_all($offset = null, $limit = null, $order_by = 'id_user', $sortorder = 'asc', $param = array(), $total = false)
+    function get_all($offset = null, $limit = null, $order_by = 'id_kompetensi', $sortorder = 'desc', $param = array(), $total = false)
     {
         $db = $this->db;
         $select = !empty($param['select']) ? $param['select'] : '*';
@@ -101,58 +95,34 @@ class User_model extends CI_Model
         return $data;
     }
 
-    public function myAccount($id)
-    {
-        $this->db->from($this->vtable);
-        $this->db->where('id_user', $id);
-        $query = $this->db->get();
-        return $query->result();
-    }
 
-    public function getRole()
+    public function add($data)
     {
-        $this->db->select('id_role, nama_role');
-        $this->db->from('role');
-        $this->db->where('is_delete', 0);
-        $query = $this->db->get();
-        return $query->result();
-    }
-
-
-    public function add($data = array())
-    {
-        $this->db->insert($this->table, $data);
-        return $this->db->insert_id();
-    }
-
-    public function update($id, $data = array())
-    {
-        $this->db->where('id_user', $id);
-        $this->db->update($this->table, $data);
-        // var_dump($this->db->last_query());die;
-        return $this->db->affected_rows();
+        $data = $this->db->insert($this->table, $data);
+        return $data;
     }
 
     public function delete($id)
     {
-        $data = $this->db->delete($this->table, array('id_user' => $id));
+        $data = $this->db->delete($this->table, array('id_kompetensi' => $id));
         return $data;
     }
 
-    public function getNamaKaryawan(){
-        $this->db->from($this->table);
-        $this->db->select('id_user,fullname');
-        $query = $this->db->get();
-        return $query->result();
+    public function edit($id)
+    {
+        $data = array(
+            'id_user'     => $this->security->xss_clean($this->input->post('id_user')),
+            'description' => $this->security->xss_clean($this->input->post('description')),
+        );
+        $this->db->where('id_kompetensi', $id);
+        $this->db->update($this->table, $data);
+        // return $this->db->last_query();
+        return $this->db->affected_rows();
     }
 
-    /* Soft Delete */
-
-    /* public function delete($id){
-        $data = array(
-            'is_delete' => 1
-        );
-        $this->db->where('id_user', $id);
-        $this->db->update('user', $data);
-    } */
 }
+
+
+/* End of file Role_model.php */
+// function
+/* Location: ./application/models/Role_model.php */

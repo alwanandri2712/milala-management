@@ -50,8 +50,15 @@
         <!-- <li class="nav-item <?= $this->uri->segment(1) == 'Remainder' ? 'active' : null ?>"><a href="<?= base_url('Remainder') ?>" class="nav-link"><i data-feather="clock"></i> <span>Remainder</span></a></li> -->
 
         <!-- Section Reservasi -->
+        <li class="nav-label mg-t-25">Kompetensi</li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Kompetensi' ? 'active' : null ?>"><a href="<?= base_url('Kompetensi') ?>" class="nav-link"><i data-feather="meh"></i> <span>Kompetensi</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Human_error' ? 'active' : null ?>"><a href="<?= base_url('Human_error') ?>" class="nav-link"><i data-feather="meh"></i> <span>Human Error</span></a></li>
+
+        <li class="nav-label mg-t-25">Pengajuan</li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Pengajuan_fasilitas_bengkel' ? 'active' : null ?>"><a href="<?= base_url('Pengajuan_fasilitas_bengkel') ?>" class="nav-link"><i data-feather="box"></i> <span>Fasilitas Bengkel</span></a></li>
+
         <li class="nav-label mg-t-25">Reservasi</li>
-        <li class="nav-item <?= $this->uri->segment(2) == 'Reservasi_mobil' ? 'active' : null ?>"><a href="<?= base_url('Reservasi_mobil') ?>" class="nav-link"><i data-feather="award"></i> <span>Reservasi Mobil</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Reservasi_mobil' ? 'active' : null ?>"><a href="<?= base_url('Reservasi_mobil') ?>" class="nav-link"><i data-feather="award"></i> <span>Reservasi Mobil</span></a></li>
 
         <!-- Section Document -->
         <!-- <li class="nav-label mg-t-25">Document</li>
