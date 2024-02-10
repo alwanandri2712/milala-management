@@ -352,7 +352,7 @@
                     if (response.code == 200) {
                         Swal.fire({
                             title: "Success",
-                            text: result.message,
+                            text: response.message,
                             icon: "success",
                             button: "OK",
                         })
