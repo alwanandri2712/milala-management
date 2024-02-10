@@ -68,7 +68,7 @@
         <div class="col-lg-12 col-xl-12 mg-t-10">
             <div class="card">
                 <div class="card-header pd-b-0 pd-x-20 bd-b-0">
-                    <h6 class="mg-b-0"><i data-feather="volume-2"></i> INFORMASI HARI LIBUR BULAN INI !! [<?= $current_bulan ?> - <?= $current_tahun ?>] </h6>
+                    <h6 class="mg-b-0"><i data-feather="calendar"></i> KALENDER LIBUR BULAN INI !! [<?= $current_bulan ?> - <?= $current_tahun ?>] </h6>
                 </div>
                 <div class="card-body pd-t-25">
                     <?php foreach ($data_hari_libur as $key => $value) { ?>
@@ -114,7 +114,7 @@
         <div class="col-lg-12 col-xl-12 mg-t-10">
             <div class="card">
                 <div class="card-header pd-b-0 pd-x-20 bd-b-0">
-                    <h6 class="mg-b-0"><i data-feather="volume-2"></i> INFORMASI HARI LIBUR BULAN INI !! [<?= $current_bulan ?> - <?= $current_tahun ?>] </h6>
+                    <h6 class="mg-b-0"><i data-feather="calendar"></i> KALENDER LIBUR BULAN INI !! [<?= $current_bulan ?> - <?= $current_tahun ?>] </h6>
                 </div>
                 <div class="card-body pd-t-25">
                     <?php foreach ($data_hari_libur as $key => $value) { ?>

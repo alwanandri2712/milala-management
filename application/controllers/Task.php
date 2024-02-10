@@ -131,6 +131,24 @@ class Task extends CI_Controller
                     'header_status_code' => 200,
                 ]
             );
+
+            if ($data['status'] == '1' || $data['status'] == '2') {
+                if ($data['status'] == '0') {
+                    $text_stat = 'Pending 🕑';
+                } else if ($data['status'] == '1') {
+                    $text_stat = 'On Progress 🕒';
+                } else if ($data['status'] == '2') {
+                    $text_stat = 'Selesai ✅';
+                } else if ($data['status'] == '3') {
+                    $text_stat = 'Cancel ❌';
+                }
+
+                /* Group MILALA  */
+                $this->whatsapp->watzap_send_group('120363181634308281', "🔔*MANAGEMENT TASK*🔔\n\nJUDUL : " . $data['judul'] . "\nDESKRIPSI : " . $data['description'] . "\nStatus : $text_stat\nDibuat oleh : " . $data['created_by'] . "\nTanggal : " . date("Y-m-d H:i:s")  . "\n\nDitangani Oleh : " . $this->session->userdata('fullname') . "\n\n");
+
+                /* Nomor Alwan */
+                // $this->whatsapp->watzap_send('62895327120214', "🔔 * LIST TASK * 🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : " . $desc . "\nStatus : $text_stat\ndibuat oleh : " . $dibuat_oleh . "\n\nDitangani Oleh : " . $this->session->userdata('username') . "\n\n");
+            }
         } else {
             $response = array(
                 'code'    => 400,
@@ -264,11 +282,10 @@ class Task extends CI_Controller
             } else if ($status == '3') {
                 $text_stat = 'Cancel ❌';
             }
-
             
             if ($status == '1' || $status == '2') {
                 /* Group MILALA  */
-                // $this->whatsapp->watzap_send_group('120363181634308281', "🔔*MANAGEMENT TASK*🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : " . $desc . "\nStatus : $text_stat\nDibuat oleh : " . $dibuat_oleh . "\nTanggal : " . date("Y-m-d H:i:s")  . "\n\nDitangani Oleh : " . $this->session->userdata('fullname') . "\n\n");
+                $this->whatsapp->watzap_send_group('120363181634308281', "🔔*MANAGEMENT TASK*🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : " . $desc . "\nStatus : $text_stat\nDibuat oleh : " . $dibuat_oleh . "\nTanggal : " . date("Y-m-d H:i:s")  . "\n\nDitangani Oleh : " . $this->session->userdata('fullname') . "\n\n");
 
                 /* Nomor Alwan */
                 // $this->whatsapp->watzap_send('62895327120214', "🔔 * LIST TASK * 🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : " . $desc . "\nStatus : $text_stat\ndibuat oleh : " . $dibuat_oleh . "\n\nDitangani Oleh : " . $this->session->userdata('username') . "\n\n");
