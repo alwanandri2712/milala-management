@@ -273,7 +273,7 @@
                             button: "OK",
                         })
                         $('#save_edit').html('<i data-feather="save"></i> Save Changes')
-                        $('#modalEditRole').modal('hide');
+                        $('#modalEdit').modal('hide');
                         $('#datatables').DataTable().draw();
                     }
                 },
@@ -285,7 +285,7 @@
                     })
 
                     $('#save_edit').html('<i data-feather="save"></i> Save Changes')
-                    $('#modalEditRole').modal('hide');
+                    $('#modalEdit').modal('hide');
                     $('#datatables').DataTable().draw();
                 }
             });
