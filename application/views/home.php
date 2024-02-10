@@ -348,7 +348,7 @@
                 },
                 "language": {
                     "sProcessing": "Sedang memproses...",
-                    "sZeroRecords": "Tidak ditemukan data yang sesuai",
+                    "sZeroRecords": "Data Kosong",
                     "sInfo": "Menampilkan _START_ - _END_ ( Total : _TOTAL_ )",
                     "sInfoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
                     "sInfoFiltered": "",
@@ -375,7 +375,7 @@
                 },
                 "language": {
                     "sProcessing": "Sedang memproses...",
-                    "sZeroRecords": "Tidak ditemukan data yang sesuai",
+                    "sZeroRecords": "Data Kosong",
                     "sInfo": "Menampilkan _START_ - _END_ ( Total : _TOTAL_ )",
                     "sInfoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
                     "sInfoFiltered": "",
