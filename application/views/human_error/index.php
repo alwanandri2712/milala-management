@@ -161,6 +161,7 @@
         table = $('#datatables').DataTable({
             "processing": true,
             "serverSide": true,
+            "responsive": true,
             "order": [],
             "ajax": {
                 "url": "<?= site_url($site_url . '/ajax_datatable') ?>",
