@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kompetensi_model extends CI_Model
+class Human_error_model extends CI_Model
 {
 
-    var $table         = 'kompetensi';
-    var $vtable        = 'vkompetensi';
-    var $column_order  = array('fullname','nama_role', 'description','created_by', 'created_date');
-    var $column_search = array('fullname','nama_role', 'description','created_by', 'created_date');
-    var $order         = array('id_kompetensi' => 'desc');
+    var $table         = 'human_error';
+    var $vtable        = 'vhuman_error';
+    var $column_order  = array('fullname', 'nama_role', 'description','created_by', 'created_date');
+    var $column_search = array('fullname', 'nama_role', 'description','created_by', 'created_date');
+    var $order         = array('id_human_error' => 'desc');
 
     public function __construct()
     {
@@ -67,7 +67,7 @@ class Kompetensi_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    function get_all($offset = null, $limit = null, $order_by = 'id_kompetensi', $sortorder = 'desc', $param = array(), $total = false)
+    function get_all($offset = null, $limit = null, $order_by = 'id_human_error', $sortorder = 'desc', $param = array(), $total = false)
     {
         $db = $this->db;
         $select = !empty($param['select']) ? $param['select'] : '*';
@@ -104,7 +104,7 @@ class Kompetensi_model extends CI_Model
 
     public function delete($id)
     {
-        $data = $this->db->delete($this->table, array('id_kompetensi' => $id));
+        $data = $this->db->delete($this->table, array('id_human_error' => $id));
         return $data;
     }
 
@@ -114,7 +114,7 @@ class Kompetensi_model extends CI_Model
             'id_user'     => $this->security->xss_clean($this->input->post('id_user')),
             'description' => $this->security->xss_clean($this->input->post('description')),
         );
-        $this->db->where('id_kompetensi', $id);
+        $this->db->where('id_human_error', $id);
         $this->db->update($this->table, $data);
         // return $this->db->last_query();
         return $this->db->affected_rows();
