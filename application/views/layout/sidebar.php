@@ -72,6 +72,11 @@
         <li class="nav-item <?= $this->uri->segment(1) == 'Task' ? 'active' : null ?>"><a href="<?= base_url('Task') ?>" class="nav-link"><i data-feather="bookmark"></i> <span>List Tugas</span></a></li>
       <?php endif; ?>
 
+      <?php if ($users->id_role == 7) : ?> <!-- role staff admin -->
+        <li class="nav-label mg-t-25">Pengajuan</li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Pengajuan_fasilitas_bengkel' ? 'active' : null ?>"><a href="<?= base_url('Pengajuan_fasilitas_bengkel') ?>" class="nav-link"><i data-feather="box"></i> <span>Fasilitas Bengkel</span></a></li>
+      <?php endif; ?>
+
       <a href="<?= base_url('Logout') ?>" class="btn btn-danger btn-block mt-3" id="logout"><i data-feather="log-out" class="text-white"></i> LOGOUT</a>
     </ul>
   </div>

@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="">Cabang</label>
+                            <label for="">Cabang <span class="text-danger">* Pilih Sesuai Cabang Kamu !</span> </label>
                             <select name="" class="form-control" id="cabang">
                                 <option value=""># Pilih Cabang #</option>
                                 <option value="bekasi">BEKASI</option>
@@ -109,6 +109,7 @@
                         </div>
                     </div>
 
+                    <?php if ($this->session->userdata('id_role') == 1): ?>
                     <div class="col-12">
                         <div class="form-group">
                             <label for="">Status</label>
@@ -119,6 +120,7 @@
                             </select>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" id="id_pengajuan">

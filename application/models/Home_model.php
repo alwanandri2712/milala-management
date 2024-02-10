@@ -23,7 +23,8 @@ class Home_model extends CI_Model
         return $this->db->get('list_task')->num_rows();
     }
 
-    public function count_task_done(){
+    public function count_task_done()
+    {
         if ($this->session->userdata('id_role') != 1) {
             $this->db->where('id_user', $this->session->userdata('id_user'));
         }
@@ -32,7 +33,8 @@ class Home_model extends CI_Model
         return $this->db->get('list_task')->num_rows();
     }
 
-    public function count_task_onproggress(){
+    public function count_task_onproggress()
+    {
         if ($this->session->userdata('id_role') != 1) {
             $this->db->where('id_user', $this->session->userdata('id_user'));
         }
@@ -41,13 +43,44 @@ class Home_model extends CI_Model
         return $this->db->get('list_task')->num_rows();
     }
 
-    public function count_task_pending(){
+    public function count_task_pending()
+    {
         if ($this->session->userdata('id_role') != 1) {
             $this->db->where('id_user', $this->session->userdata('id_user'));
         }
-        
+
         $this->db->where('status', '0');
         return $this->db->get('list_task')->num_rows();
+    }
+
+    public function count_pengajuan_fasilitas_selesai()
+    {
+        if ($this->session->userdata('id_role') != 1) {
+            $this->db->where('id_user', $this->session->userdata('id_user'));
+        }
+
+        $this->db->where('status', '1');
+        return $this->db->get('pengajuan_fasilitas')->num_rows();
+    }
+
+    public function count_pengajuan_fasilitas_onproggress()
+    {
+        if ($this->session->userdata('id_role') != 1) {
+            $this->db->where('id_user', $this->session->userdata('id_user'));
+        }
+
+        $this->db->where('status', '0');
+        return $this->db->get('pengajuan_fasilitas')->num_rows();
+    }
+
+    public function count_pengajuan_fasilitas_ditolak()
+    {
+        if ($this->session->userdata('id_role') != 1) {
+            $this->db->where('id_user', $this->session->userdata('id_user'));
+        }
+
+        $this->db->where('status', '2');
+        return $this->db->get('pengajuan_fasilitas')->num_rows();
     }
 
     public function count_gallery_foto()
