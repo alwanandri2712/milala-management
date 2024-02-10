@@ -28,8 +28,8 @@ class MyProfile extends CI_Controller
   {
     if ($this->input->post()) {
       $id_user = $this->input->post('id_user');
-      $param['where']['id_users'] = $id_user;
-      $getImages = $this->User_model->get_all(0, 1, 'id_users', 'desc', $param);
+      $param['where']['id_user'] = $id_user;
+      $getImages = $this->User_model->get_all(0, 1, 'id_user', 'desc', $param);
 
       if (!$getImages['results']) {
         $response = array(
@@ -73,42 +73,40 @@ class MyProfile extends CI_Controller
 
         if (!empty($this->input->post('password')) || $this->input->post('password') != '') {
           $data = array(
-            'fullname'            => $this->security->xss_clean($this->input->post('fullname')),
-            'no_telp'             => $this->security->xss_clean($this->input->post('phone')),
-            'password'            => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
-            'is_delete'           => $this->input->post('status'),
-            'foto'                => $filename,
-            'updated_date'        => date('Y-m-d H:i:s'),
-            'updated_by'          => $this->session->userdata('username'),
+            'fullname'     => $this->security->xss_clean($this->input->post('fullname')),
+            'phone'        => $this->security->xss_clean($this->input->post('phone')),
+            'password'     => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
+            'img_usr'      => $filename,
+            'update_date' => date('Y-m-d H:i:s'),
+            'update_by'   => $this->session->userdata('username'),
           );
         } else {
           $data = array(
-            'fullname'            => $this->security->xss_clean($this->input->post('fullname')),
-            'username'            => $this->security->xss_clean($this->input->post('username')),
-            'no_telp'             => $this->input->post('phone'),
-            'foto'                => $filename,
-            'updated_date'        => date('Y-m-d H:i:s'),
-            'updated_by'          => $this->session->userdata('fullname'),
+            'fullname'     => $this->security->xss_clean($this->input->post('fullname')),
+            // 'username'     => $this->security->xss_clean($this->input->post('username')),
+            'phone'        => $this->input->post('phone'),
+            'img_usr'      => $filename,
+            'update_date' => date('Y-m-d H:i:s'),
+            'update_by'   => $this->session->userdata('fullname'),
           );
         }
       } else {
         if (!empty($this->input->post('password')) || $this->input->post('password') != '') {
           $data = array(
-            'fullname'            => $this->security->xss_clean($this->input->post('fullname')),
-            'username'            => $this->security->xss_clean($this->input->post('username')),
-            'no_telp'             => $this->security->xss_clean($this->input->post('phone')),
-            'password'            => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
-            'is_delete'           => $this->input->post('status'),
-            'updated_date'        => date('Y-m-d H:i:s'),
-            'updated_by'          => $this->session->userdata('username'),
+            'fullname'     => $this->security->xss_clean($this->input->post('fullname')),
+            // 'username'     => $this->security->xss_clean($this->input->post('username')),
+            'phone'        => $this->security->xss_clean($this->input->post('phone')),
+            'password'     => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
+            'update_date' => date('Y-m-d H:i:s'),
+            'update_by'   => $this->session->userdata('username'),
           );
         } else {
           $data = array(
-            'fullname'            => $this->security->xss_clean($this->input->post('fullname')),
-            'username'            => $this->security->xss_clean($this->input->post('username')),
-            'no_telp'             => $this->input->post('phone'),
-            'updated_date'        => date('Y-m-d H:i:s'),
-            'updated_by'          => $this->session->userdata('fullname'),
+            'fullname'     => $this->security->xss_clean($this->input->post('fullname')),
+            // 'username'     => $this->security->xss_clean($this->input->post('username')),
+            'phone'        => $this->input->post('phone'),
+            'update_date' => date('Y-m-d H:i:s'),
+            'update_by'   => $this->session->userdata('fullname'),
           );
         }
       }
@@ -119,6 +117,7 @@ class MyProfile extends CI_Controller
         $response = array(
           'code'    => 200,
           'status'  => 'success',
+          'data'    => $result,
           'message' => 'Data berhasil diubah',
           'meta'    => [
             'header_status_code' => 200

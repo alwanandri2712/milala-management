@@ -55,7 +55,6 @@
             formData.append('id_user', $('#id_users').val())
             formData.append('fullname', $('#fullname').val())
             formData.append('phone', $('#phone').val())
-            formData.append('jenis_kelamin', $('#jenis_kelamin').val())
             formData.append('password', $('#password').val())
 
             $.ajax({
