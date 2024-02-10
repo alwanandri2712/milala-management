@@ -11,6 +11,8 @@ class Home extends CI_Controller
         $this->access->logged_in();
         $this->data['site_url'] = $this->site_url;
         $this->load->model('Home_model');
+        $this->load->model('Kompetensi_model');
+        $this->load->model('Human_error_model');
     }
 
     public function index()
@@ -31,7 +33,7 @@ class Home extends CI_Controller
 
         $data_hari_libur = curl_get("https://api-harilibur.vercel.app/api?month=$current_bulan&year=$current_tahun");
 
-        
+
         $this->data['data_hari_libur'] = $data_hari_libur;
         $this->data['tittle']          = 'Dashboard';
         $this->data['tittle_2']        = 'home';
@@ -41,5 +43,59 @@ class Home extends CI_Controller
         $this->load->view('layout/themes', $this->data);
     }
 
+    public function datatables_kompetensi()
+    {
+        $list = $this->Kompetensi_model->get_datatables();
+        $data = array();
+        $no   = $_POST['start'];
 
+        foreach ($list as $field) {
+            $no++;
+
+            $row    = array();
+            $row[]  = $field->fullname;
+            $row[]  = $field->nama_role;
+            $row[]  = $field->description;
+            $row[]  = $field->created_by;
+            $row[]  = $field->created_date;
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw"            => $_POST['draw'],
+            "recordsTotal"    => $this->Kompetensi_model->count_all(),
+            "recordsFiltered" => $this->Kompetensi_model->count_filtered(),
+            "data"            => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
+    public function datatables_human_error()
+    {
+        $list = $this->Human_error_model->get_datatables();
+        $data = array();
+        $no   = $_POST['start'];
+
+        foreach ($list as $field) {
+            $no++;
+
+            $row    = array();
+            $row[]  = $field->fullname;
+            $row[]  = $field->nama_role;
+            $row[]  = $field->description;
+            $row[]  = $field->created_by;
+            $row[]  = $field->created_date;
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw"            => $_POST['draw'],
+            "recordsTotal"    => $this->Human_error_model->count_all(),
+            "recordsFiltered" => $this->Human_error_model->count_filtered(),
+            "data"            => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
 }
