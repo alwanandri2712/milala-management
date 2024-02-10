@@ -65,9 +65,6 @@
         <li class="nav-item <?= $this->uri->segment(1) === 'Document' && $this->uri->segment(2) === 'list'  ? 'active' : null ?>"><a href="<?= base_url('Document/list') ?>" class="nav-link"><i data-feather="download"></i> <span>Daftar Dokumen</span></a></li>
         <li class="nav-item <?= $this->uri->segment(1) === 'Document' && $this->uri->segment(2) === 'category' ? 'active' : null ?>"><a href="<?= base_url('Document/category') ?>" class="nav-link"><i data-feather="navigation"></i> <span>Category</span></a></li> -->
 
-        <!-- Settings -->
-        <li class="nav-label mg-t-25">Settings</li>
-        <li class="nav-item <?= $this->uri->segment(1) == 'bantuan' ? 'active' : null ?>"><a href="<?= base_url('bantuan') ?>" class="nav-link"><i data-feather="alert-triangle"></i> <span>Bantuan</span></a></li>
       <?php endif; ?>
       
       <?php if ($users->id_role == 5) : ?>
