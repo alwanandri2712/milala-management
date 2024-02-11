@@ -299,6 +299,7 @@
                     status: status
                 },
                 beforeSend: function() {
+                    $('#save').prop('disabled', true)
                     $('#save').html('<i class="fa fa-spin fa-spinner"></i> Loading...')
                 },
                 success: function(res) {
@@ -314,6 +315,7 @@
                         $('#modalAdd').modal('hide');
                         $('#datatables').DataTable().draw();
                         $('#judul,#description,#status_add').val('')
+                        $('#save').prop('disabled', false)
                     }
                 },
                 error: function(err) {
@@ -326,6 +328,7 @@
                     $('#modalAdd').modal('hide');
                     $('#judul,#description,#status_add').val('')
                     $('#datatables').DataTable().draw();
+                    $('#save').prop('disabled', false)
                 }
             });
         });
