@@ -21,17 +21,17 @@ class Task extends CI_Controller
         $this->data['site_url'] = $this->site_url;
         $this->load->model('Task_model');
 
-        $this->connectionFactory = new RedisConnectionFactory(
-            [
-                'scheme'            => 'tcp',
-                'host'              => REDIS_HOST,
-                'password'          => REDIS_PASS,
-                'port'              => REDIS_PORT,
-                'scheme_extensions' => [
-                    'predis'
-                ],
-            ]
-        );
+        // $this->connectionFactory = new RedisConnectionFactory(
+        //     [
+        //         'scheme'            => 'tcp',
+        //         'host'              => REDIS_HOST,
+        //         'password'          => REDIS_PASS,
+        //         'port'              => REDIS_PORT,
+        //         'scheme_extensions' => [
+        //             'predis'
+        //         ],
+        //     ]
+        // );
 
     }
 
@@ -89,8 +89,8 @@ class Task extends CI_Controller
 
     public function add()
     {
-        $context    = $this->connectionFactory->createContext();
-        $redisQueue = $context->createQueue('Task:Notifications:Do');
+        // $context    = $this->connectionFactory->createContext();
+        // $redisQueue = $context->createQueue('Task:Notifications:Do');
 
         if ($this->input->post('judul') == '') {
             $response = [
@@ -166,24 +166,24 @@ class Task extends CI_Controller
                     $text_stat = 'Cancel ❌';
                 }
 
-                $payloadBroker = [
-                    'judul'          => $data['judul'],
-                    'description'    => $data['description'],
-                    'status'         => $text_stat,
-                    'dibuat_oleh'    => $data['created_by'],
-                    'ditangani_oleh' => $this->session->userdata('fullname'),
-                ];
+                // $payloadBroker = [
+                //     'judul'          => $data['judul'],
+                //     'description'    => $data['description'],
+                //     'status'         => $text_stat,
+                //     'dibuat_oleh'    => $data['created_by'],
+                //     'ditangani_oleh' => $this->session->userdata('fullname'),
+                // ];
 
-                $dataBroker = [
-                    'type' => 'insert',
-                    'data' => $payloadBroker,
-                ];
+                // $dataBroker = [
+                //     'type' => 'insert',
+                //     'data' => $payloadBroker,
+                // ];
                 
-                $message = $context->createMessage(json_encode($dataBroker));
-                $context->createProducer()->send($redisQueue, $message);
+                // $message = $context->createMessage(json_encode($dataBroker));
+                // $context->createProducer()->send($redisQueue, $message);
 
-                /* Group MILALA  */
-                // $this->whatsapp->watzap_send_group('120363181634308281', "🔔*MANAGEMENT TASK*🔔\n\nJUDUL : " . $data['judul'] . "\nDESKRIPSI : \n" . $data['description'] . "\nStatus : $text_stat\nDibuat oleh : " . $data['created_by'] . "\nTanggal : " . date("Y-m-d H:i:s")  . "\n\nDitangani Oleh : " . $this->session->userdata('fullname') . "\n\n");
+                /* Group IT MILALA  */
+                $this->whatsapp->watzap_send_group('120363028839369696', "🔔*MANAGEMENT TASK*🔔\n\nJUDUL : " . $data['judul'] . "\nDESKRIPSI : \n" . $data['description'] . "\nStatus : $text_stat\nDibuat oleh : " . $data['created_by'] . "\nTanggal : " . date("Y-m-d H:i:s")  . "\n\nDitangani Oleh : " . $this->session->userdata('fullname') . "\n\n");
 
                 /* Nomor Alwan */
                 // $this->whatsapp->watzap_send('62895327120214', "🔔 * LIST TASK * 🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : " . $desc . "\nStatus : $text_stat\ndibuat oleh : " . $dibuat_oleh . "\n\nDitangani Oleh : " . $this->session->userdata('username') . "\n\n");
@@ -287,8 +287,8 @@ class Task extends CI_Controller
 
     public function change_status()
     {
-        $context    = $this->connectionFactory->createContext();
-        $redisQueue = $context->createQueue('Task:Notifications:Do');
+        // $context    = $this->connectionFactory->createContext();
+        // $redisQueue = $context->createQueue('Task:Notifications:Do');
 
         $id     = $this->input->post('id');
         $status = $this->input->post('status');
@@ -307,8 +307,8 @@ class Task extends CI_Controller
 
             
             if ($status == '1' || $status == '2') {
-                $context    = $this->connectionFactory->createContext();
-                $redisQueue = $context->createQueue('Task:Notifications:Do');
+                // $context    = $this->connectionFactory->createContext();
+                // $redisQueue = $context->createQueue('Task:Notifications:Do');
     
                 $getData     = $this->db->query("SELECT judul,description,status,created_by FROM list_task WHERE id_ticket = $id ")->result();
     
@@ -327,24 +327,24 @@ class Task extends CI_Controller
                     $text_stat = 'Cancel ❌';
                 }
 
-                $payloadBroker = [
-                    'judul'          => $judul,
-                    'description'    => $desc,
-                    'status'         => $text_stat,
-                    'dibuat_oleh'    => $dibuat_oleh,
-                    'ditangani_oleh' => $this->session->userdata('fullname'),
-                ];
+                // $payloadBroker = [
+                //     'judul'          => $judul,
+                //     'description'    => $desc,
+                //     'status'         => $text_stat,
+                //     'dibuat_oleh'    => $dibuat_oleh,
+                //     'ditangani_oleh' => $this->session->userdata('fullname'),
+                // ];
 
-                $dataBroker = [
-                    'type' => 'insert',
-                    'data' => $payloadBroker,
-                ];
+                // $dataBroker = [
+                //     'type' => 'insert',
+                //     'data' => $payloadBroker,
+                // ];
                 
-                $message = $context->createMessage(json_encode($dataBroker));
-                $context->createProducer()->send($redisQueue, $message);
+                // $message = $context->createMessage(json_encode($dataBroker));
+                // $context->createProducer()->send($redisQueue, $message);
 
                 /* Group MILALA  */
-                // $this->whatsapp->watzap_send_group('120363181634308281', "🔔*MANAGEMENT TASK*🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : \n" . $desc . "\nStatus : $text_stat\nDibuat oleh : " . $dibuat_oleh . "\nTanggal : " . date("Y-m-d H:i:s")  . "\n\nDitangani Oleh : " . $this->session->userdata('fullname') . "\n\n");
+                $this->whatsapp->watzap_send_group('120363028839369696', "🔔*MANAGEMENT TASK*🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : \n" . $desc . "\nStatus : $text_stat\nDibuat oleh : " . $dibuat_oleh . "\nTanggal : " . date("Y-m-d H:i:s")  . "\n\nDitangani Oleh : " . $this->session->userdata('fullname') . "\n\n");
 
                 /* Nomor Alwan */
                 // $this->whatsapp->watzap_send('62895327120214', "🔔 * LIST TASK * 🔔\n\nJUDUL : " . $judul . "\nDESKRIPSI : " . $desc . "\nStatus : $text_stat\ndibuat oleh : " . $dibuat_oleh . "\n\nDitangani Oleh : " . $this->session->userdata('username') . "\n\n");
