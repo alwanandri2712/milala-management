@@ -249,6 +249,26 @@
                     $('td', row).css('background-color', 'rgba(0, 255, 0, 0.15)');
                 }
             },
+            dom: 'Blfrtip', // munculin export & show  entry
+            "buttons": [{
+                    "extend": 'excel',
+                    "text": 'Export Excel',
+                    "titleAttr": 'Excel',
+                    "title": "Report Task Management " + " - <?= date('Y-m-d') ?>",
+                    "action": newexportaction,
+                    "className": 'btn-success rounded mb-3'
+                },
+                {
+                    "extend": 'pdf',
+                    "text": 'Export PDF',
+                    "titleAttr": 'PDF',
+                    "title": "Report Task Management " + " - <?= date('Y-m-d') ?>",
+                    "action": newexportaction,
+                    "className": 'btn-danger rounded mb-3',
+                    "orientation": 'landscape',
+                    "pageSize": 'LEGAL'
+                },
+            ],
         });
 
         $('#datatables').on('change', '.change-status', function() {
@@ -264,9 +284,9 @@
                 success: function(response) {
                     if (response.code == 200) {
                         Swal.fire({
-                            icon : 'success',
+                            icon: 'success',
                             title: 'Berhasil',
-                            text : response.message,
+                            text: response.message,
                         }).then(function() {
                             $('#datatables').DataTable().draw();
                         });
