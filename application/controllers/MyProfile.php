@@ -2,7 +2,7 @@
 
 class MyProfile extends CI_Controller
 {
-  var $site_url = 'myprofile';
+  var $site_url = 'MyProfile';
   public function __construct()
   {
     parent::__construct();
@@ -15,7 +15,7 @@ class MyProfile extends CI_Controller
   {
     $this->data['data_profile'] = $this->User_model->myAccount($this->session->userdata('id_user'))[0];
     // dd($this->data['data_profile']);
-    $this->data['tittle']       = 'My profile';
+    $this->data['tittle']       = 'My profiles';
     $this->data['tittle_2']     = '';
     $this->data['tittle_3']     = '';
 
@@ -46,7 +46,7 @@ class MyProfile extends CI_Controller
 
       if ($this->input->post('foto_user') != 'kosong') {
         /* ini buat remove gambar sebelumnya biar ga beratin server */
-        $dataImages = $getImages['results'][0]->foto;
+        $dataImages = $getImages['results'][0]->img_usr;
         @unlink('./upload/mitra/' . $dataImages);
 
         $config['upload_path']   = "./upload/users";
