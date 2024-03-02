@@ -153,6 +153,52 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-12 col-xl-12 mg-t-10">
+            <div class="card">
+                <div class="card-header pd-b-0 pd-x-20 bd-b-0">
+                    <h6 class="mg-b-0"><i data-feather="smile"></i> Kompetensi [<?= date('Y-m') ?>]</h6>
+                </div>
+                <div class="card-body pd-t-25">
+                    <div class="table-responsive">
+                        <table class="table table-flush" id="datatables-kompetensi">
+                            <thead>
+                                <tr>
+                                    <th>Nama Karyawan</th>
+                                    <th>Jabatan</th>
+                                    <th>Description</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-xl-12 mg-t-10">
+            <div class="card">
+                <div class="card-header pd-b-0 pd-x-20 bd-b-0">
+                    <h6 class="mg-b-0"><i data-feather="smile"></i> Human Error [<?= date('Y-m') ?>] </h6>
+                </div>
+                <div class="card-body pd-t-25">
+                    <div class="table-responsive">
+                        <table class="table table-flush" id="datatables-human-error">
+                            <thead>
+                                <tr>
+                                    <th>Nama Karyawan</th>
+                                    <th>Jabatan</th>
+                                    <th>Description</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
 
     <!-- role staff admin -->
@@ -332,10 +378,9 @@
 </div>
 
 <script type="text/javascript">
-
     var table;
     $(document).ready(function() {
-        <?php if (in_array($this->session->userdata('id_role'), [7,8,9])) { ?> /* Role staff admin, mekanik, kepala bengkel  */
+        <?php if (in_array($this->session->userdata('id_role'), [5,7, 8, 9])) { ?> /* Role staff admin, mekanik, kepala bengkel  */
 
             table = $('#datatables-kompetensi').DataTable({
                 "processing": true,
@@ -391,7 +436,6 @@
                 },
             });
 
-         
         <?php }  ?>
     })
 </script>
