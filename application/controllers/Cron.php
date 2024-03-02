@@ -64,66 +64,29 @@ class Cron extends CI_Controller
         echo json_encode($response);
     }
 
-    public function getKelurahanBynameForDPT()
+    public function remainderLiburNasional()
     {
-        // $id_province    = 15; // jawa timur
-        $kota           = $this->input->post('kota');
-        $kecamatan      = $this->input->post('kecamatan');
-        $kelurahan_name = $this->input->post('kelurahan_name');
+        $current_bulan = date('m');
+        $current_tahun = date('Y');
+        $data          = file_get_contents("https://api-harilibur.vercel.app/api?month=$current_bulan&year=$current_tahun");
+        $events        = json_decode($data, true);
 
-        /* query like %% */
-        $getIDCity        = $this->db->query("SELECT * FROM city WHERE name LIKE '%" . $kota . "%'")->result();
-        $id_province      = $getIDCity[0]->province_id;
-        $city_id          = $getIDCity[0]->id;
-        $city_name        = $getIDCity[0]->name;
-        $getIDKecamatan   = $this->db->query("SELECT * FROM district WHERE province_id = $id_province AND city_id = $city_id AND name LIKE '%" . $kecamatan . "%' ")->result();
-        $district_id      = $getIDKecamatan[0]->id;
-        $district_name    = $getIDKecamatan[0]->name;
-        $getIDSubdistrict = $this->db->query("SELECT * FROM subdistrict WHERE city_id = $city_id AND district_id = $district_id AND LOWER(REPLACE(name, ' ', '')) LIKE '%" . strtolower(str_replace(' ', '', $kelurahan_name)) . "%' ")->result();
-        // $test_query = "SELECT * FROM subdistrict WHERE city_id = $city_id AND district_id = $district_id AND LOWER(REPLACE(name, ' ', '')) LIKE '%" . strtolower($kelurahan_name) . "%' ";
-        $subdistrict_id   = $getIDSubdistrict[0]->id;
-        $subdistrict_name = $getIDSubdistrict[0]->name;
+        foreach ($events as $event) {
 
-        if ($district_name) {
-            $response = [
-                'code'        => 200,
-                'status'      => 'success',
-                'data'        => [
-                    'city_id'          => $city_id,
-                    'city_name'        => $city_name,
-                    'district_id'      => $district_id,
-                    'district_name'    => $district_name,
-                    'subdistrict_id'   => $subdistrict_id,
-                    'subdistrict_name' => $subdistrict_name
-                ],
-                'meta'    => [
-                    'header_status_code' => 200
-                ]
-            ];
-            toJson($response, $response['meta']['header_status_code']);
-        } else {
-            $response = [
-                'code'        => 400,
-                'status'      => 'failed',
-                'message'     => 'Data Not Found',
-                'data'        => [],
-                'meta'    => [
-                    'header_status_code' => 400
-                ]
-            ];
+            if ($event['is_national_holiday'] == true) {
+                $tanggal_acara     = strtotime($event['holiday_date']);
+                $tanggal_pengingat = strtotime('-3 days', $tanggal_acara);
+                $tanggal_hari_ini  = strtotime(date('Y-m-d'));
+                echo $tanggal_acara."<br>";
+    
+                if ($tanggal_pengingat <= $tanggal_hari_ini) {
 
-            toJson($response, $response['meta']['header_status_code']);
+                    echo "Ingatlah untuk persiapkan acara {$event['event']}, karena kita sudah H-3 menuju tanggal {$event['tanggal']}.\n";
+                }
+            } else {
+                echo "BELUM ADA LIBUR NASIONAL"."<br>";
+            }
+
         }
     }
-
-    public function rekapitulasiDPT(){
-        $groupKecamatan = $this->db->group_by('kecamatan')->get('calon_pemilih')->result();
-
-        foreach ($groupKecamatan as $key => $value) {
-            
-        }
-        
-        
-    }
-
 }
