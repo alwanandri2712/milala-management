@@ -94,9 +94,9 @@ define("WATZAP_API_KEY", "KBMLSKVCWSGPAEQ4");
 define("WATZAP_NUMBER_KEY", "VsTrDLQRRX6aXZ3u");
 
 $socket['socket_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
-$socket['socket_url'] .= "://".$_SERVER['HTTP_HOST'].":5000";
+$socket['socket_url'] .= "://".$_SERVER['HTTP_HOST'];
 $socket['socket_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
-// define('SOCKET_URL', $socket['socket_url']);
+define('BASE_URL', $socket['socket_url']);
 
 
 
