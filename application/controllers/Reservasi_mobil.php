@@ -19,11 +19,10 @@ class Reservasi_mobil extends CI_Controller
 
     public function index()
     {
-
-        $this->data['tittle']   = 'Pengajuan';
-        $this->data['tittle_2'] = 'Fasilitas Bengkel';
+        $this->data['tittle']   = 'Reservasi';
+        $this->data['tittle_2'] = 'Mobil';
         $this->data['tittle_3'] = '';
-        $this->data['content']  = 'Reservasi_mobil/index';
+        $this->data['content']  = 'reservasi_mobil/index';
         $this->load->view('layout/themes', $this->data);
     }
 
@@ -37,25 +36,19 @@ class Reservasi_mobil extends CI_Controller
             $no++;
 
             $row = array();
-            $id = "'" . $field->id_pengajuan . "'";
+            $id = "'" . $field->id_reserve . "'";
             // $row[] = $no;
             $row[] = '
               <a href="javascript:;" onclick="edit(' . $id . ')"><i class="fas fa-edit wd-15 ht-15 stroke-wd-3"></i></a>
               <a href="javascript:;" onclick="deleteRow(' . $id . ')"><i class="fas fa-trash wd-15 ht-15 stroke-wd-3 text-danger"></i></a>
             ';
+            
 
-            if ($field->status == '0') {
-                $status = '<span class="badge badge-warning">Pengajuan</span>';
-            } elseif ($field->status == '1') {
-                $status = '<span class="badge badge-success">Selesai</span>';
-            } elseif ($field->status == '2') {
-                $status = '<span class="badge badge-danger">Ditolak</span>';
-            }
-
-            $row[]  = $field->nama_barang;
-            $row[]  = $field->qty;
+            $row[]  = $field->no_polisi;
+            $row[]  = $field->no_rangka;
+            $row[]  = $field->type_mobil;
+            $row[]  = $field->tahun;
             $row[]  = $field->cabang;
-            $row[]  = $status;
             $row[]  = $field->created_by;
             $row[]  = $field->created_date;
             $data[] = $row;
@@ -78,7 +71,7 @@ class Reservasi_mobil extends CI_Controller
             $response = [
                 'code'    => 400,
                 'status'  => 'error',
-                'message' => 'Nama Barang Tidak Boleh Kosong',
+                'message' => 'Nama pemlik harus diisi',
                 'meta'    => [
                     'header_status_code' => 400,
                 ]
@@ -88,6 +81,19 @@ class Reservasi_mobil extends CI_Controller
         }
 
         if ($this->input->post('nomor_polisi') == '') {
+            $response = [
+                'code'    => 400,
+                'status'  => 'error',
+                'message' => 'Nomor Polisi Tidak Boleh Kosong',
+                'meta'    => [
+                    'header_status_code' => 400,
+                ]
+            ];
+
+            toJson($response, $response['meta']['header_status_code']);
+        }
+
+        if ($this->input->post('nomor_rangka') == '') {
             $response = [
                 'code'    => 400,
                 'status'  => 'error',
@@ -128,23 +134,10 @@ class Reservasi_mobil extends CI_Controller
 
         if ($this->input->post('tgl_reservasi') == '') {
             $response = [
-                'code' => 400,
-                'status' => 'error',
+                'code'    => 400,
+                'status'  => 'error',
                 'message' => 'Tgl. Reservasi harus diisi',
-                'meta' => [
-                    'header_status_code' => 400,
-                ]
-            ];
-
-            toJson($response, $response['meta']['header_status_code']);
-        }
-
-        if ($this->input->post('no_angka') == '') {
-            $response = [
-                'code' => 400,
-                'status' => 'error',
-                'message' => 'No. Angka harus diisi',
-                'meta' => [
+                'meta'    => [
                     'header_status_code' => 400,
                 ]
             ];
@@ -154,13 +147,14 @@ class Reservasi_mobil extends CI_Controller
 
 
         $data = array(
-            'id_user'       => $this->session->userdata('id_user'),
-            'nama_pemilik'  => this->input->post('nama_pemilik'),
-            'nomor_polisi'  => $this->input->post('nomor_polisi'),
+            'user_id'       => $this->session->userdata('id_user'),
+            'nama_pemilik'  => $this->input->post('nama_pemilik'),
+            'no_polisi'     => $this->input->post('nomor_polisi'),
             'type_mobil'    => $this->input->post('type_mobil'),
             'tahun'         => $this->input->post('tahun'),
             'tgl_reservasi' => $this->input->post('tgl_reservasi'),
-            'no_angka'      => $this->input->post('no_angka'),
+            'no_rangka'     => $this->input->post('nomor_rangka'),
+            'cabang'        => $this->input->post('cabang'),
             'created_by'    => $this->session->userdata('fullname'),
             'created_date'  => date('Y-m-d H:i:s'),
         );
@@ -223,8 +217,8 @@ class Reservasi_mobil extends CI_Controller
         }
 
         /* ini buat tampilin data ketika mau di edit */
-        $param['where']['id_pengajuan']  = $id;
-        $getData = $this->Reservasi_mobil_model->get_all(0, 1, 'id_pengajuan', 'desc', $param);
+        $param['where']['id_reserve']  = $id;
+        $getData = $this->Reservasi_mobil_model->get_all(0, 1, 'id_reserve', 'desc', $param);
         if (!$getData['results']) {
             $response = array(
                 'code'    => 404,
