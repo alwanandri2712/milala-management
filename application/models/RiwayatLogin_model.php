@@ -18,7 +18,7 @@ class RiwayatLogin_model extends CI_Model
     private function _get_datatables_query()
     {
         $this->db->from($this->vtable);
-        $this->db->where('user_id' , $this->session->userdata('id_users'));
+        $this->db->where('user_id' , $this->session->userdata('id_user'));
 
         $i = 0;
         foreach ($this->column_search as $item) {
