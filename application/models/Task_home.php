@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Document_category_model extends CI_Model
+class Task_home extends CI_Model
 {
 
-    var $vtable        = 'document_category';
-    var $column_order  = array('name','created_by','created_date');
-    var $column_search = array('name','created_by','created_date');
-    var $order         = array('id' => 'ASC');
+    var $vtable        = 'list_task';
+    var $column_order  = array('judul', 'description', 'status', 'status','created_by', 'created_date');
+    var $column_search = array('judul', 'description', 'status', 'status','created_by', 'created_date');
+    var $order         = array('id_ticket' => 'desc');
 
     public function __construct()
     {
@@ -17,6 +17,14 @@ class Document_category_model extends CI_Model
 
     private function _get_datatables_query()
     {
+        if ($this->session->userdata('id_role') != 1) {
+            $this->db->where('id_user', $this->session->userdata('id_user'));
+        }
+
+        /* where_in 0,1 */
+        $this->db->where_in('status', [0,1]);
+
+
         $this->db->from($this->vtable);
         $i = 0;
         foreach ($this->column_search as $item) {
@@ -62,7 +70,7 @@ class Document_category_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    function get_all($offset = null, $limit = null, $order_by = 'id', $sortorder = 'desc', $param = array(), $total = false)
+    function get_all($offset = null, $limit = null, $order_by = 'id_ticket', $sortorder = 'desc', $param = array(), $total = false)
     {
         $db = $this->db;
         $select = !empty($param['select']) ? $param['select'] : '*';
@@ -99,24 +107,36 @@ class Document_category_model extends CI_Model
 
     public function delete($id)
     {
-        $data = $this->db->delete($this->vtable, array('id' => $id));
+        $data = $this->db->delete($this->vtable, array('id_ticket' => $id));
         return $data;
     }
 
-    public function edit($id,$data = array())
+    public function edit($id)
     {
-        $this->db->where('id', $id);
+        $data = array(
+            'judul'       => $this->security->xss_clean($this->input->post('judul')),
+            'description' => $this->security->xss_clean($this->input->post('description')),
+            'status'      => $this->input->post('status'),
+        );
+        $this->db->where('id_ticket', $id);
         $this->db->update($this->vtable, $data);
         // return $this->db->last_query();
         return $this->db->affected_rows();
     }
 
-    public function getCategory(){
-        $this->db->select('*');
-        $this->db->from($this->vtable);
-        $query = $this->db->get();
-        return $query->result();
+    public function change_status($id,$status)
+    {
+        $data = [
+            'status' => $status
+        ];
+        
+        $this->db->where('id_ticket',$id);
+        $this->db->update($this->vtable, $data);
+        return $this->db->affected_rows();
     }
 }
 
 
+/* End of file Role_model.php */
+// function
+/* Location: ./application/models/Role_model.php */

@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Company_model extends CI_Model
+class Cabang_model extends CI_Model
 {
 
-    var $vtable        = 'company';
-    var $column_order  = array('company_name', 'images', 'status_verif', 'created_by');
-    var $column_search = array('company_name', 'images', 'status_verif', 'created_by');
-    var $order         = array('id' => 'ASC');
+    var $vtable        = 'cabang';
+    var $column_order  = array('id_cabang','nama_cabang');
+    var $column_search = array('id_cabang','nama_cabang');
+    var $order         = array('id_cabang' => 'ASC');
 
     public function __construct()
     {
@@ -62,7 +62,7 @@ class Company_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    function get_all($offset = null, $limit = null, $order_by = 'id', $sortorder = 'desc', $param = array(), $total = false)
+    function get_all($offset = null, $limit = null, $order_by = 'id_cabang', $sortorder = 'desc', $param = array(), $total = false)
     {
         $db = $this->db;
         $select = !empty($param['select']) ? $param['select'] : '*';
@@ -99,13 +99,17 @@ class Company_model extends CI_Model
 
     public function delete($id)
     {
-        $data = $this->db->delete($this->vtable, array('id' => $id));
+        $data = $this->db->delete($this->vtable, array('id_cabang' => $id));
         return $data;
     }
 
-    public function edit($id,$data = array())
+    public function edit($id)
     {
-        $this->db->where('id', $id);
+        $data = array(
+            'nama_cabang'     => $this->security->xss_clean($this->input->post('nama_cabang')),
+        );
+
+        $this->db->where('id_cabang', $id);
         $this->db->update($this->vtable, $data);
         // return $this->db->last_query();
         return $this->db->affected_rows();

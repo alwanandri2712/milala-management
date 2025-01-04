@@ -43,9 +43,12 @@
         <!-- Data Master -->
         <li class="nav-label mg-t-25">Data Master</li>
         <li class="nav-item <?= $this->uri->segment(2) == 'user' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/user') ?>" class="nav-link"><i data-feather="activity"></i> <span>Users</span></a></li>
-        <li class="nav-item <?= $this->uri->segment(2) == 'role' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/role') ?>" class="nav-link"><i data-feather="activity"></i> <span>Role</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(2) == 'role' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/Role') ?>" class="nav-link"><i data-feather="activity"></i> <span>Role</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(2) == 'cabang' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/Cabang') ?>" class="nav-link"><i data-feather="activity"></i> <span>Cabang</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(2) == 'gudang' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/Gudang') ?>" class="nav-link"><i data-feather="activity"></i> <span>Gudang</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(2) == 'pelanggan' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/Pelanggan') ?>" class="nav-link"><i data-feather="activity"></i> <span>Pelanggan</span></a></li>
 
-        <li class="nav-label mg-t-25">Task </li>
+        <li class="nav-label mg-t-25">Task IT</li>
         <li class="nav-item <?= $this->uri->segment(1) == 'Task' ? 'active' : null ?>"><a href="<?= base_url('Task') ?>" class="nav-link"><i data-feather="bookmark"></i> <span>List Tugas</span></a></li>
         <!-- <li class="nav-item <?= $this->uri->segment(1) == 'Remainder' ? 'active' : null ?>"><a href="<?= base_url('Remainder') ?>" class="nav-link"><i data-feather="clock"></i> <span>Remainder</span></a></li> -->
 
@@ -56,9 +59,14 @@
 
         <li class="nav-label mg-t-25">Pengajuan</li>
         <li class="nav-item <?= $this->uri->segment(1) == 'Pengajuan_fasilitas_bengkel' ? 'active' : null ?>"><a href="<?= base_url('Pengajuan_fasilitas_bengkel') ?>" class="nav-link"><i data-feather="box"></i> <span>Fasilitas Bengkel</span></a></li>
-
+        
+        <li class="nav-label mg-t-25">Persediaan Barang</li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Stock_barang' ? 'active' : null ?>"><a href="<?= base_url('Stock_barang') ?>" class="nav-link"><i data-feather="layers"></i> <span>Stock Barang</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Stock_barang' ? 'active' : null ?>"><a href="<?= base_url('Stock_barang') ?>" class="nav-link"><i data-feather="layers"></i> <span>Barang Masuk</span></a></li>
+        
         <li class="nav-label mg-t-25">Reservasi</li>
         <li class="nav-item <?= $this->uri->segment(1) == 'Reservasi_mobil' ? 'active' : null ?>"><a href="<?= base_url('Reservasi_mobil') ?>" class="nav-link"><i data-feather="award"></i> <span>Reservasi Mobil</span></a></li>
+
 
         <!-- Section Document -->
         <!-- <li class="nav-label mg-t-25">Document</li>

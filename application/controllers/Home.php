@@ -13,6 +13,7 @@ class Home extends CI_Controller
         $this->load->model('Home_model');
         $this->load->model('Kompetensi_model');
         $this->load->model('Human_error_model');
+        $this->load->model('Task_home');
     }
 
     public function index()
@@ -93,6 +94,44 @@ class Home extends CI_Controller
             "draw"            => $_POST['draw'],
             "recordsTotal"    => $this->Human_error_model->count_all(),
             "recordsFiltered" => $this->Human_error_model->count_filtered(),
+            "data"            => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
+    public function datatables_list_task()
+    {
+        $list = $this->Task_home->get_datatables();
+        $data = array();
+        $no   = $_POST['start'];
+
+        foreach ($list as $field) {
+            $no++;
+
+            $row = array();
+            $id_ticket = "'" . $field->id_ticket . "'";
+
+            if ($field->status == 0) {
+                $status = '<span class="badge badge-danger">Pending</span>';
+            } elseif ($field->status == 1) {
+                $status = '<span class="badge badge-warning">On Progress</span>';
+            } elseif ($field->status == 2) {
+                $status = '<span class="badge badge-success">Selesai</span>';
+            }
+
+            $row[]  = $field->judul;
+            $row[]  = substr($field->description, 0, 30) . ' ...';
+            $row[]  = $status;
+            $row['status_hide']  = $field->status;
+            $row[]  = $field->created_by;
+            $row[]  = $field->created_date;
+            $data[] = $row;
+        }
+        $output = array(
+            "draw"            => $_POST['draw'],
+            "recordsTotal"    => $this->Task_home->count_all(),
+            "recordsFiltered" => $this->Task_home->count_filtered(),
             "data"            => $data,
         );
         //output to json format

@@ -1,14 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Document_model extends CI_Model
+class Gudang_model extends CI_Model
 {
 
-    var $vtable        = 'vdocument';
-    var $table         = 'document';
-    var $column_order  = array('title', 'category_name', 'file', 'created_by', 'created_date');
-    var $column_search = array('title', 'category_name', 'file', 'created_by', 'created_date');
-    var $order         = array('id' => 'ASC');
+    var $vtable        = 'gudang';
+    var $column_order  = array('id_gudang','nama_gudang');
+    var $column_search = array('id_gudang','nama_gudang');
+    var $order         = array('id_gudang' => 'ASC');
 
     public function __construct()
     {
@@ -19,11 +18,6 @@ class Document_model extends CI_Model
     private function _get_datatables_query()
     {
         $this->db->from($this->vtable);
-        
-        if ($this->session->userdata('id_role') != 1) { 
-            $this->db->where('user_id' , $this->session->userdata('id_users'));
-        }
-
         $i = 0;
         foreach ($this->column_search as $item) {
             if (@$_POST['search']['value']) {
@@ -68,7 +62,7 @@ class Document_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    function get_all($offset = null, $limit = null, $order_by = 'id', $sortorder = 'desc', $param = array(), $total = false)
+    function get_all($offset = null, $limit = null, $order_by = 'id_gudang', $sortorder = 'desc', $param = array(), $total = false)
     {
         $db = $this->db;
         $select = !empty($param['select']) ? $param['select'] : '*';
@@ -99,23 +93,30 @@ class Document_model extends CI_Model
 
     public function add($data)
     {
-        $data = $this->db->insert($this->table, $data);
+        $data = $this->db->insert($this->vtable, $data);
         return $data;
     }
 
     public function delete($id)
     {
-        $data = $this->db->delete($this->table, array('id' => $id));
+        $data = $this->db->delete($this->vtable, array('id_gudang' => $id));
         return $data;
     }
 
-    public function edit($id,$data = array())
+    public function edit($id)
     {
-        $this->db->where('id', $id);
-        $this->db->update($this->table, $data);
+        $data = array(
+            'nama_gudang'     => $this->security->xss_clean($this->input->post('nama_gudang')),
+        );
+
+        $this->db->where('id_gudang', $id);
+        $this->db->update($this->vtable, $data);
         // return $this->db->last_query();
         return $this->db->affected_rows();
     }
 }
 
 
+/* End of file Gudang_model.php */
+// function
+/* Location: ./application/models/Gudang_model.php */

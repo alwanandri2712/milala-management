@@ -20,7 +20,10 @@ class Kompetensi_model extends CI_Model
     {
         if ($this->session->userdata('id_role') != 1) {
             $this->db->where('id_user', $this->session->userdata('id_user'));
+            $this->db->where("MONTH(created_date) =", date('m'));
         }
+
+
 
         $this->db->from($this->vtable);
         $i = 0;

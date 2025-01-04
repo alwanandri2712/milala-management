@@ -11,11 +11,13 @@
                         <thead>
                             <tr>
                                 <th>&nbsp;</th>
+                                <th>Nama Pemilik</th>
                                 <th>Nomor Polisi</th>
                                 <th>Nomor Rangka</th>
                                 <th>Type Mobil</th>
                                 <th>Tahun</th>
                                 <th>Cabang</th>
+                                <th>Tanggal Booking</th>
                                 <th>Created By</th>
                                 <th>Created Date</th>
                             </tr>
@@ -186,7 +188,7 @@
                 $('#type_mobil_edit').val(response.data[0].type_mobil)
                 $('#tahun_edit').val(response.data[0].tahun)
                 $('#cabang_edit').val(response.data[0].cabang)
-                $('#tgl_reservasi').val(response.data[0].tgl_reservasi)
+                $('#tgl_reservasi_edit').val(response.data[0].tgl_reservasi)
                 $('#modalEdit').modal('show');
             },
             error: function(data) {

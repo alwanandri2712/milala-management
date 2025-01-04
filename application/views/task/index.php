@@ -105,6 +105,12 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="">Dibuat Oleh</label>
+                            <input type="text" class="form-control" id="created_by" readonly>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" id="id_ticket">
@@ -160,6 +166,7 @@
                 $("#judul_edit").val(response.data[0].judul)
                 $("#description_edit").val(response.data[0].description)
                 $('#status_edit').val(response.data[0].status)
+                $('#created_by').val(response.data[0].created_by)
                 $('#modalEdit').modal('show');
             },
             error: function(data) {

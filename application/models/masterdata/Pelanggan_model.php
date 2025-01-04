@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Reservasi_mobil_model extends CI_Model
+class Pelanggan_model extends CI_Model
 {
-    var $table         = 'reservasi_mobil';
-    var $vtable        = 'reservasi_mobil';
-    var $column_order  = array('nama_pemilik','no_polisi','type_mobil','tahun', 'no_rangka','cabang','tgl_reservasi','created_by', 'created_date');
-    var $column_search = array('nama_pemilik','no_polisi','type_mobil','tahun', 'no_rangka','cabang','tgl_reservasi','created_by', 'created_date');
-    var $order         = array('id_reserve' => 'desc');
+
+    var $vtable        = 'pelanggan';
+    var $column_order  = array('id_pelanggan','nama_lengkap', 'nomor_polisi', 'phone', 'created_by','created_date');
+    var $column_search = array('id_pelanggan','nama_lengkap', 'nomor_polisi', 'phone', 'created_by','created_date');
+    var $order         = array('id_pelanggan' => 'ASC');
 
     public function __construct()
     {
@@ -17,7 +17,6 @@ class Reservasi_mobil_model extends CI_Model
 
     private function _get_datatables_query()
     {
-       
         $this->db->from($this->vtable);
         $i = 0;
         foreach ($this->column_search as $item) {
@@ -63,7 +62,7 @@ class Reservasi_mobil_model extends CI_Model
         return $this->db->count_all_results();
     }
 
-    function get_all($offset = null, $limit = null, $order_by = 'id_reserve', $sortorder = 'desc', $param = array(), $total = false)
+    function get_all($offset = null, $limit = null, $order_by = 'id_pelanggan', $sortorder = 'desc', $param = array(), $total = false)
     {
         $db = $this->db;
         $select = !empty($param['select']) ? $param['select'] : '*';
@@ -94,37 +93,30 @@ class Reservasi_mobil_model extends CI_Model
 
     public function add($data)
     {
-        $data = $this->db->insert($this->table, $data);
-        // var_dump($this->db->last_query());die;
+        $data = $this->db->insert($this->vtable, $data);
         return $data;
     }
 
     public function delete($id)
     {
-        $data = $this->db->delete($this->table, array('id_reserve' => $id));
+        $data = $this->db->delete($this->vtable, array('id_pelanggan' => $id));
         return $data;
     }
 
     public function edit($id)
     {
         $data = array(
-            'nama_pemilik'  => $this->input->post('nama_pemilik'),
-            'no_polisi'     => $this->input->post('nomor_polisi'),
-            'no_rangka'     => $this->input->post('no_rangka'),
-            'type_mobil'    => $this->input->post('type_mobil'),
-            'tahun'         => $this->input->post('tahun'),
-            'cabang'        => $this->input->post('cabang'),
-            'tgl_reservasi' => $this->input->post('tgl_reservasi'),
+            'nama_gudang'     => $this->security->xss_clean($this->input->post('nama_gudang')),
         );
-        $this->db->where('id_reserve', $id);
-        $this->db->update($this->table, $data);
-        return $this->db->last_query();
+
+        $this->db->where('id_pelanggan', $id);
+        $this->db->update($this->vtable, $data);
+        // return $this->db->last_query();
         return $this->db->affected_rows();
     }
-
 }
 
 
-/* End of file Role_model.php */
+/* End of file Gudang_model.php */
 // function
-/* Location: ./application/models/Role_model.php */
+/* Location: ./application/models/Gudang_model.php */

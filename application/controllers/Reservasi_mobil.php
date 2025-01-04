@@ -43,12 +43,14 @@ class Reservasi_mobil extends CI_Controller
               <a href="javascript:;" onclick="deleteRow(' . $id . ')"><i class="fas fa-trash wd-15 ht-15 stroke-wd-3 text-danger"></i></a>
             ';
             
-
+            
+            $row[]  = $field->nama_pemilik;
             $row[]  = $field->no_polisi;
             $row[]  = $field->no_rangka;
             $row[]  = $field->type_mobil;
             $row[]  = $field->tahun;
             $row[]  = $field->cabang;
+            $row[]  = $field->tgl_reservasi;
             $row[]  = $field->created_by;
             $row[]  = $field->created_date;
             $data[] = $row;

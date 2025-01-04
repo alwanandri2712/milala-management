@@ -21,6 +21,7 @@ class Task_model extends CI_Model
             $this->db->where('id_user', $this->session->userdata('id_user'));
         }
 
+
         $this->db->from($this->vtable);
         $i = 0;
         foreach ($this->column_search as $item) {

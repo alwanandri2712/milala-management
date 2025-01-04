@@ -107,6 +107,29 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-12 col-xl-12 mg-t-10">
+            <div class="card">
+                <div class="card-header pd-b-0 pd-x-20 bd-b-0">
+                    <h6 class="mg-b-0"><i data-feather="list"></i> Task Lisk On Proggres & Pending </h6>
+                </div>
+                <div class="card-body pd-t-25">
+                    <div class="table-responsive">
+                        <table class="table table-flush" id="datatables-task">
+                            <thead>
+                                <tr>
+                                    <th>Judul</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
 
     <!-- ROLE IT -->
@@ -380,7 +403,7 @@
 <script type="text/javascript">
     var table;
     $(document).ready(function() {
-        <?php if (in_array($this->session->userdata('id_role'), [5,7, 8, 9])) { ?> /* Role staff admin, mekanik, kepala bengkel  */
+        <?php if (in_array($this->session->userdata('id_role'), [5, 7, 8, 9])) { ?> /* Role staff admin, mekanik, kepala bengkel  */
 
             table = $('#datatables-kompetensi').DataTable({
                 "processing": true,
@@ -435,7 +458,43 @@
                     },
                 },
             });
-
         <?php }  ?>
+
+        <?php if ($this->session->userdata('id_role') == 1) { ?>
+            table = $('#datatables-task').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "order": [],
+                "ajax": {
+                    "url": "<?= site_url($site_url . '/datatables_list_task') ?>",
+                    "type": "POST"
+                },
+                "language": {
+                    "sProcessing": "Sedang memproses...",
+                    "sZeroRecords": "Tidak ditemukan data yang sesuai",
+                    "sInfo": "Menampilkan _START_ - _END_ ( Total : _TOTAL_ )",
+                    "sInfoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
+                    "sInfoFiltered": "",
+                    "sInfoPostFix": "",
+                    "sSearch": "Cari:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Pertama",
+                        "sPrevious": "Sebelumnya",
+                        "sNext": "Selanjutnya",
+                        "sLast": "Terakhir"
+                    },
+                },
+                'rowCallback': function(row, data, index) {
+                    if (data.status_hide == "0") {
+                        $('td', row).css('background-color', 'rgba(255, 0, 0, 0.15)');
+                    } else if (data.status_hide == "1") {
+                        $('td', row).css('background-color', 'rgba(255,255,0,0.3)');
+                    } else if (data.status_hide == "2") {
+                        $('td', row).css('background-color', 'rgba(0, 255, 0, 0.15)');
+                    }
+                },
+            });
+        <?php } ?>
     })
 </script>
