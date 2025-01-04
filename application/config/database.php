@@ -78,9 +78,15 @@ $db['default'] = array(
 
 	/* db pusat */
 	'hostname' => 'localhost',
-	'username' => 'inde5327_milala_dashboard',
+	'username' => 'alwan',
 	'password' => 'kontol2712',
-	'database' => 'inde5327_milala_dashboard',
+	'database' => 'milala_dashboard',
+
+	/* db local laptop */
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '1234',
+	// 'database' => 'milala_dashboard',
 
 	'dbdriver'     => 'mysqli',
 	'dbprefix'     => '',
