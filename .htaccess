@@ -1,0 +1,12 @@
+# Aktifkan mod_rewrite
+RewriteEngine On
+
+# Jika bukan file atau direktori yang ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Coba aturan berikut (untuk macOS/Homebrew Apache)
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+# Jika aturan di atas tidak berfungsi, coba yang ini (untuk Apache standar)
+# RewriteRule ^(.*)$ index.php/$1 [L]
