@@ -32,7 +32,7 @@ date_default_timezone_set('Asia/Jakarta');
 // $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
 // Static base URL - adjust to match your setup
-$config['base_url'] = 'http://localhost:8080/milala-management/';
+$config['base_url'] = 'http://localhost/milala-management/';
 
 
 /*
@@ -61,6 +61,7 @@ $config['index_page'] = '';
 | 'PATH_INFO'      Uses $_SERVER['PATH_INFO']
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
+|
 */
 $config['uri_protocol']	= 'REQUEST_URI';
 

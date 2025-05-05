@@ -11,7 +11,7 @@
                 Informasi dan tips perawatan kendaraan untuk membantu Anda menjaga mobil tetap prima
             </p>
         </div>
-        
+
         <!-- Search & Categories -->
         <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
             <div class="w-full md:w-1/3">
@@ -42,161 +42,79 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Featured Article -->
+        <?php if ($featured_article): ?>
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16" data-aos="fade-up">
             <div class="flex flex-col lg:flex-row">
                 <div class="lg:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-                         alt="Featured Article" 
+                    <img src="<?= base_url('upload/artikel/' . $featured_article->artikel_image) ?>"
+                         alt="<?= $featured_article->artikel_title ?>"
                          class="w-full h-full object-cover">
                 </div>
                 <div class="lg:w-1/2 p-8 md:p-12">
                     <div class="flex items-center mb-4">
-                        <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Perawatan</span>
-                        <span class="ml-4 text-gray-500 text-sm">12 Mei 2025</span>
+                        <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
+                        <span class="ml-4 text-gray-500 text-sm"><?= date('d M Y', strtotime($featured_article->created_date)) ?></span>
                     </div>
-                    <h2 class="text-3xl font-bold mb-4">5 Cara Merawat Mobil Agar Tetap Prima Selama Bertahun-tahun</h2>
+                    <h2 class="text-3xl font-bold mb-4"><?= $featured_article->artikel_title ?></h2>
                     <p class="text-gray-600 mb-6">
-                        Merawat mobil dengan baik tidak hanya menjaga penampilannya tetap menarik, tetapi juga memastikan kinerja optimal dan memperpanjang umur kendaraan. Artikel ini membahas 5 tips penting yang sering diabaikan pemilik mobil...
+                        <?= substr(strip_tags($featured_article->artikel_content), 0, 200) ?>...
                     </p>
                     <div class="flex items-center mb-6">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="w-10 h-10 rounded-full mr-3">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-dark font-bold mr-3">
+                            <?= substr($featured_article->created_by, 0, 1) ?>
+                        </div>
                         <div>
-                            <p class="font-medium">Ahmad Sutisna</p>
-                            <p class="text-gray-500 text-sm">Head Mechanic</p>
+                            <p class="font-medium"><?= $featured_article->created_by ?></p>
+                            <p class="text-gray-500 text-sm">Penulis</p>
                         </div>
                     </div>
-                    <a href="#" class="inline-block bg-primary text-dark px-6 py-3 rounded-full font-bold hover:bg-dark hover:text-primary transition-colors">
+                    <a href="<?= base_url('artikel/' . $featured_article->artikel_slug) ?>" class="inline-block bg-primary text-dark px-6 py-3 rounded-full font-bold hover:bg-dark hover:text-primary transition-colors">
                         Baca Selengkapnya
                     </a>
                 </div>
             </div>
         </div>
-        
+        <?php else: ?>
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-16 p-8 text-center" data-aos="fade-up">
+            <h2 class="text-2xl font-bold mb-4">Belum ada artikel tersedia</h2>
+            <p class="text-gray-600">Artikel akan segera ditambahkan. Silakan kunjungi kembali nanti.</p>
+        </div>
+        <?php endif; ?>
+
         <!-- Articles Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <!-- Article 1 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="50">
-                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Article" 
-                     class="w-full h-56 object-cover">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Tips Berkendara</span>
-                        <span class="ml-4 text-gray-500 text-sm">5 Mei 2025</span>
+            <?php if (!empty($articles['results'])): ?>
+                <?php $delay = 50; foreach ($articles['results'] as $article): ?>
+                <!-- Article -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                    <img src="<?= base_url('upload/artikel/' . $article->artikel_image) ?>"
+                         alt="<?= $article->artikel_title ?>"
+                         class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
+                            <span class="ml-4 text-gray-500 text-sm"><?= date('d M Y', strtotime($article->created_date)) ?></span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3"><?= $article->artikel_title ?></h3>
+                        <p class="text-gray-600 mb-4">
+                            <?= substr(strip_tags($article->artikel_content), 0, 120) ?>...
+                        </p>
+                        <a href="<?= base_url('artikel/' . $article->artikel_slug) ?>" class="text-primary font-bold hover:text-dark transition-colors">
+                            Baca Selengkapnya →
+                        </a>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Cara Aman Berkendara di Musim Hujan</h3>
-                    <p class="text-gray-600 mb-4">
-                        Musim hujan membawa tantangan tersendiri bagi pengendara. Berikut tips penting untuk menjaga keamanan di jalan saat kondisi basah...
-                    </p>
-                    <a href="#" class="text-primary font-bold hover:text-dark transition-colors">
-                        Baca Selengkapnya →
-                    </a>
                 </div>
-            </div>
-            
-            <!-- Article 2 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Article" 
-                     class="w-full h-56 object-cover">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Teknologi</span>
-                        <span class="ml-4 text-gray-500 text-sm">28 April 2025</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Mengenal Teknologi Hybrid pada Mobil Modern</h3>
-                    <p class="text-gray-600 mb-4">
-                        Teknologi hybrid semakin populer di Indonesia. Pelajari cara kerjanya dan keuntungan memiliki mobil hybrid dibandingkan mobil konvensional...
-                    </p>
-                    <a href="#" class="text-primary font-bold hover:text-dark transition-colors">
-                        Baca Selengkapnya →
-                    </a>
+                <?php $delay += 50; endforeach; ?>
+            <?php else: ?>
+                <div class="col-span-3 bg-white rounded-2xl shadow-lg p-8 text-center">
+                    <h3 class="text-xl font-bold mb-3">Belum ada artikel tersedia</h3>
+                    <p class="text-gray-600">Artikel akan segera ditambahkan. Silakan kunjungi kembali nanti.</p>
                 </div>
-            </div>
-            
-            <!-- Article 3 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="150">
-                <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Article" 
-                     class="w-full h-56 object-cover">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">DIY</span>
-                        <span class="ml-4 text-gray-500 text-sm">20 April 2025</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Cara Mudah Mengganti Wiper Mobil Sendiri</h3>
-                    <p class="text-gray-600 mb-4">
-                        Wiper yang aus dapat mengganggu visibilitas saat hujan. Ikuti panduan langkah demi langkah untuk mengganti wiper mobil Anda dengan mudah...
-                    </p>
-                    <a href="#" class="text-primary font-bold hover:text-dark transition-colors">
-                        Baca Selengkapnya →
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Article 4 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1563299796-17596ed6b017?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Article" 
-                     class="w-full h-56 object-cover">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Perawatan</span>
-                        <span class="ml-4 text-gray-500 text-sm">15 April 2025</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Pentingnya Balancing dan Spooring untuk Ban Mobil</h3>
-                    <p class="text-gray-600 mb-4">
-                        Balancing dan spooring yang tepat tidak hanya membuat berkendara lebih nyaman tetapi juga memperpanjang umur ban. Ketahui kapan waktu yang tepat untuk melakukannya...
-                    </p>
-                    <a href="#" class="text-primary font-bold hover:text-dark transition-colors">
-                        Baca Selengkapnya →
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Article 5 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="250">
-                <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Article" 
-                     class="w-full h-56 object-cover">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Tips Berkendara</span>
-                        <span class="ml-4 text-gray-500 text-sm">8 April 2025</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Menghemat Bahan Bakar dengan Eco-Driving</h3>
-                    <p class="text-gray-600 mb-4">
-                        Teknik eco-driving tidak hanya ramah lingkungan tetapi juga menghemat pengeluaran untuk bahan bakar. Pelajari teknik mengemudi yang efisien...
-                    </p>
-                    <a href="#" class="text-primary font-bold hover:text-dark transition-colors">
-                        Baca Selengkapnya →
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Article 6 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Article" 
-                     class="w-full h-56 object-cover">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Teknologi</span>
-                        <span class="ml-4 text-gray-500 text-sm">1 April 2025</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Fitur Keselamatan Wajib pada Mobil Modern</h3>
-                    <p class="text-gray-600 mb-4">
-                        Teknologi keselamatan pada mobil terus berkembang. Kenali fitur-fitur keselamatan penting yang sebaiknya ada pada mobil Anda...
-                    </p>
-                    <a href="#" class="text-primary font-bold hover:text-dark transition-colors">
-                        Baca Selengkapnya →
-                    </a>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
-        
+
         <!-- Pagination -->
         <div class="flex justify-center" data-aos="fade-up">
             <nav class="inline-flex rounded-md shadow-sm">
@@ -217,7 +135,7 @@
                 </a>
             </nav>
         </div>
-        
+
         <!-- Newsletter -->
         <div class="bg-primary rounded-2xl p-12 text-center mt-20" data-aos="fade-up">
             <h2 class="text-3xl font-bold mb-6 text-dark">Dapatkan Tips Perawatan Mobil Terbaru</h2>

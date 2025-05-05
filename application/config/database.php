@@ -33,7 +33,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |	['dbcollat'] The character collation used in communicating with the database
 |				 NOTE: For MySQL and MySQLi databases, this setting is only used
 | 				 as a backup if your server is running PHP < 5.2.3 or MySQL < 5.0.7
-|				 (and in table creation queries made with DB Forge).
+| 				 (and in table creation queries made with DB Forge).
 | 				 There is an incompatibility in PHP with mysql_real_escape_string() which
 | 				 can make your site vulnerable to SQL injection if you are using a
 | 				 multi-byte character set and are running versions lower than these.
@@ -77,21 +77,21 @@ $db['default'] = array(
 	'dsn'	=> '',
 
 	/* db pusat */
-	'hostname' => 'localhost',
-	'username' => 'alwan',
-	'password' => 'kontol2712',
-	'database' => 'milala_dashboard',
+	// 'hostname' => 'localhost',
+	// 'username' => 'alwan',
+	// 'password' => 'kontol2712',
+	// 'database' => 'milala_dashboard',
 
 	/* db local laptop */
-	// 'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => '1234',
-	// 'database' => 'milala_dashboard',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'milala_dashboard',
 
 	'dbdriver'     => 'mysqli',
 	'dbprefix'     => '',
 	'pconnect'     => FALSE,
-	'db_debug'     => FALSE,
+	'db_debug'     => TRUE,
 	'cache_on'     => TRUE,
 	'cachedir'     => '',
 	'char_set'     => 'utf8',
@@ -103,4 +103,3 @@ $db['default'] = array(
 	'failover'     => array(),
 	'save_queries' => TRUE
 );
-

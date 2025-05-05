@@ -49,19 +49,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Landing';
+$route['default_controller'] = 'Login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
-// Old routes (keeping for compatibility)
-$route['landing'] = 'Landing/index';
-$route['landing/about'] = 'Landing/about';
-$route['landing/services'] = 'Landing/services';
-$route['landing/artikel'] = 'Landing/artikel';
-$route['landing/contact'] = 'Landing/contact';
 
 // New clean URL routes - will work with or without index.php
 $route['pages/about'] = 'Landing/about';
 $route['pages/services'] = 'Landing/services';
 $route['pages/artikel'] = 'Landing/artikel';
 $route['pages/contact'] = 'Landing/contact';
+
+// Artikel routes
+$route['artikel'] = 'Landing/artikel';
+$route['artikel/(:any)'] = 'Landing/artikel_detail/$1';

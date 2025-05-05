@@ -39,7 +39,7 @@
         <li class="nav-label mg-t-25">Notifikasi</li>
         <?php $countNotification = $this->db->where('to_user_id', $this->session->userdata('id_user'))->where('read_notif','0')->get('notification')->num_rows(); ?>
         <li class="nav-item <?= $this->uri->segment(1) == 'notification' ? 'active' : null ?>"><a href="<?= base_url('notification') ?>" class="nav-link"><i data-feather="bell"></i> <span>Notification <span class="badge badge-sm badge-danger"><?= $countNotification ?></span> </span></a></li>
-        
+
         <!-- Data Master -->
         <li class="nav-label mg-t-25">Data Master</li>
         <li class="nav-item <?= $this->uri->segment(2) == 'user' ? 'active' : null ?>"><a href="<?= base_url('Masterdata/user') ?>" class="nav-link"><i data-feather="activity"></i> <span>Users</span></a></li>
@@ -59,14 +59,16 @@
 
         <li class="nav-label mg-t-25">Pengajuan</li>
         <li class="nav-item <?= $this->uri->segment(1) == 'Pengajuan_fasilitas_bengkel' ? 'active' : null ?>"><a href="<?= base_url('Pengajuan_fasilitas_bengkel') ?>" class="nav-link"><i data-feather="box"></i> <span>Fasilitas Bengkel</span></a></li>
-        
+
         <li class="nav-label mg-t-25">Persediaan Barang</li>
         <li class="nav-item <?= $this->uri->segment(1) == 'Stock_barang' ? 'active' : null ?>"><a href="<?= base_url('Stock_barang') ?>" class="nav-link"><i data-feather="layers"></i> <span>Stock Barang</span></a></li>
         <li class="nav-item <?= $this->uri->segment(1) == 'Stock_barang' ? 'active' : null ?>"><a href="<?= base_url('Stock_barang') ?>" class="nav-link"><i data-feather="layers"></i> <span>Barang Masuk</span></a></li>
-        
+
         <li class="nav-label mg-t-25">Reservasi</li>
         <li class="nav-item <?= $this->uri->segment(1) == 'Reservasi_mobil' ? 'active' : null ?>"><a href="<?= base_url('Reservasi_mobil') ?>" class="nav-link"><i data-feather="award"></i> <span>Reservasi Mobil</span></a></li>
 
+        <li class="nav-label mg-t-25">Landing Control</li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'control_landing' && $this->uri->segment(2) == 'Artikel' ? 'active' : null ?>"><a href="<?= base_url('control_landing/Artikel') ?>" class="nav-link"><i data-feather="file-text"></i> <span>Artikel</span></a></li>
 
         <!-- Section Document -->
         <!-- <li class="nav-label mg-t-25">Document</li>
@@ -74,7 +76,7 @@
         <li class="nav-item <?= $this->uri->segment(1) === 'Document' && $this->uri->segment(2) === 'category' ? 'active' : null ?>"><a href="<?= base_url('Document/category') ?>" class="nav-link"><i data-feather="navigation"></i> <span>Category</span></a></li> -->
 
       <?php endif; ?>
-      
+
       <?php if ($users->id_role == 5) : ?>
         <li class="nav-label mg-t-25">Task </li>
         <li class="nav-item <?= $this->uri->segment(1) == 'Task' ? 'active' : null ?>"><a href="<?= base_url('Task') ?>" class="nav-link"><i data-feather="bookmark"></i> <span>List Tugas</span></a></li>
