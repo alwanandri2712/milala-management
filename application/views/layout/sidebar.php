@@ -69,6 +69,7 @@
 
         <li class="nav-label mg-t-25">Landing Control</li>
         <li class="nav-item <?= $this->uri->segment(1) == 'control_landing' && $this->uri->segment(2) == 'Artikel' ? 'active' : null ?>"><a href="<?= base_url('control_landing/Artikel') ?>" class="nav-link"><i data-feather="file-text"></i> <span>Artikel</span></a></li>
+        <li class="nav-item <?= $this->uri->segment(1) == 'Contact_messages' ? 'active' : null ?>"><a href="<?= base_url('Contact_messages') ?>" class="nav-link"><i data-feather="mail"></i> <span>Pesan Kontak</span></a></li>
 
         <!-- Section Document -->
         <!-- <li class="nav-label mg-t-25">Document</li>

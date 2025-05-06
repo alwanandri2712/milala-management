@@ -117,6 +117,7 @@ class Artikel_model extends CI_Model
             'artikel_kategori' => isset($data['category']) ? $data['category'] : '',
             'artikel_content' => isset($data['content']) ? $data['content'] : '',
             'artikel_image' => isset($data['image']) ? $data['image'] : '',
+            'artikel_status' => isset($data['status']) ? $data['status'] : 1, // Default: Published (1)
             'created_by' => isset($data['created_by']) ? $data['created_by'] : '',
             'created_date' => isset($data['created_date']) ? $data['created_date'] : date('Y-m-d H:i:s')
         );
@@ -141,6 +142,7 @@ class Artikel_model extends CI_Model
         if (isset($data['category'])) $update_data['artikel_kategori'] = $data['category'];
         if (isset($data['content'])) $update_data['artikel_content'] = $data['content'];
         if (isset($data['image'])) $update_data['artikel_image'] = $data['image'];
+        if (isset($data['status'])) $update_data['artikel_status'] = $data['status'];
         if (isset($data['updated_by'])) $update_data['updated_by'] = $data['updated_by'];
 
         $update_data['updated_date'] = date('Y-m-d H:i:s');
@@ -154,6 +156,7 @@ class Artikel_model extends CI_Model
     // Get published articles for frontend display
     public function get_published_articles($limit = 10, $offset = 0)
     {
+        $this->db->where('artikel_status', 1); // Only get published articles
         $this->db->order_by('created_date', 'desc');
         $this->db->limit($limit, $offset);
         return $this->db->get($this->table)->result();
@@ -163,6 +166,7 @@ class Artikel_model extends CI_Model
     public function get_article_by_slug($slug)
     {
         $this->db->where('artikel_slug', $slug);
+        $this->db->where('artikel_status', 1); // Only get published articles
         return $this->db->get($this->table)->row();
     }
 }

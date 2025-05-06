@@ -48,7 +48,9 @@ class Artikel extends CI_Controller
                 $row[] = !empty($field->artikel_image) ? '<img src="' . base_url() . 'upload/artikel/' . $field->artikel_image . '" style="width:50px;height:50px"/>' : '<img src="' . base_url() . 'assets/img/no-image.png" style="width:50px;height:50px"/>';
                 $row[] = $field->artikel_title;
                 $row[] = !empty($field->artikel_kategori) ? $field->artikel_kategori : '<span class="text-muted">-</span>'; // Tampilkan kategori jika ada
-                $row[] = "<button class='btn btn-success btn-sm'>Published</button>"; // Status selalu published
+                $row[] = isset($field->artikel_status) && $field->artikel_status == 1 ?
+                    "<button class='btn btn-success btn-sm'>Published</button>" :
+                    "<button class='btn btn-secondary btn-sm'>Draft</button>";
                 $row[] = $field->created_by;
                 $row[] = $field->created_date;
                 $data[] = $row;
@@ -113,6 +115,7 @@ class Artikel extends CI_Controller
                 'category'     => $this->security->xss_clean($this->input->post('category')),
                 'content'      => $this->input->post('content'),
                 'image'        => $filename,
+                'status'       => $this->input->post('status'),
                 'created_by'   => $this->session->userdata('fullname'),
                 'created_date' => date('Y-m-d H:i:s'),
             ];
@@ -189,6 +192,7 @@ class Artikel extends CI_Controller
                     'category'   => $this->security->xss_clean($this->input->post('category')),
                     'content'    => $this->input->post('content'),
                     'image'      => $filename,
+                    'status'     => $this->input->post('status'),
                     'updated_by' => $this->session->userdata('fullname')
                 ];
             } else {
@@ -197,6 +201,7 @@ class Artikel extends CI_Controller
                     'title_slug' => strtolower(url_title($this->input->post('title'))),
                     'category'   => $this->security->xss_clean($this->input->post('category')),
                     'content'    => $this->input->post('content'),
+                    'status'     => $this->input->post('status'),
                     'updated_by' => $this->session->userdata('fullname')
                 ];
             }
@@ -282,6 +287,7 @@ class Artikel extends CI_Controller
                     'category' => $artikel->artikel_kategori,
                     'content' => $artikel->artikel_content,
                     'image' => $artikel->artikel_image,
+                    'status' => isset($artikel->artikel_status) ? $artikel->artikel_status : 1,
                     'created_by' => $artikel->created_by,
                     'created_date' => $artikel->created_date
                 );

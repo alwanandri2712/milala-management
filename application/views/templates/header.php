@@ -4,49 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?? 'AutoCare - Bengkel Mobil Premium' ?></title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Custom Styles -->
     <style>
         /* Custom Clip Path for Hero Section */
         .hero-clip {
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
-        
+
         /* Floating Animation for Tools */
         .float-animation {
             animation: float 3s ease-in-out infinite;
         }
-        
+
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
         }
-        
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
-        
+
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-        
+
         ::-webkit-scrollbar-thumb {
             background: #FFD32E;
             border-radius: 5px;
         }
-        
+
         ::-webkit-scrollbar-thumb:hover {
             background: #e6be29;
         }
     </style>
-    
+
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -76,7 +79,7 @@
                     </div>
                     <span class="text-2xl font-bold text-dark">Milala</span>
                 </div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="<?= base_url(); ?>" class="font-medium <?= ($active == 'home') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Beranda</a>
@@ -88,7 +91,7 @@
                         Booking
                     </a>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-dark focus:outline-none">
@@ -98,7 +101,7 @@
                     </button>
                 </div>
             </div>
-            
+
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden hidden py-4">
                 <a href="<?= base_url(); ?>" class="block py-2 font-medium <?= ($active == 'home') ? 'text-primary' : 'text-dark hover:text-primary' ?>">Beranda</a>

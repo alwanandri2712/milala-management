@@ -62,67 +62,7 @@
                 </ul>
             </div>
         </div>
-        
-        <!-- Team -->
-        <div class="mb-20">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-6">Tim Profesional Kami</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Kenali mekanik berpengalaman yang akan merawat kendaraan Anda dengan standar kualitas tertinggi
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Team Member 1 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="50">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-1">Ahmad Sutisna</h3>
-                        <p class="text-primary font-medium mb-3">Founder & Head Mechanic</p>
-                        <p class="text-gray-600 text-sm">
-                            Berpengalaman lebih dari 20 tahun di industri otomotif dengan sertifikasi dari Toyota dan Honda.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Team Member 2 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-1">Siti Rahayu</h3>
-                        <p class="text-primary font-medium mb-3">Customer Service Manager</p>
-                        <p class="text-gray-600 text-sm">
-                            Memastikan setiap pelanggan mendapatkan pengalaman terbaik dengan pendekatan personal.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Team Member 3 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="150">
-                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Team Member" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-1">Budi Santoso</h3>
-                        <p class="text-primary font-medium mb-3">Senior Technician</p>
-                        <p class="text-gray-600 text-sm">
-                            Spesialis diagnostik komputer dengan keahlian khusus dalam sistem kelistrikan mobil modern.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Team Member 4 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Team Member" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-1">Rudi Hermawan</h3>
-                        <p class="text-primary font-medium mb-3">Body Repair Specialist</p>
-                        <p class="text-gray-600 text-sm">
-                            Ahli dalam perbaikan body dan pengecatan dengan hasil yang presisi dan berkualitas tinggi.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+
         <!-- Facilities -->
         <div>
             <div class="text-center mb-12" data-aos="fade-up">
