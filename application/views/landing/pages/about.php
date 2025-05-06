@@ -11,58 +11,33 @@
                 Mengenal lebih dekat bengkel mobil premium dengan layanan terbaik
             </p>
         </div>
-        
+
         <!-- Company Story -->
         <div class="flex flex-col lg:flex-row items-center gap-12 mb-20">
             <div class="lg:w-1/2" data-aos="fade-right">
-                <h2 class="text-3xl font-bold mb-6">Sejarah AutoCare</h2>
+                <h2 class="text-3xl font-bold mb-6">MILALA AUTO SERVICE</h2>
                 <p class="text-gray-600 mb-4">
-                    Didirikan pada tahun 2010, AutoCare bermula dari bengkel kecil dengan hanya 3 mekanik. Dengan komitmen pada kualitas dan kepuasan pelanggan, kami berkembang menjadi bengkel premium dengan lebih dari 30 mekanik bersertifikat.
+                    Milala Auto Service merupakan Bengkel Spesialis Power Steering yang berkomitmen untuk membantu pemilik kendaraan dalam mengatasi dan memberikan pemahaman seputar kendala power steering.
                 </p>
                 <p class="text-gray-600 mb-4">
-                    Perjalanan kami dimulai ketika Bapak Ahmad Sutisna, seorang mekanik berpengalaman selama 15 tahun di berbagai bengkel resmi, memutuskan untuk membuka bengkel sendiri dengan visi memberikan pelayanan premium namun dengan harga yang terjangkau.
+                    Sejarah kami dimulai di daerah Wr. Buncit Jakarta Selatan pada tahun 1998. Keberadaan Milala Auto Service saat itu sangat membantu dan dinilai baik oleh para konsumen, dengan banyak pelanggan yang mempercayakan pengerjaan power steering mobilnya kepada kami meskipun kami tergolong "pemain baru" dalam bisnis ini.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Karena keterbatasan tempat, pada tahun 2006 kami membuka cabang di Jl. Pangeran Antasari No.89, Jakarta Selatan. Dari sana, kami mendapat kepercayaan sebagai bengkel rekomendasi beberapa klub mobil dan rekan bengkel lainnya.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Pada tahun 2008, kami membuka cabang di Jl. RA Kartini No.9 Bekasi Timur untuk melayani konsumen di daerah Bekasi hingga Karawang. Kemudian pada 3 Maret 2012, kami memindahkan pusat yang ada di Wr. Buncit ke Jl. Madrasah Raya No.3a, Ampera, Jakarta Selatan.
                 </p>
                 <p class="text-gray-600">
-                    Seiring berjalannya waktu, AutoCare terus berinovasi dengan menambahkan layanan-layanan baru dan mengadopsi teknologi diagnostik terkini untuk memberikan pelayanan terbaik bagi pelanggan kami.
+                    Meskipun Milala Power Steering memiliki 2 workshop di Jakarta Selatan dan 1 workshop di Bekasi Timur, pelanggan kami tersebar di seluruh Jabotabek, Banten, hingga pelosok Bandung. Kami terus belajar dan berbagi pengetahuan dengan semua konsumen untuk mengatasi segala kendala seputar power steering.
                 </p>
             </div>
             <div class="lg:w-1/2" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1613214149322-99e4bbada007?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                     alt="Sejarah AutoCare" 
+                <img src="https://images.unsplash.com/photo-1613214149322-99e4bbada007?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                     alt="Sejarah AutoCare"
                      class="w-full h-auto rounded-2xl shadow-xl">
             </div>
         </div>
-        
-        <!-- Vision & Mission -->
-        <div class="grid md:grid-cols-2 gap-12 mb-20">
-            <div class="bg-gray-50 p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4">Visi Kami</h3>
-                <p class="text-gray-600">
-                    Menjadi bengkel mobil terpercaya dengan standar layanan premium yang dapat diakses oleh semua kalangan, serta menjadi pionir dalam inovasi perawatan kendaraan di Indonesia.
-                </p>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4">Misi Kami</h3>
-                <ul class="text-gray-600 space-y-2">
-                    <li>• Memberikan layanan perawatan kendaraan berkualitas tinggi dengan harga yang kompetitif</li>
-                    <li>• Menggunakan teknologi diagnostik terkini untuk memastikan akurasi dalam perbaikan</li>
-                    <li>• Mengembangkan tim mekanik profesional melalui pelatihan berkelanjutan</li>
-                    <li>• Menciptakan pengalaman pelanggan yang menyenangkan dan transparan</li>
-                </ul>
-            </div>
-        </div>
-
         <!-- Facilities -->
         <div>
             <div class="text-center mb-12" data-aos="fade-up">
@@ -71,12 +46,12 @@
                     Dilengkapi dengan peralatan modern dan area yang nyaman untuk memberikan pengalaman terbaik
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Facility 1 -->
                 <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="50">
-                    <img src="https://images.unsplash.com/photo-1613214174161-62e6b56c8e11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                         alt="Facility" 
+                    <img src="https://images.unsplash.com/photo-1613214174161-62e6b56c8e11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                         alt="Facility"
                          class="w-full h-64 object-cover">
                     <div class="p-6 bg-white">
                         <h3 class="text-xl font-bold mb-2">Area Servis Modern</h3>
@@ -85,11 +60,11 @@
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Facility 2 -->
                 <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1600877685303-857f8d4093af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                         alt="Facility" 
+                    <img src="https://images.unsplash.com/photo-1600877685303-857f8d4093af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                         alt="Facility"
                          class="w-full h-64 object-cover">
                     <div class="p-6 bg-white">
                         <h3 class="text-xl font-bold mb-2">Ruang Tunggu Premium</h3>
@@ -98,11 +73,11 @@
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Facility 3 -->
                 <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="150">
-                    <img src="https://images.unsplash.com/photo-1607857530433-da9fc50e0d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                         alt="Facility" 
+                    <img src="https://images.unsplash.com/photo-1607857530433-da9fc50e0d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                         alt="Facility"
                          class="w-full h-64 object-cover">
                     <div class="p-6 bg-white">
                         <h3 class="text-xl font-bold mb-2">Painting Booth</h3>
