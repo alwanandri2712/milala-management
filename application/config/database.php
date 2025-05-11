@@ -77,16 +77,16 @@ $db['default'] = array(
 	'dsn'	=> '',
 
 	/* db pusat */
-	// 'hostname' => 'localhost',
-	// 'username' => 'alwan',
-	// 'password' => 'kontol2712',
-	// 'database' => 'milala_dashboard',
+	'hostname' => 'localhost',
+	'username' => 'alwan',
+	'password' => 'kontol2712',
+	'database' => 'milala_dashboard',
 
 	/* db local laptop */
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'milala_dashboard',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'milala_dashboard',
 
 	'dbdriver'     => 'mysqli',
 	'dbprefix'     => '',
