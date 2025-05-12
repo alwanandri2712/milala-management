@@ -38,55 +38,5 @@
                      class="w-full h-auto rounded-2xl shadow-xl">
             </div>
         </div>
-        <!-- Facilities -->
-        <div>
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-6">Fasilitas Bengkel</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Dilengkapi dengan peralatan modern dan area yang nyaman untuk memberikan pengalaman terbaik
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Facility 1 -->
-                <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="50">
-                    <img src="https://images.unsplash.com/photo-1613214174161-62e6b56c8e11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                         alt="Facility"
-                         class="w-full h-64 object-cover">
-                    <div class="p-6 bg-white">
-                        <h3 class="text-xl font-bold mb-2">Area Servis Modern</h3>
-                        <p class="text-gray-600">
-                            Dilengkapi dengan lift hidrolik dan peralatan diagnostik terkini untuk servis yang akurat.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Facility 2 -->
-                <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1600877685303-857f8d4093af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                         alt="Facility"
-                         class="w-full h-64 object-cover">
-                    <div class="p-6 bg-white">
-                        <h3 class="text-xl font-bold mb-2">Ruang Tunggu Premium</h3>
-                        <p class="text-gray-600">
-                            Dilengkapi dengan sofa nyaman, wifi gratis, kopi, dan area kerja untuk produktivitas Anda.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Facility 3 -->
-                <div class="rounded-2xl overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="150">
-                    <img src="https://images.unsplash.com/photo-1607857530433-da9fc50e0d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                         alt="Facility"
-                         class="w-full h-64 object-cover">
-                    <div class="p-6 bg-white">
-                        <h3 class="text-xl font-bold mb-2">Painting Booth</h3>
-                        <p class="text-gray-600">
-                            Ruang pengecatan khusus dengan sistem ventilasi modern untuk hasil cat yang sempurna.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>

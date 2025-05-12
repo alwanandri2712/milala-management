@@ -26,8 +26,14 @@ date_default_timezone_set('Asia/Jakarta');
 | a PHP script and you can easily do that on your own.
 |
 */
-// Dynamic base URL (uncomment if needed)
-$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+// Dynamic base URL with Cloudflare SSL Flexible support and local development detection
+if (strpos($_SERVER['HTTP_HOST'], '.test') !== false || strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
+    // Use HTTP for local development environments
+    $config['base_url'] = "http";
+} else {
+    // Force HTTPS for production with Cloudflare SSL Flexible
+    $config['base_url'] = "https";
+}
 $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
@@ -476,7 +482,7 @@ if (isset($_SERVER["REQUEST_URI"])) {
             $config['csrf_protection'] = TRUE;
         }
     }
-} 
+}
 $config['csrf_token_name']   = '4lW4nGAnt3ngbGT2712';
 $config['csrf_cookie_name']  = 'wedev_token';
 $config['csrf_expire']       = 1200;
