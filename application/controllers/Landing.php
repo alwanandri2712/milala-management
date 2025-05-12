@@ -12,7 +12,7 @@ class Landing extends CI_Controller {
     }
 
     public function index() {
-        $data['title'] = 'AutoCare - Bengkel Mobil Premium';
+        $data['title'] = 'Milala Auto Service - Spesialis Power Steering Mobil';
         $data['active'] = 'home';
 
         $this->load->view('templates/header', $data);
@@ -21,7 +21,7 @@ class Landing extends CI_Controller {
     }
 
     public function about() {
-        $data['title'] = 'Tentang Kami - AutoCare';
+        $data['title'] = 'Tentang Kami - Milala Auto Service';
         $data['active'] = 'about';
 
         $this->load->view('templates/header', $data);
@@ -30,7 +30,7 @@ class Landing extends CI_Controller {
     }
 
     public function services() {
-        $data['title'] = 'Layanan Kami - AutoCare';
+        $data['title'] = 'Layanan Kami - Milala Auto Service';
         $data['active'] = 'services';
 
         $this->load->view('templates/header', $data);
@@ -39,7 +39,7 @@ class Landing extends CI_Controller {
     }
 
     public function artikel() {
-        $data['title'] = 'Artikel - AutoCare';
+        $data['title'] = 'Artikel - Milala Auto Service';
         $data['active'] = 'artikel';
 
         // Ambil semua artikel dengan status published dari database
@@ -60,7 +60,7 @@ class Landing extends CI_Controller {
     }
 
     public function artikel_detail($slug) {
-        $data['title'] = 'Detail Artikel - AutoCare';
+        $data['title'] = 'Detail Artikel - Milala Auto Service';
         $data['active'] = 'artikel';
 
         // Ambil detail artikel berdasarkan slug
@@ -83,7 +83,7 @@ class Landing extends CI_Controller {
     }
 
     public function contact() {
-        $data['title'] = 'Hubungi Kami - AutoCare';
+        $data['title'] = 'Hubungi Kami - Milala Auto Service';
         $data['active'] = 'contact';
 
         $this->load->view('templates/header', $data);
@@ -130,12 +130,12 @@ class Landing extends CI_Controller {
             try {
                 // Jika validasi berhasil, simpan data
                 $data = [
-                    'name' => $this->input->post('name', true),
-                    'phone' => $this->input->post('phone', true),
-                    'email' => $this->input->post('email', true),
-                    'service' => $this->input->post('service', true),
-                    'message' => $this->input->post('message', true),
-                    'status' => 'unread',
+                    'name'       => $this->input->post('name', true),
+                    'phone'      => $this->input->post('phone', true),
+                    'email'      => $this->input->post('email', true),
+                    'service'    => $this->input->post('service', true),
+                    'message'    => $this->input->post('message', true),
+                    'status'     => 'unread',
                     'created_at' => date('Y-m-d H:i:s')
                 ];
 

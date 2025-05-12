@@ -145,6 +145,45 @@
       </nav> -->
     </div><!-- content-header -->
 
+    <!-- content header mobile -->
+    <?php if ($this->mobiledetection->isMobile() == true) : ?>
+      <?php if (in_array($this->uri->segment(1), ['Borrower', 'mobile', 'my-profile', 'Home', 'Remarks', 'history-remarks',])) : ?>
+        <div class="content-header" style="background-color: #fff; padding-left: 15px; height: 60px !important;">
+          <div class="d-flex align-items-center">
+            <?php if (in_array($this->uri->segment(1), ['Remarks', 'history-remarks']) || in_array($this->uri->segment(2), ['detail-borrower', 'terms_of_services', 'changePassword', 'editProfile'])) : ?>
+              <div class="avatar" style="height: 18px">
+                <i class="fas fa-arrow-left fa-lg" onclick="window.history.back()" style="cursor: pointer; color: #2437d6;"></i>
+              </div>
+            <?php else : ?>
+              <a href="<?= base_url('Home') ?>" class="avatar">
+                <img src="<?= base_url('assets/img/kan-icon.png') ?>" class="rounded-circle" alt="ANDALAN NUSA">
+              </a>
+            <?php endif; ?>
+            <?php
+            if ($this->uri->segment(1) == 'Borrower') {
+              $title_navbar = 'List Borrower';
+            } elseif ($this->uri->segment(1) == 'Remarks') {
+              $title_navbar = 'Remarks';
+            } elseif ($this->uri->segment(1) == 'my-profile') {
+              $title_navbar = 'My Profiles';
+            } elseif ($this->uri->segment(1) == 'Home') {
+              $title_navbar = 'Analytics';
+            } elseif ($this->uri->segment(2) == 'detail-borrower') {
+              $title_navbar = 'Detail Data Nasabah';
+            } elseif ($this->uri->segment(1) == 'history-remarks') {
+              $title_navbar = 'History Remarks';
+            }
+            ?>
+            <?php if (in_array($this->uri->segment(2), ['detail-borrower'])) { ?>
+              <h6 class="mg-b-0 tx-spacing--1 ml-3" style="font-size: 17px;"><?= $title_navbar ?></h5>
+              <?php } else { ?>
+                <h6 class="mg-b-0 tx-spacing--1 ml-3" style="font-size: 17px;">Koleksi Andalan Nusa | <?= $title_navbar ?></h5>
+                <?php } ?>
+          </div>
+        </div>
+      <?php endif; ?>
+    <?php endif; ?>
+
     <div class="content-body">
       <div class="container pd-x-0">
         <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">

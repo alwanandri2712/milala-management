@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?? 'AutoCare - Bengkel Mobil Premium' ?></title>
+    <title><?= $title ?? 'Milala Auto Service - Spesialis Power Steering Mobil' ?></title>
+
+    <!-- META SEO Tags -->
+    <meta name="description" content="Milala Auto Service - Bengkel spesialis power steering mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998. Melayani area Jabotabek, Banten, dan Bandung.">
+    <meta name="keywords" content="power steering, bengkel power steering, spesialis power steering, perbaikan power steering, pemasangan power steering, modifikasi power steering, Milala Auto Service, bengkel mobil Jakarta">
+    <meta name="author" content="Milala Auto Service">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?= base_url() ?>">
+    <meta property="og:title" content="<?= $title ?? 'Milala Auto Service - Spesialis Power Steering Mobil' ?>">
+    <meta property="og:description" content="Bengkel spesialis power steering mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998. Melayani area Jabotabek, Banten, dan Bandung.">
+    <meta property="og:image" content="<?= base_url('assets/img/logo.jpg') ?>">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<?= base_url() ?>">
+    <meta property="twitter:title" content="<?= $title ?? 'Milala Auto Service - Spesialis Power Steering Mobil' ?>">
+    <meta property="twitter:description" content="Bengkel spesialis power steering mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998. Melayani area Jabotabek, Banten, dan Bandung.">
+    <meta property="twitter:image" content="<?= base_url('assets/img/logo.jpg') ?>">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -77,7 +96,7 @@
                             <path d="M19 12h-2V9h-2v3H5c-1.1 0-2 .9-2 2v3h2v-3h14v3h2v-3c0-1.1-.9-2-2-2zM5 7h14c1.1 0 2-.9 2-2s-.9-2-2-2H5c-1.1 0-2 .9-2 2s.9 2 2 2zm11.5 7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm-8 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
                         </svg>
                     </div>
-                    <span class="text-2xl font-bold text-dark">Milala</span>
+                    <span class="text-2xl font-bold text-dark">Milala Auto Service</span>
                 </div>
 
                 <!-- Desktop Menu -->

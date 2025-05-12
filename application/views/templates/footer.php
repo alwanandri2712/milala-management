@@ -10,10 +10,10 @@
                             <path d="M19 12h-2V9h-2v3H5c-1.1 0-2 .9-2 2v3h2v-3h14v3h2v-3c0-1.1-.9-2-2-2zM5 7h14c1.1 0 2-.9 2-2s-.9-2-2-2H5c-1.1 0-2 .9-2 2s.9 2 2 2zm11.5 7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm-8 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
                         </svg>
                     </div>
-                    <span class="text-2xl font-bold text-white">AutoCare</span>
+                    <span class="text-2xl font-bold text-white">Milala Auto Service</span>
                 </div>
                 <p class="text-gray-400 mb-6">
-                    Bengkel mobil premium dengan teknisi berpengalaman dan peralatan modern untuk perawatan kendaraan Anda.
+                    Bengkel spesialis power steering mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998.
                 </p>
                 <div class="flex space-x-4">
                     <a href="#" class="bg-gray-800 p-3 rounded-full text-primary hover:bg-primary hover:text-dark transition-colors">
@@ -38,7 +38,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <!-- Quick Links -->
             <div data-aos="fade-up" data-aos-delay="150">
                 <h3 class="text-xl font-bold mb-6 text-white">Link Cepat</h3>
@@ -63,7 +63,7 @@
                     </li>
                 </ul>
             </div>
-            
+
             <!-- Services -->
             <div data-aos="fade-up" data-aos-delay="250">
                 <h3 class="text-xl font-bold mb-6 text-white">Layanan Kami</h3>
@@ -88,7 +88,7 @@
                     </li>
                 </ul>
             </div>
-            
+
             <!-- Newsletter -->
             <div data-aos="fade-up" data-aos-delay="350">
                 <h3 class="text-xl font-bold mb-6 text-white">Berlangganan</h3>
@@ -103,11 +103,11 @@
                 </form>
             </div>
         </div>
-        
+
         <!-- Bottom Footer -->
         <div class="pt-8 border-t border-gray-800 text-center">
             <p class="text-gray-400">
-                &copy; <?= date('Y') ?> AutoCare - Bengkel Mobil Premium. All rights reserved.
+                &copy; <?= date('Y') ?> Milala Auto Service - Spesialis Power Steering Mobil. All rights reserved.
             </p>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="#" class="text-gray-400 hover:text-primary transition-colors">Kebijakan Privasi</a>
@@ -134,28 +134,28 @@
         once: true,
         easing: 'ease-out-quad'
     });
-    
+
     // Mobile Menu Toggle
     document.getElementById('mobile-menu-button').addEventListener('click', function() {
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenu.classList.toggle('hidden');
     });
-    
+
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
+
                 // Close mobile menu if open
                 const mobileMenu = document.getElementById('mobile-menu');
                 if (!mobileMenu.classList.contains('hidden')) {

@@ -29,12 +29,12 @@
                     Pada tahun 2008, kami membuka cabang di Jl. RA Kartini No.9 Bekasi Timur untuk melayani konsumen di daerah Bekasi hingga Karawang. Kemudian pada 3 Maret 2012, kami memindahkan pusat yang ada di Wr. Buncit ke Jl. Madrasah Raya No.3a, Ampera, Jakarta Selatan.
                 </p>
                 <p class="text-gray-600">
-                    Meskipun Milala Power Steering memiliki 2 workshop di Jakarta Selatan dan 1 workshop di Bekasi Timur, pelanggan kami tersebar di seluruh Jabotabek, Banten, hingga pelosok Bandung. Kami terus belajar dan berbagi pengetahuan dengan semua konsumen untuk mengatasi segala kendala seputar power steering.
+                    Meskipun Milala Auto Service memiliki 2 workshop di Jakarta Selatan dan 1 workshop di Bekasi Timur, pelanggan kami tersebar di seluruh Jabotabek, Banten, hingga pelosok Bandung. Kami terus belajar dan berbagi pengetahuan dengan semua konsumen untuk mengatasi segala kendala seputar power steering.
                 </p>
             </div>
             <div class="lg:w-1/2" data-aos="fade-left">
                 <img src="https://images.unsplash.com/photo-1613214149322-99e4bbada007?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                     alt="Sejarah AutoCare"
+                     alt="Sejarah Milala Auto Service"
                      class="w-full h-auto rounded-2xl shadow-xl">
             </div>
         </div>
