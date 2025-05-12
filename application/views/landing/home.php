@@ -108,12 +108,6 @@
                 <a href="#" class="inline-block mt-4 text-primary font-bold hover:text-dark transition-colors">Selengkapnya →</a>
             </div>
 
-        <!-- Service CTA -->
-        <div class="mt-16 text-center" data-aos="fade-up">
-            <a href="#" class="inline-block bg-dark text-primary px-10 py-4 rounded-full font-bold hover:bg-primary hover:text-dark transition-colors">
-                Lihat Semua Layanan
-            </a>
-        </div>
     </div>
 </section>
 
@@ -377,7 +371,7 @@
     <div class="container mx-auto px-4">
         <!-- Google Map -->
         <div class="mt-16 rounded-2xl overflow-hidden shadow-xl" data-aos="zoom-in">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.29279605123!2d106.7588548748879!3d-6.229386695496356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%20Selatan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1651999111082!5m2!1sid!2sid"
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.521929247894!2d106.8262297!3d-6.2661385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1c3c9b7d8c7%3A0xd13d67819a6f5bb!2sMilala%20Auto%20Service!5e0!3m2!1sid!2sid!4v1715599847913!5m2!1sid!2sid"
                     width="100%"
                     height="450"
                     style="border:0;"
@@ -385,6 +379,23 @@
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
             </iframe>
+        </div>
+
+        <!-- Cabang Lokasi -->
+        <div class="mt-12 grid md:grid-cols-2 gap-8" data-aos="fade-up">
+            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Cabang Antasari</h3>
+                <p class="text-gray-600 mb-2">Jl. Pangeran Antasari No.89, Cilandak, Jakarta Selatan</p>
+                <p class="text-gray-600 mb-4">Telp: (021) 7591 2345</p>
+                <a href="https://maps.app.goo.gl/Ld5Ld5Ld5Ld5Ld5Ld5" target="_blank" class="text-primary font-bold hover:text-dark transition-colors">Lihat di Google Maps →</a>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Cabang Pasar Minggu</h3>
+                <p class="text-gray-600 mb-2">Jl. Madrasah Raya No. 3A, Pasar Minggu, Jakarta Selatan</p>
+                <p class="text-gray-600 mb-4">Telp: (021) 7891 0123</p>
+                <a href="https://maps.app.goo.gl/Ld5Ld5Ld5Ld5Ld5Ld5" target="_blank" class="text-primary font-bold hover:text-dark transition-colors">Lihat di Google Maps →</a>
+            </div>
         </div>
     </div>
 </section>
