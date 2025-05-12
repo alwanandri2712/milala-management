@@ -103,10 +103,10 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="<?= base_url(); ?>" class="font-medium <?= ($active == 'home') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Beranda</a>
-                    <a href="<?= base_url('pages/about'); ?>" class="font-medium <?= ($active == 'about') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Tentang Kami</a>
-                    <a href="<?= base_url('pages/services'); ?>" class="font-medium <?= ($active == 'services') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Layanan</a>
-                    <a href="<?= base_url('pages/artikel'); ?>" class="font-medium <?= ($active == 'artikel') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Artikel</a>
-                    <a href="<?= base_url('pages/contact'); ?>" class="font-medium <?= ($active == 'contact') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Kontak</a>
+                    <a href="<?= base_url('about'); ?>" class="font-medium <?= ($active == 'about') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Tentang Kami</a>
+                    <a href="<?= base_url('services'); ?>" class="font-medium <?= ($active == 'services') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Layanan</a>
+                    <a href="<?= base_url('artikel'); ?>" class="font-medium <?= ($active == 'artikel') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Artikel</a>
+                    <a href="<?= base_url('contact'); ?>" class="font-medium <?= ($active == 'contact') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Kontak</a>
                     <a href="#" class="bg-primary px-6 py-2 rounded-full font-bold text-dark hover:bg-dark hover:text-primary transition-colors">
                         Booking
                     </a>

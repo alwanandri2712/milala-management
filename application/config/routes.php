@@ -55,10 +55,10 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 // New clean URL routes - will work with or without index.php
-$route['pages/about'] = 'Landing/about';
-$route['pages/services'] = 'Landing/services';
-$route['pages/artikel'] = 'Landing/artikel';
-$route['pages/contact'] = 'Landing/contact';
+$route['about']    = 'Landing/about';
+$route['services'] = 'Landing/services';
+$route['artikel']  = 'Landing/artikel';
+$route['contact']  = 'Landing/contact';
 
 // Artikel routes
 $route['artikel'] = 'Landing/artikel';
