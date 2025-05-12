@@ -1,7 +1,14 @@
 <?php
+/*
+ Developer : Alwan Putra Andriansyah
+ Website : Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki
+*/
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Landing extends CI_Controller {
+
+    var $site_url = 'Landing';
 
     public function __construct() {
         parent::__construct();
@@ -11,6 +18,9 @@ class Landing extends CI_Controller {
         $this->load->library('form_validation');
     }
 
+    /**
+     * Halaman Beranda
+     */
     public function index() {
         $data['title'] = 'Milala Auto Service - Spesialis Power Steering Mobil';
         $data['active'] = 'home';
@@ -20,6 +30,9 @@ class Landing extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    /**
+     * Halaman Tentang Kami
+     */
     public function about() {
         $data['title'] = 'Tentang Kami - Milala Auto Service';
         $data['active'] = 'about';
@@ -29,6 +42,9 @@ class Landing extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    /**
+     * Halaman Layanan
+     */
     public function services() {
         $data['title'] = 'Layanan Kami - Milala Auto Service';
         $data['active'] = 'services';
@@ -38,6 +54,9 @@ class Landing extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    /**
+     * Halaman Artikel
+     */
     public function artikel() {
         $data['title'] = 'Artikel - Milala Auto Service';
         $data['active'] = 'artikel';
@@ -59,6 +78,11 @@ class Landing extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    /**
+     * Halaman Detail Artikel
+     *
+     * @param string $slug Slug artikel
+     */
     public function artikel_detail($slug) {
         $data['title'] = 'Detail Artikel - Milala Auto Service';
         $data['active'] = 'artikel';
@@ -82,6 +106,9 @@ class Landing extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    /**
+     * Halaman Kontak
+     */
     public function contact() {
         $data['title'] = 'Hubungi Kami - Milala Auto Service';
         $data['active'] = 'contact';
@@ -91,6 +118,9 @@ class Landing extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    /**
+     * Halaman Reservasi
+     */
     public function reservation() {
         $data['title'] = 'Reservasi Layanan - Milala Auto Service';
         $data['active'] = 'reservation';
@@ -111,16 +141,8 @@ class Landing extends CI_Controller {
      * Menangani pengiriman form kontak
      */
     public function submit_contact() {
-        // Aktifkan error reporting untuk debugging
-        ini_set('display_errors', 1);
-        error_reporting(E_ALL);
-
-        // Log input yang diterima
-        log_message('debug', 'Contact form submission received: ' . json_encode($_POST));
-
         // Cek apakah request adalah AJAX
         if (!$this->input->is_ajax_request()) {
-            log_message('error', 'Contact form: Not an AJAX request');
             exit('No direct script access allowed');
         }
 
@@ -135,7 +157,6 @@ class Landing extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             // Jika validasi gagal
             $errors = $this->form_validation->error_array();
-            log_message('debug', 'Contact form validation failed: ' . json_encode($errors));
 
             $response = [
                 'status' => false,
@@ -155,60 +176,10 @@ class Landing extends CI_Controller {
                     'created_at' => date('Y-m-d H:i:s')
                 ];
 
-                log_message('debug', 'Contact form data to save: ' . json_encode($data));
-
                 // Cek apakah tabel contact_messages ada
-                if (!$this->db->table_exists('contact_messages')) {
-                    log_message('error', 'Table contact_messages does not exist');
-
-                    // Buat tabel jika belum ada
-                    $this->load->dbforge();
-
-                    $fields = array(
-                        'id' => array(
-                            'type' => 'INT',
-                            'constraint' => 11,
-                            'unsigned' => TRUE,
-                            'auto_increment' => TRUE
-                        ),
-                        'name' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 100,
-                        ),
-                        'phone' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 20,
-                        ),
-                        'email' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 100,
-                        ),
-                        'service' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 50,
-                        ),
-                        'message' => array(
-                            'type' => 'TEXT',
-                        ),
-                        'status' => array(
-                            'type' => 'ENUM',
-                            'constraint' => array('unread', 'read'),
-                            'default' => 'unread',
-                        ),
-                        'created_at' => array(
-                            'type' => 'DATETIME',
-                        )
-                    );
-
-                    $this->dbforge->add_field($fields);
-                    $this->dbforge->add_key('id', TRUE);
-                    $this->dbforge->create_table('contact_messages', TRUE);
-
-                    log_message('info', 'Table contact_messages created successfully');
-                }
+                $this->_create_contact_table_if_not_exists();
 
                 $result = $this->Contact_model->save_message($data);
-                log_message('debug', 'Contact form save result: ' . ($result ? 'success' : 'failed'));
 
                 if ($result) {
                     $response = [
@@ -222,7 +193,6 @@ class Landing extends CI_Controller {
                     ];
                 }
             } catch (Exception $e) {
-                log_message('error', 'Contact form exception: ' . $e->getMessage());
                 $response = [
                     'status' => false,
                     'message' => 'Terjadi kesalahan: ' . $e->getMessage()
@@ -239,16 +209,8 @@ class Landing extends CI_Controller {
      * Menangani pengiriman form reservasi
      */
     public function submit_reservation() {
-        // Aktifkan error reporting untuk debugging
-        ini_set('display_errors', 1);
-        error_reporting(E_ALL);
-
-        // Log input yang diterima
-        log_message('debug', 'Reservation form submission received: ' . json_encode($_POST));
-
         // Cek apakah request adalah AJAX
         if (!$this->input->is_ajax_request()) {
-            log_message('error', 'Reservation form: Not an AJAX request');
             exit('No direct script access allowed');
         }
 
@@ -268,7 +230,6 @@ class Landing extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             // Jika validasi gagal
             $errors = $this->form_validation->error_array();
-            log_message('debug', 'Reservation form validation failed: ' . json_encode($errors));
 
             $response = [
                 'status' => false,
@@ -293,81 +254,12 @@ class Landing extends CI_Controller {
                     'created_at'       => date('Y-m-d H:i:s')
                 ];
 
-                log_message('debug', 'Reservation form data to save: ' . json_encode($data));
-
                 // Cek apakah tabel reservations ada
-                if (!$this->db->table_exists('reservations')) {
-                    log_message('error', 'Table reservations does not exist');
-
-                    // Buat tabel jika belum ada
-                    $this->load->dbforge();
-
-                    $fields = array(
-                        'id' => array(
-                            'type' => 'INT',
-                            'constraint' => 11,
-                            'unsigned' => TRUE,
-                            'auto_increment' => TRUE
-                        ),
-                        'name' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 100,
-                        ),
-                        'phone' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 20,
-                        ),
-                        'email' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 100,
-                        ),
-                        'branch_id' => array(
-                            'type' => 'INT',
-                            'constraint' => 11,
-                        ),
-                        'service_type' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 100,
-                        ),
-                        'vehicle_type' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 100,
-                        ),
-                        'vehicle_brand' => array(
-                            'type' => 'VARCHAR',
-                            'constraint' => 100,
-                        ),
-                        'reservation_date' => array(
-                            'type' => 'DATE',
-                        ),
-                        'reservation_time' => array(
-                            'type' => 'TIME',
-                        ),
-                        'notes' => array(
-                            'type' => 'TEXT',
-                            'null' => TRUE,
-                        ),
-                        'status' => array(
-                            'type' => 'ENUM',
-                            'constraint' => array('pending', 'confirmed', 'completed', 'cancelled'),
-                            'default' => 'pending',
-                        ),
-                        'created_at' => array(
-                            'type' => 'DATETIME',
-                        )
-                    );
-
-                    $this->dbforge->add_field($fields);
-                    $this->dbforge->add_key('id', TRUE);
-                    $this->dbforge->create_table('reservations', TRUE);
-
-                    log_message('info', 'Table reservations created successfully');
-                }
+                $this->_create_reservation_table_if_not_exists();
 
                 // Load the Reservation model
                 $this->load->model('Reservation_model');
                 $result = $this->Reservation_model->save_reservation($data);
-                log_message('debug', 'Reservation form save result: ' . ($result ? 'success' : 'failed'));
 
                 if ($result) {
                     $response = [
@@ -381,7 +273,6 @@ class Landing extends CI_Controller {
                     ];
                 }
             } catch (Exception $e) {
-                log_message('error', 'Reservation form exception: ' . $e->getMessage());
                 $response = [
                     'status' => false,
                     'message' => 'Terjadi kesalahan: ' . $e->getMessage()
@@ -392,5 +283,124 @@ class Landing extends CI_Controller {
         // Kirim response dalam format JSON
         header('Content-Type: application/json');
         echo json_encode($response);
+    }
+
+    /**
+     * Membuat tabel contact_messages jika belum ada
+     */
+    private function _create_contact_table_if_not_exists() {
+        if (!$this->db->table_exists('contact_messages')) {
+            // Buat tabel jika belum ada
+            $this->load->dbforge();
+
+            $fields = array(
+                'id' => array(
+                    'type' => 'INT',
+                    'constraint' => 11,
+                    'unsigned' => TRUE,
+                    'auto_increment' => TRUE
+                ),
+                'name' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 100,
+                ),
+                'phone' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 20,
+                ),
+                'email' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 100,
+                ),
+                'service' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 50,
+                ),
+                'message' => array(
+                    'type' => 'TEXT',
+                ),
+                'status' => array(
+                    'type' => 'ENUM',
+                    'constraint' => array('unread', 'read'),
+                    'default' => 'unread',
+                ),
+                'created_at' => array(
+                    'type' => 'DATETIME',
+                )
+            );
+
+            $this->dbforge->add_field($fields);
+            $this->dbforge->add_key('id', TRUE);
+            $this->dbforge->create_table('contact_messages', TRUE);
+        }
+    }
+
+    /**
+     * Membuat tabel reservations jika belum ada
+     */
+    private function _create_reservation_table_if_not_exists() {
+        if (!$this->db->table_exists('reservations')) {
+            // Buat tabel jika belum ada
+            $this->load->dbforge();
+
+            $fields = array(
+                'id' => array(
+                    'type' => 'INT',
+                    'constraint' => 11,
+                    'unsigned' => TRUE,
+                    'auto_increment' => TRUE
+                ),
+                'name' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 100,
+                ),
+                'phone' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 20,
+                ),
+                'email' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 100,
+                ),
+                'branch_id' => array(
+                    'type' => 'INT',
+                    'constraint' => 11,
+                ),
+                'service_type' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 100,
+                ),
+                'vehicle_type' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 100,
+                ),
+                'vehicle_brand' => array(
+                    'type' => 'VARCHAR',
+                    'constraint' => 100,
+                ),
+                'reservation_date' => array(
+                    'type' => 'DATE',
+                ),
+                'reservation_time' => array(
+                    'type' => 'TIME',
+                ),
+                'notes' => array(
+                    'type' => 'TEXT',
+                    'null' => TRUE,
+                ),
+                'status' => array(
+                    'type' => 'ENUM',
+                    'constraint' => array('pending', 'confirmed', 'completed', 'cancelled'),
+                    'default' => 'pending',
+                ),
+                'created_at' => array(
+                    'type' => 'DATETIME',
+                )
+            );
+
+            $this->dbforge->add_field($fields);
+            $this->dbforge->add_key('id', TRUE);
+            $this->dbforge->create_table('reservations', TRUE);
+        }
     }
 }
