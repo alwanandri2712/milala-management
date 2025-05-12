@@ -173,11 +173,11 @@ class Landing extends CI_Controller {
             try {
                 // Jika validasi berhasil, simpan data
                 $data = [
-                    'name'       => $this->input->post('name', true),
-                    'phone'      => $this->input->post('phone', true),
-                    'email'      => $this->input->post('email', true),
-                    'service'    => $this->input->post('service', true),
-                    'message'    => $this->input->post('message', true),
+                    'name'       => $this->security->xss_clean($this->input->post('name')),
+                    'phone'      => $this->security->xss_clean($this->input->post('phone')),
+                    'email'      => $this->security->xss_clean($this->input->post('email')),
+                    'service'    => $this->security->xss_clean($this->input->post('service')),
+                    'message'    => $this->security->xss_clean($this->input->post('message')),
                     'status'     => 'unread',
                     'created_at' => date('Y-m-d H:i:s')
                 ];
@@ -267,16 +267,16 @@ class Landing extends CI_Controller {
             try {
                 // Jika validasi berhasil, simpan data
                 $data = [
-                    'name'             => $this->input->post('name', true),
-                    'phone'            => $this->input->post('phone', true),
-                    'email'            => $this->input->post('email', true),
-                    'branch_id'        => $this->input->post('branch_id', true),
-                    'service_type'     => $this->input->post('service_type', true),
-                    'vehicle_type'     => $this->input->post('vehicle_type', true),
-                    'vehicle_brand'    => $this->input->post('vehicle_brand', true),
-                    'reservation_date' => $this->input->post('reservation_date', true),
-                    'reservation_time' => $this->input->post('reservation_time', true),
-                    'notes'            => $this->input->post('notes', true),
+                    'name'             => $this->security->xss_clean($this->input->post('name')),
+                    'phone'            => $this->security->xss_clean($this->input->post('phone')),
+                    'email'            => $this->security->xss_clean($this->input->post('email')),
+                    'branch_id'        => $this->security->xss_clean($this->input->post('branch_id')),
+                    'service_type'     => $this->security->xss_clean($this->input->post('service_type')),
+                    'vehicle_type'     => $this->security->xss_clean($this->input->post('vehicle_type')),
+                    'vehicle_brand'    => $this->security->xss_clean($this->input->post('vehicle_brand')),
+                    'reservation_date' => $this->security->xss_clean($this->input->post('reservation_date')),
+                    'reservation_time' => $this->security->xss_clean($this->input->post('reservation_time')),
+                    'notes'            => $this->security->xss_clean($this->input->post('notes')),
                     'status'           => 'pending',
                     'created_at'       => date('Y-m-d H:i:s')
                 ];
