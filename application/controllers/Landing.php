@@ -159,10 +159,16 @@ class Landing extends CI_Controller {
             $errors = $this->form_validation->error_array();
 
             $response = [
-                'status' => false,
+                'code'    => 400,
+                'status'  => false,
                 'message' => validation_errors(),
-                'errors' => $errors
+                'errors'  => $errors,
+                'meta'    => [
+                    'header_status_code' => 400,
+                ]
             ];
+
+            toJson($response, $response['meta']['header_status_code']);
         } else {
             try {
                 // Jika validasi berhasil, simpan data
@@ -183,26 +189,41 @@ class Landing extends CI_Controller {
 
                 if ($result) {
                     $response = [
-                        'status' => true,
-                        'message' => 'Pesan Anda berhasil dikirim. Kami akan segera menghubungi Anda.'
+                        'code'    => 200,
+                        'status'  => true,
+                        'message' => 'Pesan Anda berhasil dikirim. Kami akan segera menghubungi Anda.',
+                        'data'    => $data,
+                        'meta'    => [
+                            'header_status_code' => 200,
+                        ]
                     ];
                 } else {
                     $response = [
-                        'status' => false,
-                        'message' => 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi nanti.'
+                        'code'    => 400,
+                        'status'  => false,
+                        'message' => 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi nanti.',
+                        'data'    => [],
+                        'meta'    => [
+                            'header_status_code' => 400,
+                        ]
                     ];
                 }
+
+                toJson($response, $response['meta']['header_status_code']);
             } catch (Exception $e) {
                 $response = [
-                    'status' => false,
-                    'message' => 'Terjadi kesalahan: ' . $e->getMessage()
+                    'code'    => 500,
+                    'status'  => false,
+                    'message' => 'Terjadi kesalahan: ' . $e->getMessage(),
+                    'data'    => [],
+                    'meta'    => [
+                        'header_status_code' => 500,
+                    ]
                 ];
+
+                toJson($response, $response['meta']['header_status_code']);
             }
         }
-
-        // Kirim response dalam format JSON
-        header('Content-Type: application/json');
-        echo json_encode($response);
     }
 
     /**
@@ -232,10 +253,16 @@ class Landing extends CI_Controller {
             $errors = $this->form_validation->error_array();
 
             $response = [
-                'status' => false,
+                'code'    => 400,
+                'status'  => false,
                 'message' => validation_errors(),
-                'errors' => $errors
+                'errors'  => $errors,
+                'meta'    => [
+                    'header_status_code' => 400,
+                ]
             ];
+
+            toJson($response, $response['meta']['header_status_code']);
         } else {
             try {
                 // Jika validasi berhasil, simpan data
@@ -263,26 +290,41 @@ class Landing extends CI_Controller {
 
                 if ($result) {
                     $response = [
-                        'status' => true,
-                        'message' => 'Reservasi Anda berhasil dikirim. Kami akan segera mengkonfirmasi melalui email atau telepon.'
+                        'code'    => 200,
+                        'status'  => true,
+                        'message' => 'Reservasi Anda berhasil dikirim. Kami akan segera mengkonfirmasi melalui email atau telepon.',
+                        'data'    => $data,
+                        'meta'    => [
+                            'header_status_code' => 200,
+                        ]
                     ];
                 } else {
                     $response = [
-                        'status' => false,
-                        'message' => 'Terjadi kesalahan saat mengirim reservasi. Silakan coba lagi nanti.'
+                        'code'    => 400,
+                        'status'  => false,
+                        'message' => 'Terjadi kesalahan saat mengirim reservasi. Silakan coba lagi nanti.',
+                        'data'    => [],
+                        'meta'    => [
+                            'header_status_code' => 400,
+                        ]
                     ];
                 }
+
+                toJson($response, $response['meta']['header_status_code']);
             } catch (Exception $e) {
                 $response = [
-                    'status' => false,
-                    'message' => 'Terjadi kesalahan: ' . $e->getMessage()
+                    'code'    => 500,
+                    'status'  => false,
+                    'message' => 'Terjadi kesalahan: ' . $e->getMessage(),
+                    'data'    => [],
+                    'meta'    => [
+                        'header_status_code' => 500,
+                    ]
                 ];
+
+                toJson($response, $response['meta']['header_status_code']);
             }
         }
-
-        // Kirim response dalam format JSON
-        header('Content-Type: application/json');
-        echo json_encode($response);
     }
 
     /**
