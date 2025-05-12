@@ -5,11 +5,11 @@
             <!-- Text Content -->
             <div class="lg:w-1/2" data-aos="fade-right" data-aos-duration="1000">
                 <h1 class="text-5xl md:text-6xl font-black mb-6 text-dark">
-                    Selamat Datang
-                    <span class="block bg-dark text-primary px-6 py-3 mt-4 w-fit">Milala Auto Service Spesialis</span>
+                    Bengkel Spesialis
+                    <span class="block bg-dark text-primary px-6 py-3 mt-4 w-fit">Power Steering & Kaki-Kaki</span>
                 </h1>
                 <p class="text-xl mb-8 text-dark/80">
-                    Layanan bengkel profesional dengan teknisi yang mahir dalam Powersteering & Kaki – Kaki
+                    Milala Auto Service - Bengkel spesialis power steering dan kaki-kaki mobil dengan pengalaman lebih dari 20 tahun
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <button class="bg-dark text-primary px-8 py-4 rounded-full font-bold hover:scale-105 transition-all">
@@ -58,10 +58,10 @@
     <div class="container mx-auto px-4">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-4xl font-black text-dark mb-6">
-                Layanan Unggulan Kami
+                Layanan Spesialis Power Steering & Kaki-Kaki
             </h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Teknologi terkini dan standar pelayanan premium untuk kenyamanan mobil Anda
+                Teknisi berpengalaman dan peralatan modern untuk menangani semua masalah power steering dan kaki-kaki mobil Anda
             </p>
         </div>
 
@@ -75,8 +75,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Servis Kilat</h3>
-                <p class="text-gray-600">Proses cepat dengan garansi 30 hari untuk semua jenis perbaikan dan perawatan berkala</p>
+                <h3 class="text-2xl font-bold mb-4">Perbaikan Power Steering</h3>
+                <p class="text-gray-600">Perbaikan semua jenis power steering, termasuk power steering hidrolik, elektrik, dan hybrid dengan garansi 6 bulan</p>
                 <a href="#" class="inline-block mt-4 text-primary font-bold hover:text-dark transition-colors">Selengkapnya →</a>
             </div>
 
@@ -89,8 +89,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Garansi Resmi</h3>
-                <p class="text-gray-600">Semua sparepart original dengan garansi pabrikan dan jaminan kualitas terbaik</p>
+                <h3 class="text-2xl font-bold mb-4">Penggantian Kaki-Kaki</h3>
+                <p class="text-gray-600">Penggantian komponen kaki-kaki seperti ball joint, tie rod, shock absorber, dan bushing dengan sparepart berkualitas</p>
                 <a href="#" class="inline-block mt-4 text-primary font-bold hover:text-dark transition-colors">Selengkapnya →</a>
             </div>
 
@@ -103,8 +103,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Keamanan</h3>
-                <p class="text-gray-600">Area bengkel berpendingin dengan sistem keamanan 24 jam dan asuransi kendaraan</p>
+                <h3 class="text-2xl font-bold mb-4">Spooring & Balancing</h3>
+                <p class="text-gray-600">Layanan spooring dan balancing dengan teknologi komputer untuk memastikan kenyamanan dan keamanan berkendara</p>
                 <a href="#" class="inline-block mt-4 text-primary font-bold hover:text-dark transition-colors">Selengkapnya →</a>
             </div>
 
@@ -116,10 +116,10 @@
     <div class="container mx-auto px-4">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-4xl font-black text-dark mb-6">
-                Galeri Bengkel
+                Galeri Bengkel Spesialis Power Steering
             </h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Fasilitas modern dan hasil kerja terbaik dari tim profesional kami
+                Lihat fasilitas dan hasil kerja terbaik dari bengkel spesialis power steering dan kaki-kaki terpercaya
             </p>
         </div>
 
@@ -129,13 +129,13 @@
                 Semua
             </button>
             <button class="px-6 py-2 rounded-full bg-white text-dark font-bold hover:bg-primary transition-colors">
-                Fasilitas
+                Power Steering
             </button>
             <button class="px-6 py-2 rounded-full bg-white text-dark font-bold hover:bg-primary transition-colors">
-                Hasil Kerja
+                Kaki-Kaki
             </button>
             <button class="px-6 py-2 rounded-full bg-white text-dark font-bold hover:bg-primary transition-colors">
-                Tim Kami
+                Spooring & Balancing
             </button>
         </div>
 
@@ -148,8 +148,8 @@
                      class="w-full h-72 object-cover transition-all duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
                     <div class="p-6">
-                        <h3 class="text-white text-xl font-bold">Fasilitas Modern</h3>
-                        <p class="text-white/80">Peralatan diagnostik terbaru</p>
+                        <h3 class="text-white text-xl font-bold">Bengkel Power Steering</h3>
+                        <p class="text-white/80">Peralatan khusus power steering</p>
                     </div>
                 </div>
             </div>
@@ -161,8 +161,8 @@
                      class="w-full h-72 object-cover transition-all duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
                     <div class="p-6">
-                        <h3 class="text-white text-xl font-bold">Tune Up Mesin</h3>
-                        <p class="text-white/80">Performa optimal setiap kali</p>
+                        <h3 class="text-white text-xl font-bold">Perbaikan Power Steering</h3>
+                        <p class="text-white/80">Proses perbaikan oleh ahli</p>
                     </div>
                 </div>
             </div>
@@ -187,8 +187,8 @@
                      class="w-full h-72 object-cover transition-all duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
                     <div class="p-6">
-                        <h3 class="text-white text-xl font-bold">Ruang Tunggu</h3>
-                        <p class="text-white/80">Nyaman dengan wifi gratis</p>
+                        <h3 class="text-white text-xl font-bold">Penggantian Kaki-Kaki</h3>
+                        <p class="text-white/80">Sparepart berkualitas tinggi</p>
                     </div>
                 </div>
             </div>
@@ -200,8 +200,8 @@
                      class="w-full h-72 object-cover transition-all duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
                     <div class="p-6">
-                        <h3 class="text-white text-xl font-bold">Pengecatan</h3>
-                        <p class="text-white/80">Hasil sempurna dan tahan lama</p>
+                        <h3 class="text-white text-xl font-bold">Spooring & Balancing</h3>
+                        <p class="text-white/80">Teknologi komputer terkini</p>
                     </div>
                 </div>
             </div>
@@ -213,8 +213,8 @@
                      class="w-full h-72 object-cover transition-all duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
                     <div class="p-6">
-                        <h3 class="text-white text-xl font-bold">Detailing</h3>
-                        <p class="text-white/80">Perawatan ekstra untuk kilau maksimal</p>
+                        <h3 class="text-white text-xl font-bold">Pemeriksaan Kaki-Kaki</h3>
+                        <p class="text-white/80">Diagnosa akurat dan cepat</p>
                     </div>
                 </div>
             </div>
@@ -233,10 +233,10 @@
     <div class="container mx-auto px-4">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-4xl font-black text-dark mb-6">
-                Apa Kata Mereka
+                Testimoni Pelanggan
             </h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Pengalaman pelanggan yang telah mempercayakan kendaraan mereka pada kami
+                Pengalaman pelanggan yang telah mempercayakan perbaikan power steering dan kaki-kaki mobil mereka pada kami
             </p>
         </div>
 
@@ -270,9 +270,9 @@
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
                 </div>
-                <p class="text-gray-600">"Pelayanan sangat profesional, mekanik berpengalaman dan hasil servis memuaskan. Mobil saya jadi lebih responsif dan hemat bahan bakar setelah tune up di sini."</p>
+                <p class="text-gray-600">"Pelayanan sangat profesional, mekanik berpengalaman dalam menangani masalah power steering. Mobil saya yang tadinya berat saat dibelokkan sekarang jadi ringan dan responsif setelah diperbaiki di sini."</p>
                 <div class="mt-6 pt-6 border-t border-gray-100">
-                    <p class="text-primary font-bold">Servis Berkala + Tune Up</p>
+                    <p class="text-primary font-bold">Perbaikan Power Steering</p>
                 </div>
             </div>
 
@@ -304,9 +304,9 @@
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
                 </div>
-                <p class="text-gray-600">"Sebagai wanita, saya sering khawatir dibohongi bengkel. Di Milala Auto Service, mereka menjelaskan semua proses dengan detail dan transparan. Ruang tunggu nyaman dengan wifi cepat!"</p>
+                <p class="text-gray-600">"Sebagai wanita, saya sering khawatir dibohongi bengkel. Di Milala Auto Service, mereka menjelaskan semua masalah kaki-kaki mobil saya dengan detail dan transparan. Sekarang mobil saya tidak berbunyi lagi saat melewati jalan berlubang!"</p>
                 <div class="mt-6 pt-6 border-t border-gray-100">
-                    <p class="text-primary font-bold">Ganti Oli & Filter</p>
+                    <p class="text-primary font-bold">Penggantian Kaki-Kaki</p>
                 </div>
             </div>
 
@@ -338,9 +338,9 @@
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
                 </div>
-                <p class="text-gray-600">"Mobil saya mogok di tol dan tim emergency Milala Auto Service datang dalam 30 menit. Mereka memperbaiki masalah di tempat dan harganya sangat wajar. Sangat terkesan!"</p>
+                <p class="text-gray-600">"Mobil saya bermasalah saat di jalan, kemudi bergetar dan sulit dikendalikan. Tim Milala Auto Service melakukan spooring dan balancing dengan cepat. Hasilnya, mobil saya kembali stabil dan nyaman dikendarai. Sangat terkesan!"</p>
                 <div class="mt-6 pt-6 border-t border-gray-100">
-                    <p class="text-primary font-bold">Layanan Darurat 24 Jam</p>
+                    <p class="text-primary font-bold">Spooring & Balancing</p>
                 </div>
             </div>
         </div>
@@ -369,9 +369,18 @@
 <!-- gmap section -->
 <section id="contact" class="py-24 bg-gray-50">
     <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-black text-dark mb-6">
+                Lokasi Cabang Kami
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Milala Auto Service memiliki 4 cabang strategis untuk melayani kebutuhan power steering dan kaki-kaki mobil Anda
+            </p>
+        </div>
+
         <!-- Google Map -->
-        <div class="mt-16 rounded-2xl overflow-hidden shadow-xl" data-aos="zoom-in">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.521929247894!2d106.8262297!3d-6.2661385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1c3c9b7d8c7%3A0xd13d67819a6f5bb!2sMilala%20Auto%20Service!5e0!3m2!1sid!2sid!4v1715599847913!5m2!1sid!2sid"
+        <div class="mt-8 rounded-2xl overflow-hidden shadow-xl" data-aos="zoom-in">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d253833.7705229376!2d106.68442755566404!3d-6.266138499999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMilala%20Auto%20Service%20Bengkel%20Spesialis%20Power%20Steering!5e0!3m2!1sid!2sid!4v1715599847913!5m2!1sid!2sid"
                     width="100%"
                     height="450"
                     style="border:0;"
@@ -384,17 +393,55 @@
         <!-- Cabang Lokasi -->
         <div class="mt-12 grid md:grid-cols-2 gap-8" data-aos="fade-up">
             <div class="bg-white p-6 rounded-2xl shadow-lg">
-                <h3 class="text-xl font-bold mb-4">Cabang Antasari</h3>
-                <p class="text-gray-600 mb-2">Jl. Pangeran Antasari No.89, Cilandak, Jakarta Selatan</p>
-                <p class="text-gray-600 mb-4">Telp: (021) 7591 2345</p>
-                <a href="https://maps.app.goo.gl/Ld5Ld5Ld5Ld5Ld5Ld5" target="_blank" class="text-primary font-bold hover:text-dark transition-colors">Lihat di Google Maps →</a>
+                <h3 class="text-xl font-bold mb-4">Cabang Ampera</h3>
+                <p class="text-gray-600 mb-2">Kotamadya Jakarta Selatan, Daerah Khusus Ibukota Jakarta</p>
+                <p class="text-gray-600 mb-4">Sudah beroperasi selama 15+ tahun</p>
+                <div class="flex justify-between items-center">
+                    <a href="https://maps.app.goo.gl/ampera" target="_blank" class="text-primary font-bold hover:text-dark transition-colors">Lihat di Google Maps →</a>
+                    <div class="flex items-center">
+                        <span class="text-yellow-500 font-bold mr-1">4.8</span>
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                </div>
             </div>
 
             <div class="bg-white p-6 rounded-2xl shadow-lg">
-                <h3 class="text-xl font-bold mb-4">Cabang Pasar Minggu</h3>
-                <p class="text-gray-600 mb-2">Jl. Madrasah Raya No. 3A, Pasar Minggu, Jakarta Selatan</p>
-                <p class="text-gray-600 mb-4">Telp: (021) 7891 0123</p>
-                <a href="https://maps.app.goo.gl/Ld5Ld5Ld5Ld5Ld5Ld5" target="_blank" class="text-primary font-bold hover:text-dark transition-colors">Lihat di Google Maps →</a>
+                <h3 class="text-xl font-bold mb-4">Cabang Bekasi</h3>
+                <p class="text-gray-600 mb-2">Kota Bks, Jawa Barat</p>
+                <p class="text-gray-600 mb-4">Telp: 0817-422-768</p>
+                <div class="flex justify-between items-center">
+                    <a href="https://maps.app.goo.gl/bekasi" target="_blank" class="text-primary font-bold hover:text-dark transition-colors">Lihat di Google Maps →</a>
+                    <div class="flex items-center">
+                        <span class="text-yellow-500 font-bold mr-1">4.8</span>
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Cabang Antasari</h3>
+                <p class="text-gray-600 mb-2">Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta</p>
+                <p class="text-gray-600 mb-4">Sudah beroperasi selama 20+ tahun</p>
+                <div class="flex justify-between items-center">
+                    <a href="https://maps.app.goo.gl/antasari" target="_blank" class="text-primary font-bold hover:text-dark transition-colors">Lihat di Google Maps →</a>
+                    <div class="flex items-center">
+                        <span class="text-yellow-500 font-bold mr-1">4.9</span>
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Cabang Bogor</h3>
+                <p class="text-gray-600 mb-2">Kabupaten Bogor, Jawa Barat</p>
+                <p class="text-gray-600 mb-4">Sudah beroperasi selama 7+ tahun</p>
+                <div class="flex justify-between items-center">
+                    <a href="https://maps.app.goo.gl/bogor" target="_blank" class="text-primary font-bold hover:text-dark transition-colors">Lihat di Google Maps →</a>
+                    <div class="flex items-center">
+                        <span class="text-yellow-500 font-bold mr-1">4.7</span>
+                        <span class="text-yellow-500">★★★★★</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

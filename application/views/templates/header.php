@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?? 'Milala Auto Service - Spesialis Power Steering Mobil' ?></title>
+    <title><?= $title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki' ?></title>
 
     <!-- META SEO Tags -->
-    <meta name="description" content="Milala Auto Service - Bengkel spesialis power steering mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998. Melayani area Jabotabek, Banten, dan Bandung.">
-    <meta name="keywords" content="power steering, bengkel power steering, spesialis power steering, perbaikan power steering, pemasangan power steering, modifikasi power steering, Milala Auto Service, bengkel mobil Jakarta">
+    <meta name="description" content="Milala Auto Service - Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
+    <meta name="keywords" content="power steering, bengkel power steering, spesialis power steering, perbaikan power steering, kaki-kaki mobil, spooring balancing, ball joint, tie rod, shock absorber, Milala Auto Service, bengkel spesialis Jakarta">
     <meta name="author" content="Milala Auto Service">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?= base_url() ?>">
-    <meta property="og:title" content="<?= $title ?? 'Milala Auto Service - Spesialis Power Steering Mobil' ?>">
-    <meta property="og:description" content="Bengkel spesialis power steering mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998. Melayani area Jabotabek, Banten, dan Bandung.">
+    <meta property="og:title" content="<?= $title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki' ?>">
+    <meta property="og:description" content="Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
     <meta property="og:image" content="<?= base_url('assets/img/logo.jpg') ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="<?= base_url() ?>">
-    <meta property="twitter:title" content="<?= $title ?? 'Milala Auto Service - Spesialis Power Steering Mobil' ?>">
-    <meta property="twitter:description" content="Bengkel spesialis power steering mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998. Melayani area Jabotabek, Banten, dan Bandung.">
+    <meta property="twitter:title" content="<?= $title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki' ?>">
+    <meta property="twitter:description" content="Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
     <meta property="twitter:image" content="<?= base_url('assets/img/logo.jpg') ?>">
 
     <!-- Tailwind CSS -->
