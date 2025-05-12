@@ -86,6 +86,15 @@
             }
         }
     </script>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        $(document).ready(function() {
+            $('#mobile-menu-button').on('click', function() {
+                $('#mobile-menu').toggleClass('hidden');
+            });
+        });
+    </script>
 </head>
 <body class="bg-white">
     <!-- Navigation -->
@@ -102,13 +111,13 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="<?= base_url(); ?>" class="font-medium <?= ($active == 'home') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Beranda</a>
-                    <a href="<?= base_url('about'); ?>" class="font-medium <?= ($active == 'about') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Tentang Kami</a>
-                    <a href="<?= base_url('services'); ?>" class="font-medium <?= ($active == 'services') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Layanan</a>
-                    <a href="<?= base_url('artikel'); ?>" class="font-medium <?= ($active == 'artikel') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Artikel</a>
-                    <a href="<?= base_url('contact'); ?>" class="font-medium <?= ($active == 'contact') ? 'text-primary' : 'text-dark hover:text-primary' ?> transition-colors">Kontak</a>
-                    <a href="#" class="bg-primary px-6 py-2 rounded-full font-bold text-dark hover:bg-dark hover:text-primary transition-colors">
-                        Booking
+                    <a href="<?= base_url(); ?>" class="font-medium <?= ($active == 'home') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Beranda</a>
+                    <a href="<?= base_url('about'); ?>" class="font-medium <?= ($active == 'about') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Tentang Kami</a>
+                    <a href="<?= base_url('services'); ?>" class="font-medium <?= ($active == 'services') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Layanan</a>
+                    <a href="<?= base_url('artikel'); ?>" class="font-medium <?= ($active == 'artikel') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Artikel</a>
+                    <a href="<?= base_url('contact'); ?>" class="font-medium <?= ($active == 'contact') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Kontak</a>
+                    <a href="<?= base_url('reservation'); ?>" class="<?= ($active == 'reservation') ? 'bg-dark text-primary border-2 border-primary' : 'bg-primary text-dark hover:bg-dark hover:text-primary' ?> px-6 py-2 rounded-full font-bold transition-colors">
+                        Reservasi
                     </a>
                 </div>
 
@@ -124,13 +133,13 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden hidden py-4">
-                <a href="<?= base_url(); ?>" class="block py-2 font-medium <?= ($active == 'home') ? 'text-primary' : 'text-dark hover:text-primary' ?>">Beranda</a>
-                <a href="<?= base_url('pages/about'); ?>" class="block py-2 font-medium <?= ($active == 'about') ? 'text-primary' : 'text-dark hover:text-primary' ?>">Tentang Kami</a>
-                <a href="<?= base_url('pages/services'); ?>" class="block py-2 font-medium <?= ($active == 'services') ? 'text-primary' : 'text-dark hover:text-primary' ?>">Layanan</a>
-                <a href="<?= base_url('pages/artikel'); ?>" class="block py-2 font-medium <?= ($active == 'artikel') ? 'text-primary' : 'text-dark hover:text-primary' ?>">Artikel</a>
-                <a href="<?= base_url('pages/contact'); ?>" class="block py-2 font-medium <?= ($active == 'contact') ? 'text-primary' : 'text-dark hover:text-primary' ?>">Kontak</a>
-                <a href="#" class="inline-block mt-2 bg-primary px-6 py-2 rounded-full font-bold text-dark hover:bg-dark hover:text-primary transition-colors">
-                    Booking
+                <a href="<?= base_url(); ?>" class="block py-2 font-medium <?= ($active == 'home') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Beranda</a>
+                <a href="<?= base_url('about'); ?>" class="block py-2 font-medium <?= ($active == 'about') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Tentang Kami</a>
+                <a href="<?= base_url('services'); ?>" class="block py-2 font-medium <?= ($active == 'services') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Layanan</a>
+                <a href="<?= base_url('artikel'); ?>" class="block py-2 font-medium <?= ($active == 'artikel') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Artikel</a>
+                <a href="<?= base_url('contact'); ?>" class="block py-2 font-medium <?= ($active == 'contact') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Kontak</a>
+                <a href="<?= base_url('reservation'); ?>" class="inline-block mt-2 <?= ($active == 'reservation') ? 'bg-dark text-primary border-2 border-primary' : 'bg-primary text-dark hover:bg-dark hover:text-primary' ?> px-6 py-2 rounded-full font-bold transition-colors">
+                    Reservasi
                 </a>
             </div>
         </div>

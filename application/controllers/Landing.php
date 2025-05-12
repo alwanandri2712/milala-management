@@ -91,6 +91,22 @@ class Landing extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function reservation() {
+        $data['title'] = 'Reservasi Layanan - Milala Auto Service';
+        $data['active'] = 'reservation';
+
+        // Load the Cabang model to get branch data
+        $this->load->model('masterdata/Cabang_model', 'cabang');
+
+        // Get all branches
+        $branches = $this->cabang->get_all();
+        $data['branches'] = $branches['results'];
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('landing/pages/reservation', $data);
+        $this->load->view('templates/footer');
+    }
+
     /**
      * Menangani pengiriman form kontak
      */
@@ -207,6 +223,165 @@ class Landing extends CI_Controller {
                 }
             } catch (Exception $e) {
                 log_message('error', 'Contact form exception: ' . $e->getMessage());
+                $response = [
+                    'status' => false,
+                    'message' => 'Terjadi kesalahan: ' . $e->getMessage()
+                ];
+            }
+        }
+
+        // Kirim response dalam format JSON
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
+
+    /**
+     * Menangani pengiriman form reservasi
+     */
+    public function submit_reservation() {
+        // Aktifkan error reporting untuk debugging
+        ini_set('display_errors', 1);
+        error_reporting(E_ALL);
+
+        // Log input yang diterima
+        log_message('debug', 'Reservation form submission received: ' . json_encode($_POST));
+
+        // Cek apakah request adalah AJAX
+        if (!$this->input->is_ajax_request()) {
+            log_message('error', 'Reservation form: Not an AJAX request');
+            exit('No direct script access allowed');
+        }
+
+        // Set aturan validasi
+        $this->form_validation->set_rules('name', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('phone', 'Nomor Telepon', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('branch_id', 'Cabang', 'required|trim');
+        $this->form_validation->set_rules('service_type', 'Jenis Layanan', 'required|trim');
+        $this->form_validation->set_rules('vehicle_type', 'Jenis Kendaraan', 'required|trim');
+        $this->form_validation->set_rules('vehicle_brand', 'Merek Kendaraan', 'required|trim');
+        $this->form_validation->set_rules('reservation_date', 'Tanggal Reservasi', 'required|trim');
+        $this->form_validation->set_rules('reservation_time', 'Waktu Reservasi', 'required|trim');
+        $this->form_validation->set_rules('notes', 'Catatan', 'trim');
+
+        // Jalankan validasi
+        if ($this->form_validation->run() == FALSE) {
+            // Jika validasi gagal
+            $errors = $this->form_validation->error_array();
+            log_message('debug', 'Reservation form validation failed: ' . json_encode($errors));
+
+            $response = [
+                'status' => false,
+                'message' => validation_errors(),
+                'errors' => $errors
+            ];
+        } else {
+            try {
+                // Jika validasi berhasil, simpan data
+                $data = [
+                    'name'             => $this->input->post('name', true),
+                    'phone'            => $this->input->post('phone', true),
+                    'email'            => $this->input->post('email', true),
+                    'branch_id'        => $this->input->post('branch_id', true),
+                    'service_type'     => $this->input->post('service_type', true),
+                    'vehicle_type'     => $this->input->post('vehicle_type', true),
+                    'vehicle_brand'    => $this->input->post('vehicle_brand', true),
+                    'reservation_date' => $this->input->post('reservation_date', true),
+                    'reservation_time' => $this->input->post('reservation_time', true),
+                    'notes'            => $this->input->post('notes', true),
+                    'status'           => 'pending',
+                    'created_at'       => date('Y-m-d H:i:s')
+                ];
+
+                log_message('debug', 'Reservation form data to save: ' . json_encode($data));
+
+                // Cek apakah tabel reservations ada
+                if (!$this->db->table_exists('reservations')) {
+                    log_message('error', 'Table reservations does not exist');
+
+                    // Buat tabel jika belum ada
+                    $this->load->dbforge();
+
+                    $fields = array(
+                        'id' => array(
+                            'type' => 'INT',
+                            'constraint' => 11,
+                            'unsigned' => TRUE,
+                            'auto_increment' => TRUE
+                        ),
+                        'name' => array(
+                            'type' => 'VARCHAR',
+                            'constraint' => 100,
+                        ),
+                        'phone' => array(
+                            'type' => 'VARCHAR',
+                            'constraint' => 20,
+                        ),
+                        'email' => array(
+                            'type' => 'VARCHAR',
+                            'constraint' => 100,
+                        ),
+                        'branch_id' => array(
+                            'type' => 'INT',
+                            'constraint' => 11,
+                        ),
+                        'service_type' => array(
+                            'type' => 'VARCHAR',
+                            'constraint' => 100,
+                        ),
+                        'vehicle_type' => array(
+                            'type' => 'VARCHAR',
+                            'constraint' => 100,
+                        ),
+                        'vehicle_brand' => array(
+                            'type' => 'VARCHAR',
+                            'constraint' => 100,
+                        ),
+                        'reservation_date' => array(
+                            'type' => 'DATE',
+                        ),
+                        'reservation_time' => array(
+                            'type' => 'TIME',
+                        ),
+                        'notes' => array(
+                            'type' => 'TEXT',
+                            'null' => TRUE,
+                        ),
+                        'status' => array(
+                            'type' => 'ENUM',
+                            'constraint' => array('pending', 'confirmed', 'completed', 'cancelled'),
+                            'default' => 'pending',
+                        ),
+                        'created_at' => array(
+                            'type' => 'DATETIME',
+                        )
+                    );
+
+                    $this->dbforge->add_field($fields);
+                    $this->dbforge->add_key('id', TRUE);
+                    $this->dbforge->create_table('reservations', TRUE);
+
+                    log_message('info', 'Table reservations created successfully');
+                }
+
+                // Load the Reservation model
+                $this->load->model('Reservation_model');
+                $result = $this->Reservation_model->save_reservation($data);
+                log_message('debug', 'Reservation form save result: ' . ($result ? 'success' : 'failed'));
+
+                if ($result) {
+                    $response = [
+                        'status' => true,
+                        'message' => 'Reservasi Anda berhasil dikirim. Kami akan segera mengkonfirmasi melalui email atau telepon.'
+                    ];
+                } else {
+                    $response = [
+                        'status' => false,
+                        'message' => 'Terjadi kesalahan saat mengirim reservasi. Silakan coba lagi nanti.'
+                    ];
+                }
+            } catch (Exception $e) {
+                log_message('error', 'Reservation form exception: ' . $e->getMessage());
                 $response = [
                     'status' => false,
                     'message' => 'Terjadi kesalahan: ' . $e->getMessage()

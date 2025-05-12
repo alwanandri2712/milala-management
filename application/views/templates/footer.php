@@ -59,7 +59,7 @@
                         <a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Kontak</a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Booking Online</a>
+                        <a href="<?= base_url('reservation'); ?>" class="text-gray-400 hover:text-primary transition-colors">Reservasi Online</a>
                     </li>
                 </ul>
             </div>

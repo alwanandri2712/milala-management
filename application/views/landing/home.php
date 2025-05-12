@@ -12,12 +12,12 @@
                     Milala Auto Service - Bengkel spesialis power steering dan kaki-kaki mobil dengan pengalaman lebih dari 20 tahun
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <button class="bg-dark text-primary px-8 py-4 rounded-full font-bold hover:scale-105 transition-all">
-                        Booking Sekarang
-                    </button>
-                    <button class="border-2 border-dark text-dark px-8 py-4 rounded-full font-bold hover:bg-dark hover:text-primary transition-all">
+                    <a href="<?= base_url('reservation'); ?>" class="bg-dark text-primary px-8 py-4 rounded-full font-bold hover:scale-105 transition-all inline-block">
+                        Reservasi Sekarang
+                    </a>
+                    <a href="#services" class="border-2 border-dark text-dark px-8 py-4 rounded-full font-bold hover:bg-dark hover:text-primary transition-all inline-block">
                         Lihat Layanan
-                    </button>
+                    </a>
                 </div>
             </div>
 

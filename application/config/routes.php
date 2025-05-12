@@ -59,6 +59,7 @@ $route['about']    = 'Landing/about';
 $route['services'] = 'Landing/services';
 $route['artikel']  = 'Landing/artikel';
 $route['contact']  = 'Landing/contact';
+$route['reservation'] = 'Landing/reservation';
 
 // Artikel routes
 $route['artikel'] = 'Landing/artikel';
