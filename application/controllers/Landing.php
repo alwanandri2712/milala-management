@@ -77,6 +77,81 @@ class Landing extends CI_Controller {
         $this->load->view('landing/pages/artikel', $data);
         $this->load->view('templates/footer');
     }
+    
+    /**
+     * Mengambil artikel dengan pagination untuk AJAX
+     */
+    public function get_articles_json() {
+        // Validasi dan sanitasi parameter pagination
+        $offset = $this->input->get('offset') !== null ? intval($this->input->get('offset')) : 0;
+        $offset = max(0, $offset); // Pastikan offset tidak negatif
+        
+        $limit = $this->input->get('limit') !== null ? intval($this->input->get('limit')) : 6;
+        $limit = min(max(1, $limit), 20); // Batasi limit antara 1-20 untuk mencegah overload
+        
+        // Sanitasi input pencarian
+        $search = $this->input->get('search') !== null ? $this->security->xss_clean(trim($this->input->get('search'))) : '';
+        
+        // Validasi kategori (hanya terima kategori yang valid)
+        $valid_categories = ['Perawatan', 'Tips Berkendara', 'Teknologi', 'DIY', 'all', ''];
+        $category = $this->input->get('category') !== null ? $this->input->get('category') : '';
+        $category = in_array($category, $valid_categories) ? $category : 'all';
+        
+        // Filter berdasarkan pencarian dan kategori jika ada
+        $where = ['artikel_status' => 1]; // Hanya artikel yang dipublish
+        
+        // Hanya filter berdasarkan pencarian jika search tidak kosong
+        if (!empty($search)) {
+            // Gunakan query parameter binding untuk mencegah SQL injection
+            $where['artikel_title LIKE'] = '%' . $this->db->escape_like_str($search) . '%';
+        }
+        
+        if (!empty($category) && $category !== 'all') {
+            $where['artikel_kategori'] = $category;
+        }
+        
+        // Ambil artikel dari database
+        $articles = $this->Artikel_model->get_all($offset, $limit, 'created_date', 'desc', ['where' => $where]);
+        
+        // Format data untuk response JSON
+        $formatted_articles = [];
+        if (!empty($articles['results'])) {
+            foreach ($articles['results'] as $article) {
+                $formatted_articles[] = [
+                    'id'              => $article->artikel_id,
+                    'title'           => $article->artikel_title,
+                    'slug'            => $article->artikel_slug,
+                    'image'           => base_url('upload/artikel/' . $article->artikel_image),
+                    'content_preview' => substr(strip_tags($article->artikel_content), 0, 120) . '...',
+                    'date'            => date('d M Y', strtotime($article->created_date)),
+                    'author'          => $article->created_by,
+                    'category'        => $article->artikel_kategori
+                ];
+            }
+        }
+        
+        // Buat response
+        $response = [
+            'code'    => 200,
+            'status'  => 'success',
+            'message' => 'Data berhasil diambil',
+            'data'    => [
+                'articles' => $formatted_articles,
+                'pagination' => [
+                    'offset'   => $offset,
+                    'limit'    => $limit,
+                    'total'    => $articles['total_rows'],
+                    'has_more' => ($offset + $limit < $articles['total_rows'])
+                ]
+            ],
+            'meta' => [
+                'header_status_code' => 200
+            ]
+        ];
+        
+        // Kirim response JSON
+        toJson($response, $response['meta']['header_status_code']);
+    }
 
     /**
      * Halaman Detail Artikel

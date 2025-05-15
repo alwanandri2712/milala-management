@@ -16,8 +16,8 @@
         <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
             <div class="w-full md:w-1/3">
                 <div class="relative">
-                    <input type="text" placeholder="Cari artikel..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                    <button class="absolute right-3 top-3 text-gray-500">
+                    <input type="text" id="search-article" placeholder="Cari artikel..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button id="search-button" class="absolute right-3 top-3 text-gray-500">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                         </svg>
@@ -25,19 +25,19 @@
                 </div>
             </div>
             <div class="flex flex-wrap gap-2">
-                <button class="px-4 py-2 rounded-full bg-primary text-dark font-medium">
+                <button data-category="all" class="category-filter px-4 py-2 rounded-full bg-primary text-dark font-medium">
                     Semua
                 </button>
-                <button class="px-4 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-primary transition-colors">
+                <button data-category="Perawatan" class="category-filter px-4 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-primary transition-colors">
                     Perawatan
                 </button>
-                <button class="px-4 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-primary transition-colors">
+                <button data-category="Tips Berkendara" class="category-filter px-4 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-primary transition-colors">
                     Tips Berkendara
                 </button>
-                <button class="px-4 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-primary transition-colors">
+                <button data-category="Teknologi" class="category-filter px-4 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-primary transition-colors">
                     Teknologi
                 </button>
-                <button class="px-4 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-primary transition-colors">
+                <button data-category="DIY" class="category-filter px-4 py-2 rounded-full bg-gray-100 text-dark font-medium hover:bg-primary transition-colors">
                     DIY
                 </button>
             </div>
@@ -84,11 +84,11 @@
         <?php endif; ?>
 
         <!-- Articles Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div id="articles-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             <?php if (!empty($articles['results'])): ?>
                 <?php $delay = 50; foreach ($articles['results'] as $article): ?>
                 <!-- Article -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                <div class="article-item bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                     <img src="<?= base_url('upload/artikel/' . $article->artikel_image) ?>"
                          alt="<?= $article->artikel_title ?>"
                          class="w-full h-56 object-cover">
@@ -108,32 +108,26 @@
                 </div>
                 <?php $delay += 50; endforeach; ?>
             <?php else: ?>
-                <div class="col-span-3 bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div id="no-articles" class="col-span-3 bg-white rounded-2xl shadow-lg p-8 text-center">
                     <h3 class="text-xl font-bold mb-3">Belum ada artikel tersedia</h3>
                     <p class="text-gray-600">Artikel akan segera ditambahkan. Silakan kunjungi kembali nanti.</p>
                 </div>
             <?php endif; ?>
         </div>
 
-        <!-- Pagination -->
-        <div class="flex justify-center" data-aos="fade-up">
-            <nav class="inline-flex rounded-md shadow-sm">
-                <a href="#" class="py-2 px-4 border border-gray-300 bg-white text-gray-500 hover:bg-gray-50 rounded-l-md">
-                    Prev
-                </a>
-                <a href="#" class="py-2 px-4 border-t border-b border-gray-300 bg-primary text-dark">
-                    1
-                </a>
-                <a href="#" class="py-2 px-4 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
-                    2
-                </a>
-                <a href="#" class="py-2 px-4 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
-                    3
-                </a>
-                <a href="#" class="py-2 px-4 border border-gray-300 bg-white text-gray-500 hover:bg-gray-50 rounded-r-md">
-                    Next
-                </a>
-            </nav>
+        <!-- Load More Button -->
+        <div id="load-more-container" class="flex justify-center mb-16" data-aos="fade-up">
+            <button id="load-more-btn" class="bg-primary text-dark px-8 py-3 rounded-full font-bold hover:bg-dark hover:text-primary transition-colors">
+                Muat Lebih Banyak
+            </button>
+            <div id="loading-indicator" class="hidden">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+            </div>
+        </div>
+        
+        <!-- No More Articles Message -->
+        <div id="no-more-articles" class="text-center mb-16 hidden">
+            <p class="text-gray-500">Tidak ada artikel lagi untuk ditampilkan</p>
         </div>
 
         <!-- Newsletter -->
@@ -152,4 +146,178 @@
             </div>
         </div>
     </div>
+    
+    <!-- AJAX Script for Articles -->
+    <script>
+        $(document).ready(function() {
+            // Variables for pagination and filtering
+            let currentOffset = <?= count($articles['results']) ?>;
+            let limit = 6;
+            let currentSearch = '';
+            let currentCategory = 'all';
+            let isLoading = false;
+            let hasMore = true;
+            
+            // Function to load articles via AJAX
+            function loadArticles(offset, limit, search, category, append = true) {
+                if (isLoading) return;
+                
+                isLoading = true;
+                $('#loading-indicator').removeClass('hidden');
+                $('#load-more-btn').addClass('hidden');
+                
+                $.ajax({
+                    url: '<?= base_url("landing/get_articles_json") ?>',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        offset: offset,
+                        limit: limit,
+                        search: search,
+                        category: category
+                    },
+                    success: function(response) {
+                        if (response.code === 200) {
+                            // Hide loading indicator
+                            $('#loading-indicator').addClass('hidden');
+                            
+                            // Check if we have more articles to load
+                            hasMore = response.data.pagination.has_more;
+                            
+                            if (hasMore) {
+                                $('#load-more-btn').removeClass('hidden');
+                                $('#no-more-articles').addClass('hidden');
+                            } else {
+                                $('#load-more-btn').addClass('hidden');
+                                $('#no-more-articles').removeClass('hidden');
+                            }
+                            
+                            // If no articles found
+                            if (response.data.articles.length === 0 && !append) {
+                                $('#articles-container').html(
+                                    '<div id="no-articles" class="col-span-3 bg-white rounded-2xl shadow-lg p-8 text-center">' +
+                                    '<h3 class="text-xl font-bold mb-3">Tidak ada artikel ditemukan</h3>' +
+                                    '<p class="text-gray-600">Silakan coba dengan kata kunci atau kategori lain.</p>' +
+                                    '</div>'
+                                );
+                                $('#no-more-articles').addClass('hidden');
+                                return;
+                            }
+                            
+                            // Clear container if not appending
+                            if (!append) {
+                                $('#articles-container').empty();
+                            }
+                            
+                            // Fungsi untuk mencegah XSS attack dengan escape HTML
+                            function escapeHtml(unsafe) {
+                                return unsafe
+                                    .replace(/&/g, "&amp;")
+                                    .replace(/</g, "&lt;")
+                                    .replace(/>/g, "&gt;")
+                                    .replace(/"/g, "&quot;")
+                                    .replace(/'/g, "&#039;");
+                            }
+                            
+                            // Append articles to container dengan sanitasi data
+                            $.each(response.data.articles, function(index, article) {
+                                // Sanitasi data untuk mencegah XSS
+                                const safeTitle = escapeHtml(article.title);
+                                const safeContentPreview = escapeHtml(article.content_preview);
+                                const safeDate = escapeHtml(article.date);
+                                const safeSlug = escapeHtml(article.slug);
+                                
+                                let articleHtml = `
+                                    <div class="article-item bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                                        <img src="${article.image}" alt="${safeTitle}" class="w-full h-56 object-cover">
+                                        <div class="p-6">
+                                            <div class="flex items-center mb-4">
+                                                <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
+                                                <span class="ml-4 text-gray-500 text-sm">${safeDate}</span>
+                                            </div>
+                                            <h3 class="text-xl font-bold mb-3">${safeTitle}</h3>
+                                            <p class="text-gray-600 mb-4">${safeContentPreview}</p>
+                                            <a href="<?= base_url('artikel/') ?>${safeSlug}" class="text-primary font-bold hover:text-dark transition-colors">
+                                                Baca Selengkapnya →
+                                            </a>
+                                        </div>
+                                    </div>
+                                `;
+                                $('#articles-container').append(articleHtml);
+                            });
+                            
+                            // Update current offset
+                            currentOffset = offset + response.data.articles.length;
+                            
+                            // Reinitialize AOS for new elements
+                            AOS.refresh();
+                        } else {
+                            console.error('Error loading articles:', response.message);
+                        }
+                        
+                        isLoading = false;
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error:', error);
+                        $('#loading-indicator').addClass('hidden');
+                        $('#load-more-btn').removeClass('hidden');
+                        isLoading = false;
+                    }
+                });
+            }
+            
+            // Load More button click event
+            $('#load-more-btn').on('click', function() {
+                loadArticles(currentOffset, limit, currentSearch, currentCategory);
+            });
+            
+            // Variabel untuk debounce timer
+            let searchTimer;
+            
+            // Auto search saat mengetik dengan debounce
+            $('#search-article').on('keyup', function() {
+                clearTimeout(searchTimer);
+                
+                // Tunggu 500ms setelah pengguna berhenti mengetik
+                searchTimer = setTimeout(function() {
+                    currentSearch = $('#search-article').val().trim();
+                    currentOffset = 0;
+                    loadArticles(0, limit, currentSearch, currentCategory, false);
+                }, 500);
+            });
+            
+            // Search button click event (tetap dipertahankan untuk UX)
+            $('#search-button').on('click', function() {
+                clearTimeout(searchTimer); // Clear timer jika tombol diklik
+                currentSearch = $('#search-article').val().trim();
+                currentOffset = 0;
+                loadArticles(0, limit, currentSearch, currentCategory, false);
+            });
+            
+            // Enter key in search input
+            $('#search-article').on('keypress', function(e) {
+                if (e.which === 13) {
+                    clearTimeout(searchTimer); // Clear timer jika Enter ditekan
+                    currentSearch = $(this).val().trim();
+                    currentOffset = 0;
+                    loadArticles(0, limit, currentSearch, currentCategory, false);
+                    return false; // Prevent form submission
+                }
+            });
+            
+            // Category filter click event
+            $('.category-filter').on('click', function() {
+                // Update active category styling
+                $('.category-filter').removeClass('bg-primary').addClass('bg-gray-100');
+                $(this).removeClass('bg-gray-100').addClass('bg-primary');
+                
+                // Update current category
+                currentCategory = $(this).data('category');
+                currentOffset = 0;
+                
+                // Load articles with new filter
+                loadArticles(0, limit, currentSearch, currentCategory, false);
+            });
+        });
+    </script>
 </section>
