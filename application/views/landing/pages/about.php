@@ -33,7 +33,7 @@
                 </p>
             </div>
             <div class="lg:w-1/2" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1613214149322-99e4bbada007?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                <img src="<?= base_url('assets/img/pak_bos.jpeg') ?>"
                      alt="Sejarah Milala Auto Service"
                      class="w-full h-auto rounded-2xl shadow-xl">
             </div>

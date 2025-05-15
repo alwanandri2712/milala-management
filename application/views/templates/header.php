@@ -3,29 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki' ?></title>
+    <title><?= isset($article) ? $article->artikel_title . ' | Milala Auto Service' : ($title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki') ?></title>
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/img/milala_logo.png') ?>">
 
-    <!-- META SEO Tags -->
-    <meta name="description" content="Milala Auto Service - Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
-    <meta name="keywords" content="power steering, bengkel power steering, spesialis power steering, perbaikan power steering, kaki-kaki mobil, spooring balancing, ball joint, tie rod, shock absorber, Milala Auto Service, bengkel spesialis Jakarta">
-    <meta name="author" content="Milala Auto Service">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="<?= base_url() ?>">
-    <meta property="og:title" content="<?= $title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki' ?>">
-    <meta property="og:description" content="Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
-    <meta property="og:image" content="<?= base_url('assets/img/logo.jpg') ?>">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="<?= base_url() ?>">
-    <meta property="twitter:title" content="<?= $title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki' ?>">
-    <meta property="twitter:description" content="Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
-    <meta property="twitter:image" content="<?= base_url('assets/img/logo.jpg') ?>">
+    <!-- META SEO Tags (Dynamic for Article) -->
+    <?php if (isset($article)): ?>
+        <meta name="description" content="<?= strip_tags(substr($article->artikel_content,0,150)) ?>">
+        <meta name="keywords" content="<?= $article->artikel_title ?>, artikel otomotif, power steering, kaki-kaki, Milala Auto Service">
+        <meta name="author" content="<?= $article->created_by ?>">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="<?= current_url() ?>">
+        <meta property="og:title" content="<?= $article->artikel_title ?>">
+        <meta property="og:description" content="<?= strip_tags(substr($article->artikel_content,0,150)) ?>">
+        <meta property="og:image" content="<?= base_url('upload/artikel/' . $article->artikel_image) ?>">
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="<?= current_url() ?>">
+        <meta property="twitter:title" content="<?= $article->artikel_title ?>">
+        <meta property="twitter:description" content="<?= strip_tags(substr($article->artikel_content,0,150)) ?>">
+        <meta property="twitter:image" content="<?= base_url('upload/artikel/' . $article->artikel_image) ?>">
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "<?= $article->artikel_title ?>",
+            "image": "<?= base_url('upload/artikel/' . $article->artikel_image) ?>",
+            "author": {
+                "@type": "Person",
+                "name": "<?= $article->created_by ?>"
+            },
+            "datePublished": "<?= date('c', strtotime($article->created_date)) ?>",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Milala Auto Service",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "<?= base_url('assets/img/milala_logo.png') ?>"
+                }
+            },
+            "description": "<?= strip_tags(substr($article->artikel_content,0,150)) ?>"
+        }
+        </script>
+    <?php else: ?>
+        <meta name="description" content="Milala Auto Service - Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
+        <meta name="keywords" content="power steering, bengkel power steering, spesialis power steering, perbaikan power steering, kaki-kaki mobil, spooring balancing, ball joint, tie rod, shock absorber, Milala Auto Service, bengkel spesialis Jakarta">
+        <meta name="author" content="Milala Auto Service">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="<?= base_url() ?>">
+        <meta property="og:title" content="<?= $title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki' ?>">
+        <meta property="og:description" content="Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
+        <meta property="og:image" content="<?= base_url('assets/img/logo.jpg') ?>">
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="<?= base_url() ?>">
+        <meta property="twitter:title" content="<?= $title ?? 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki' ?>">
+        <meta property="twitter:description" content="Bengkel spesialis power steering & kaki-kaki mobil dengan layanan perbaikan, penggantian, dan spooring balancing. 4 cabang strategis di Jakarta, Bekasi, dan Bogor.">
+        <meta property="twitter:image" content="<?= base_url('assets/img/logo.jpg') ?>">
+    <?php endif; ?>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
