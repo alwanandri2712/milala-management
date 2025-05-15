@@ -6,9 +6,7 @@
             <div data-aos="fade-up" data-aos-delay="50">
                 <div class="flex items-center space-x-2 mb-6">
                     <div class="bg-primary p-2 rounded-lg">
-                        <svg class="w-8 h-8 text-dark" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 12h-2V9h-2v3H5c-1.1 0-2 .9-2 2v3h2v-3h14v3h2v-3c0-1.1-.9-2-2-2zM5 7h14c1.1 0 2-.9 2-2s-.9-2-2-2H5c-1.1 0-2 .9-2 2s.9 2 2 2zm11.5 7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm-8 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
-                        </svg>
+                        <img src="<?= base_url('assets/img/milala_logo_32.png') ?>" alt="Logo Milala Auto Service" class="w-8 h-8">
                     </div>
                     <span class="text-2xl font-bold text-white">Milala Auto Service</span>
                 </div>
@@ -69,19 +67,13 @@
                 <h3 class="text-xl font-bold mb-6 text-white">Layanan Kami</h3>
                 <ul class="space-y-4">
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Servis Berkala</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Perbaikan Power Steering</a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Tune Up Mesin</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Modifikasi Power Steering</a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Body Repair</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Ganti Oli</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Balancing & Spooring</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">Perbaikan Kaki-Kaki Mobil</a>
                     </li>
                     <li>
                         <a href="#" class="text-gray-400 hover:text-primary transition-colors">Layanan Darurat 24 Jam</a>
