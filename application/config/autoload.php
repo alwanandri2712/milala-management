@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'session', 'access','uuid' ,'notification_list','whatsapp','api_redis','Mobiledetection');
+$autoload['libraries'] = array('database', 'session', 'access','uuid' ,'notification_list','whatsapp','api_redis','Mobiledetection','kirim_email');
 
 /*
 | -------------------------------------------------------------------
