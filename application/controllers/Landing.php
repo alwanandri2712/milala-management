@@ -13,8 +13,14 @@ class Landing extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
+        
+        // Load models
         $this->load->model('control_landing/Artikel_model');
         $this->load->model('Contact_model');
+        $this->load->model('masterdata/Cabang_model', 'cabang');
+        $this->load->model('Reservation_model');
+        
+        // Load libraries
         $this->load->library('form_validation');
     }
 
@@ -200,9 +206,6 @@ class Landing extends CI_Controller {
         $data['title'] = 'Reservasi Layanan - Milala Auto Service';
         $data['active'] = 'reservation';
 
-        // Load the Cabang model to get branch data
-        $this->load->model('masterdata/Cabang_model', 'cabang');
-
         // Get all branches
         $branches = $this->cabang->get_all();
         $data['branches'] = $branches['results'];
@@ -301,6 +304,123 @@ class Landing extends CI_Controller {
         }
     }
 
+    public function test_email() {
+        $data = $this->kirim_email->send_test("alwanputra2712@gmail.com");
+        var_dump($data);
+    }
+
+    /**
+     * Test email with HTML
+     * URL: /landing/test_email_html
+     */
+    public function test_email_html()
+    {
+        // Sample data for testing
+        $test_data = [
+            'reservation_id' => 'TEST' . rand(1000, 9999),
+            'name' => 'John Doe',
+            'email' => 'alwanputra2712@gmail.com',
+            'phone' => '081234567890',
+            'service_type' => 'Service Berkala',
+            'vehicle_type' => 'Mobil',
+            'vehicle_brand' => 'Toyota Avanza',
+            'reservation_date' => date('Y-m-d'),
+            'reservation_time' => '10:00:00',
+            'notes' => 'Ini adalah pesan test untuk mengirim email dengan format teks.'
+        ];
+
+        // Generate email content
+        $email_content = $this->_email_template_customer($test_data);
+
+        // Send email
+        $email_data = [
+            'to' => $test_data['email'],
+            'subject' => 'Test Email HTML - ' . $test_data['reservation_id'],
+            'message' => $email_content,
+            'is_html' => false // Set ke false untuk format teks
+        ];
+
+        $result = $this->kirim_email->send($email_data);
+
+        if (is_array($result) && isset($result['status']) && $result['status']) {
+            echo 'Email dengan format teks berhasil dikirim ke ' . $test_data['email'];
+            echo '<br><br>Reservation ID: ' . $test_data['reservation_id'];
+            echo '<hr><h3>Preview Email:</h3><pre>' . htmlspecialchars($email_content) . '</pre>';
+        } else {
+            echo 'Gagal mengirim email. Error: ' . (isset($result['error']) ? $result['error'] : 'Tidak diketahui');
+            echo '<hr><h3>Preview Email:</h3><pre>' . htmlspecialchars($email_content) . '</pre>';
+        }
+    }
+
+    /**
+     * Test email with HTML (simple version)
+     * URL: /landing/test_email_simple
+     */
+    public function test_email_simple()
+    {
+        $this->load->library('email');
+        
+        // Konfigurasi email
+        $config = [
+            'protocol'    => 'smtp',
+            'smtp_host'   => 'mail.milalaautoservice.com',
+            'smtp_port'   => 587,
+            'smtp_user'   => 'info@milalaautoservice.com',
+            'smtp_pass'   => '#!MiL4L4366PSM!',
+            'smtp_crypto' => 'tls',
+            'mailtype'    => 'text',
+            'charset'     => 'utf-8',
+            'newline'     => "\r\n",
+            'wordwrap'    => TRUE,
+            'wrapchars'   => 70,
+            'validate'    => FALSE,
+            'priority'    => 3,
+            'crlf'        => "\r\n"
+        ];
+
+        $this->email->initialize($config);
+        
+        // Isi email - format teks biasa
+        $text = "" . str_repeat("=", 50) . "
+
+TEST EMAIL SEDERHANA
+
+" . str_repeat("-", 50) . "
+
+Halo,
+
+Ini adalah email test sederhana untuk memastikan konfigurasi SMTP berfungsi dengan baik.
+
+Email ini dikirim dalam format teks biasa untuk menghindari masalah 'line too long' yang dapat terjadi pada email HTML.
+
+Detail Teknis:
+- Server: mail.milalaautoservice.com
+- Port: 587
+- Protocol: SMTP dengan TLS
+- Format: Plain Text
+- Tanggal: " . date('d F Y H:i:s') . "
+
+" . str_repeat("-", 50) . "
+
+Email ini dikirim otomatis dari sistem Milala Auto Service.
+© " . date('Y') . " Milala Auto Service. All rights reserved.
+
+" . str_repeat("=", 50) . "";
+
+        $this->email->from('info@milalaautoservice.com', 'Milala Auto Service');
+        $this->email->to('alwanputra2712@gmail.com');
+        $this->email->subject('Test Email Teks Sederhana - ' . date('Y-m-d H:i:s'));
+        $this->email->message($text);
+
+        if ($this->email->send(FALSE)) {
+            echo 'Email sederhana berhasil dikirim!';
+            echo '<hr><h3>Preview Email:</h3><pre>' . htmlspecialchars($text) . '</pre>';
+        } else {
+            echo 'Gagal mengirim email. Error: ' . $this->email->print_debugger();
+            echo '<hr><h3>Preview Email:</h3><pre>' . htmlspecialchars($text) . '</pre>';
+        }
+    }
+
     /**
      * Menangani pengiriman form reservasi
      */
@@ -359,16 +479,45 @@ class Landing extends CI_Controller {
                 // Cek apakah tabel reservations ada
                 $this->_create_reservation_table_if_not_exists();
 
-                // Load the Reservation model
-                $this->load->model('Reservation_model');
                 $result = $this->Reservation_model->save_reservation($data);
 
                 if ($result) {
+                    // Siapkan data untuk email
+                    $payload = [
+                        'name'             => $data['name'],
+                        'reservation_id'   => $result,
+                        'service_type'     => $data['service_type'],
+                        'vehicle_type'     => $data['vehicle_type'],
+                        'vehicle_brand'    => $data['vehicle_brand'],
+                        'reservation_date' => $data['reservation_date'],
+                        'reservation_time' => $data['reservation_time'],
+                        'notes'            => $data['notes'],
+                        'phone'            => $data['phone'],
+                        'email'            => $data['email']
+                    ];
+                    
+                    // Kirim email ke customer
+                    $email_customer = [
+                        'to'      => $data['email'],
+                        'subject' => 'Konfirmasi Reservasi - ' . $result,
+                        'message' => $this->_email_template_customer($payload),
+                        'is_html' => false // Kirim sebagai teks biasa
+                    ];
+                    
+                    $email_result = $this->kirim_email->send($email_customer);
+                    
+                    if ($email_result['status']) {
+                        $email_message = 'Reservasi Anda berhasil dikirim. Konfirmasi telah dikirim ke email Anda.';
+                    } else {
+                        log_message('error', 'Gagal mengirim email: ' . print_r($email_result['error'], TRUE));
+                        $email_message = 'Reservasi Anda berhasil dikirim, tetapi gagal mengirim email konfirmasi. Mohon simpan nomor reservasi Anda.';
+                    }
+
                     $response = [
                         'code'    => 200,
                         'status'  => true,
-                        'message' => 'Reservasi Anda berhasil dikirim. Kami akan segera mengkonfirmasi melalui email atau telepon.',
-                        'data'    => $data,
+                        'message' => $email_message,
+                        'data'    => array_merge($data, ['reservation_id' => $result]),
                         'meta'    => [
                             'header_status_code' => 200,
                         ]
@@ -453,6 +602,78 @@ class Landing extends CI_Controller {
     }
 
     /**
+     * Template email untuk customer
+     *
+     * @param array $data Data untuk template email
+     * @return string
+     */
+    private function _email_template_customer($data)
+    {
+        // Format tanggal dan waktu
+        $reservation_datetime = date('d F Y H:i', strtotime($data['reservation_date'] . ' ' . $data['reservation_time']));
+        $current_datetime = date('d F Y H:i');
+        
+        // Buat template teks biasa
+        $text = "\n";
+        $text .= str_repeat("=", 50) . "\n";
+        $text .= "KONFIRMASI RESERVASI - " . $data['reservation_id'] . "\n";
+        $text .= str_repeat("=", 50) . "\n\n";
+        
+        $text .= "Halo " . $data['name'] . ",\n\n";
+        $text .= "Terima kasih telah melakukan reservasi di Milala Auto Service.\n";
+        $text .= "Berikut adalah detail reservasi Anda:\n\n";
+        
+        $text .= "DETAIL RESERVASI\n";
+        $text .= str_repeat("-", 50) . "\n";
+        $text .= "Nomor Reservasi : " . $data['reservation_id'] . "\n";
+        $text .= "Tanggal & Waktu : " . $reservation_datetime . " WIB\n";
+        $text .= "Jenis Layanan   : " . $data['service_type'] . "\n";
+        $text .= "Jenis Kendaraan : " . $data['vehicle_type'] . "\n";
+        $text .= "Merk/Tipe       : " . $data['vehicle_brand'] . "\n\n";
+        
+        $text .= "DETAIL PELANGGAN\n";
+        $text .= str_repeat("-", 50) . "\n";
+        $text .= "Nama    : " . $data['name'] . "\n";
+        $text .= "Email   : " . $data['email'] . "\n";
+        $text .= "Telepon : " . $data['phone'] . "\n\n";
+        
+        // Tambahkan catatan jika ada
+        if (!empty($data['notes'])) {
+            $text .= "CATATAN TAMBAHAN\n";
+            $text .= str_repeat("-", 50) . "\n";
+            $text .= wordwrap($data['notes'], 50, "\n") . "\n\n";
+        }
+        
+        // Tambahkan informasi penting
+        $text .= "INFORMASI PENTING\n";
+        $text .= str_repeat("-", 50) . "\n";
+        $text .= "- Harap datang 15 menit sebelum waktu reservasi\n";
+        $text .= "- Bawa surat-surat kendaraan yang diperlukan\n";
+        $text .= "- Jika ada perubahan jadwal, hubungi kami di 081234567890\n\n";
+        
+        // Tambahkan footer
+        $text .= str_repeat("-", 50) . "\n";
+        $text .= "Terima kasih telah mempercayakan kendaraan Anda kepada kami.\n";
+        $text .= "Tim kami akan segera menghubungi Anda untuk konfirmasi lebih lanjut.\n\n";
+        $text .= str_repeat("=", 50) . "\n";
+        $text .= "© " . date('Y') . " Milala Auto Service. All rights reserved.\n";
+        $text .= "Email ini dikirim secara otomatis, mohon tidak membalas email ini.\n";
+        
+        return $text;
+    }
+
+    /**
+     * Template email untuk admin (jika diperlukan)
+     *
+     * @param array $data Data untuk template email
+     * @return string
+     */
+    private function _email_template_admin($data)
+    {
+        return $this->load->view('email/reservation_notification', $data, TRUE);
+    }
+
+    /**
      * Membuat tabel reservations jika belum ada
      */
     private function _create_reservation_table_if_not_exists() {
@@ -469,15 +690,15 @@ class Landing extends CI_Controller {
                 ),
                 'name' => array(
                     'type' => 'VARCHAR',
-                    'constraint' => 100,
+                    'constraint' => '100',
                 ),
                 'phone' => array(
                     'type' => 'VARCHAR',
-                    'constraint' => 20,
+                    'constraint' => '20',
                 ),
                 'email' => array(
                     'type' => 'VARCHAR',
-                    'constraint' => 100,
+                    'constraint' => '100',
                 ),
                 'branch_id' => array(
                     'type' => 'INT',
@@ -485,15 +706,15 @@ class Landing extends CI_Controller {
                 ),
                 'service_type' => array(
                     'type' => 'VARCHAR',
-                    'constraint' => 100,
+                    'constraint' => '100',
                 ),
                 'vehicle_type' => array(
                     'type' => 'VARCHAR',
-                    'constraint' => 100,
+                    'constraint' => '50',
                 ),
                 'vehicle_brand' => array(
                     'type' => 'VARCHAR',
-                    'constraint' => 100,
+                    'constraint' => '100',
                 ),
                 'reservation_date' => array(
                     'type' => 'DATE',
@@ -506,13 +727,17 @@ class Landing extends CI_Controller {
                     'null' => TRUE,
                 ),
                 'status' => array(
-                    'type' => 'ENUM',
-                    'constraint' => array('pending', 'confirmed', 'completed', 'cancelled'),
+                    'type' => 'VARCHAR',
+                    'constraint' => '20',
                     'default' => 'pending',
                 ),
                 'created_at' => array(
                     'type' => 'DATETIME',
-                )
+                ),
+                'updated_at' => array(
+                    'type' => 'DATETIME',
+                    'null' => TRUE,
+                ),
             );
 
             $this->dbforge->add_field($fields);

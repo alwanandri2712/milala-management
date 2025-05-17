@@ -97,18 +97,57 @@
         </div>
 
         <!-- Bottom Footer -->
-        <div class="pt-8 border-t border-gray-800 text-center">
-            <p class="text-gray-400">
-                &copy; <?= date('Y') ?> Milala Auto Service - Spesialis Power Steering Mobil. All rights reserved.
-            </p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors">Kebijakan Privasi</a>
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors">Syarat & Ketentuan</a>
-                <a href="#" class="text-gray-400 hover:text-primary transition-colors">FAQ</a>
-            </div>
+        <div class="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            <p>&copy; <?= date('Y') ?> Milala Auto Service. All rights reserved.</p>
+            <p class="mt-2"><a href="<?= base_url('sitemap') ?>" class="text-gray-500 hover:text-primary">Sitemap</a></p>
         </div>
     </div>
 </footer>
+
+<!-- Structured Data untuk SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Milala Auto Service",
+  "image": "<?= base_url('assets/img/milala_logo.png') ?>",
+  "@id": "<?= base_url() ?>",
+  "url": "<?= base_url() ?>",
+  "telephone": "+6287878999366",
+  "priceRange": "Rp",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Raya Bogor",
+    "addressLocality": "Jakarta",
+    "postalCode": "12345",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.2088,
+    "longitude": 106.8456
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/milalaautoservice",
+    "https://www.instagram.com/milalaautoservice"
+  ] 
+}
+</script>
 
 <!-- Back to Top Button -->
 <a href="#home" class="fixed bottom-8 right-8 bg-primary p-3 rounded-full shadow-lg z-50 hover:bg-dark hover:text-primary transition-colors">

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /system/
+Disallow: /application/
+
+Sitemap: https://milalaautoservice.com/sitemap.xml
