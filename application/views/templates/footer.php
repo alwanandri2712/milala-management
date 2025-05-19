@@ -6,7 +6,7 @@
             <div data-aos="fade-up" data-aos-delay="50">
                 <div class="flex items-center space-x-2 mb-6">
                     <div class="bg-primary p-2 rounded-lg">
-                        <img src="<?= base_url('assets/img/milala_logo_32.png') ?>" alt="Logo Milala Auto Service" class="w-8 h-8">
+                        <img src="<?= base_url('assets/img/milala_logo_v2.png') ?>" alt="Logo Milala Auto Service" class="w-8 h-8">
                     </div>
                     <span class="text-2xl font-bold text-white">Milala Auto Service</span>
                 </div>
