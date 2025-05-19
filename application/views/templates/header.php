@@ -146,7 +146,7 @@
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
                     <div class="bg-primary p-2 rounded-lg">
-                        <img src="<?= base_url('assets/img/milala_logo_32.png') ?>" alt="Logo Milala Auto Service" class="w-8 h-8">
+                        <img src="<?= base_url('assets/img/milala_logo_v2.png') ?>" alt="Logo Milala Auto Service" class="w-10 h-10">
                     </div>
                     <span class="text-2xl font-bold text-dark">Milala Auto Service</span>
                 </div>
