@@ -28,7 +28,7 @@ class Landing extends CI_Controller {
      * Halaman Beranda
      */
     public function index() {
-        $data['title'] = 'Milala Auto Service - Spesialis Power Steering Mobil';
+        $data['title'] = 'Milala Auto Service - Bengkel Spesialis Power Steering & Kaki-Kaki';
         $data['active'] = 'home';
 
         $this->load->view('templates/header', $data);

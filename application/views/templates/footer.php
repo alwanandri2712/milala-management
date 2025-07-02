@@ -11,7 +11,7 @@
                     <span class="text-2xl font-bold text-white">Milala Auto Service</span>
                 </div>
                 <p class="text-gray-400 mb-6">
-                    Bengkel spesialis power steering mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998.
+                    Bengkel spesialis power steering & kaki-kaki Mobil dengan layanan perbaikan, pemasangan, dan modifikasi power steering sejak 1998.
                 </p>
                 <div class="flex space-x-4">
                     <a href="#" class="bg-gray-800 p-3 rounded-full text-primary hover:bg-primary hover:text-dark transition-colors">
