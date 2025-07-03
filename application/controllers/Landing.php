@@ -200,6 +200,236 @@ class Landing extends CI_Controller {
     }
 
     /**
+     * Halaman Workshop
+     */
+    public function workshop($branch_slug = null) {
+        // Data workshop dengan informasi lengkap
+        $workshops = [
+            [
+                'slug' => 'ampera',
+                'name' => 'Workshop Ampera',
+                'address' => 'Jl. Ampera Raya No. 123, Jakarta Selatan',
+                'phone' => '(021) 7891-2345',
+                'established' => '2012',
+                'rating' => '4.8',
+                'description' => 'Pusat layanan utama dengan fasilitas terlengkap dan tim berpengalaman lebih dari 10 tahun.',
+                'team' => [
+                    [
+                        'name' => 'Budi Santoso',
+                        'position' => 'Manajer Workshop',
+                        'experience' => '15 tahun',
+                        'specialization' => 'Manajemen Operasional'
+                    ],
+                    [
+                        'name' => 'Ahmad Rizki',
+                        'position' => 'Supervisor Teknis',
+                        'experience' => '12 tahun',
+                        'specialization' => 'Diagnostik Engine'
+                    ],
+                    [
+                        'name' => 'Dedi Kurniawan',
+                        'position' => 'Kepala Mekanik',
+                        'experience' => '10 tahun',
+                        'specialization' => 'Transmisi & Kopling'
+                    ]
+                ],
+                'services' => [
+                    'Service Berkala',
+                    'Perbaikan Engine',
+                    'Transmisi & Kopling',
+                    'Sistem Kelistrikan',
+                    'AC Mobil',
+                    'Tune Up',
+                    'Spooring & Balancing'
+                ],
+                'facilities' => [
+                    'Ruang Tunggu Ber-AC',
+                    'WiFi Gratis',
+                    'Area Parkir Luas',
+                    'Mushola',
+                    'Kantin',
+                    'Lift Hidrolik Modern',
+                    'Peralatan Diagnostik Terbaru'
+                ]
+            ],
+            [
+                'slug' => 'bekasi',
+                'name' => 'Workshop Bekasi',
+                'address' => 'Jl. Ahmad Yani No. 456, Bekasi Timur',
+                'phone' => '(021) 8901-2346',
+                'established' => '2008',
+                'rating' => '4.7',
+                'description' => 'Cabang strategis di Bekasi dengan layanan cepat dan berkualitas untuk wilayah Bekasi dan sekitarnya.',
+                'team' => [
+                    [
+                        'name' => 'Sari Indrawati',
+                        'position' => 'Manajer Workshop',
+                        'experience' => '13 tahun',
+                        'specialization' => 'Customer Service Excellence'
+                    ],
+                    [
+                        'name' => 'Roni Setiawan',
+                        'position' => 'Supervisor Teknis',
+                        'experience' => '11 tahun',
+                        'specialization' => 'Sistem Rem & Suspensi'
+                    ],
+                    [
+                        'name' => 'Eko Prasetyo',
+                        'position' => 'Kepala Mekanik',
+                        'experience' => '9 tahun',
+                        'specialization' => 'Body Repair'
+                    ]
+                ],
+                'services' => [
+                    'Service Rutin',
+                    'Perbaikan Rem',
+                    'Suspensi',
+                    'Body Repair',
+                    'Cat Mobil',
+                    'Ganti Oli',
+                    'Check Up Menyeluruh'
+                ],
+                'facilities' => [
+                    'Ruang Tunggu Nyaman',
+                    'TV & Majalah',
+                    'Parkir Aman',
+                    'Toilet Bersih',
+                    'Mesin Cuci Mobil',
+                    'Peralatan Modern',
+                    'CCTV 24 Jam'
+                ]
+            ],
+            [
+                'slug' => 'antasari',
+                'name' => 'Workshop Antasari',
+                'address' => 'Jl. Antasari No. 789, Jakarta Selatan',
+                'phone' => '(021) 7654-3210',
+                'established' => '2006',
+                'rating' => '4.6',
+                'description' => 'Cabang pertama dengan pengalaman panjang melayani pelanggan setia di area Jakarta Selatan.',
+                'team' => [
+                    [
+                        'name' => 'Hendra Wijaya',
+                        'position' => 'Manajer Workshop',
+                        'experience' => '16 tahun',
+                        'specialization' => 'Vintage Car Specialist'
+                    ],
+                    [
+                        'name' => 'Agus Salim',
+                        'position' => 'Supervisor Teknis',
+                        'experience' => '14 tahun',
+                        'specialization' => 'Fuel Injection System'
+                    ],
+                    [
+                        'name' => 'Bambang Sutrisno',
+                        'position' => 'Kepala Mekanik',
+                        'experience' => '12 tahun',
+                        'specialization' => 'Classic Engine Restoration'
+                    ]
+                ],
+                'services' => [
+                    'Restoration Mobil Klasik',
+                    'Engine Overhaul',
+                    'Fuel Injection',
+                    'Electrical System',
+                    'Interior Restoration',
+                    'Custom Modification',
+                    'Vintage Parts Supply'
+                ],
+                'facilities' => [
+                    'Workshop Khusus Klasik',
+                    'Parts Storage',
+                    'Restoration Bay',
+                    'Customer Lounge',
+                    'Documentation Area',
+                    'Specialized Tools',
+                    'Climate Control'
+                ]
+            ],
+            [
+                'slug' => 'bogor',
+                'name' => 'Workshop Bogor',
+                'address' => 'Jl. Pajajaran No. 321, Bogor Tengah',
+                'phone' => '(0251) 123-4567',
+                'established' => '2015',
+                'rating' => '4.9',
+                'description' => 'Cabang terbaru dengan teknologi paling canggih dan pelayanan premium untuk wilayah Bogor.',
+                'team' => [
+                    [
+                        'name' => 'Maya Sari',
+                        'position' => 'Manajer Workshop',
+                        'experience' => '8 tahun',
+                        'specialization' => 'Digital Service Management'
+                    ],
+                    [
+                        'name' => 'Fajar Nugroho',
+                        'position' => 'Supervisor Teknis',
+                        'experience' => '7 tahun',
+                        'specialization' => 'Hybrid & Electric Vehicle'
+                    ],
+                    [
+                        'name' => 'Rizal Ramadan',
+                        'position' => 'Kepala Mekanik',
+                        'experience' => '6 tahun',
+                        'specialization' => 'Advanced Diagnostics'
+                    ]
+                ],
+                'services' => [
+                    'Hybrid Car Service',
+                    'Electric Vehicle Support',
+                    'Advanced Diagnostics',
+                    'Computer Programming',
+                    'Sensor Calibration',
+                    'Digital Service Record',
+                    'Remote Monitoring'
+                ],
+                'facilities' => [
+                    'Digital Service Bay',
+                    'EV Charging Station',
+                    'Smart Waiting Room',
+                    'Online Booking System',
+                    'Real-time Updates',
+                    'Mobile App Integration',
+                    'Contactless Payment'
+                ]
+            ]
+        ];
+
+        $data = [
+            'title' => 'Workshop - Milala Auto Service',
+            'active' => 'workshop',
+            'workshops' => $workshops
+        ];
+
+        if ($branch_slug) {
+            // Cari workshop berdasarkan slug
+            $selected_workshop = null;
+            foreach ($workshops as $workshop) {
+                if ($workshop['slug'] === $branch_slug) {
+                    $selected_workshop = $workshop;
+                    break;
+                }
+            }
+
+            if ($selected_workshop) {
+                $data['selected_workshop'] = $selected_workshop;
+                $data['title'] = $selected_workshop['name'] . ' - Milala Auto Service';
+                $this->load->view('templates/header', $data);
+                $this->load->view('landing/pages/workshop_detail', $data);
+                $this->load->view('templates/footer');
+            } else {
+                // Jika workshop tidak ditemukan, redirect ke halaman workshop utama
+                redirect('workshop');
+            }
+        } else {
+            // Tampilkan halaman overview workshop
+            $this->load->view('templates/header', $data);
+            $this->load->view('landing/pages/workshop', $data);
+            $this->load->view('templates/footer');
+        }
+    }
+
+    /**
      * Halaman Reservasi
      */
     public function reservation() {
