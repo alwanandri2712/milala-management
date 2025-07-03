@@ -1,25 +1,4 @@
-<!-- Custom CSS for animations -->
-<style>
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(5deg); }
-    66% { transform: translateY(5px) rotate(-5deg); }
-}
 
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
-.particle {
-    animation: float 8s ease-in-out infinite;
-}
-
-@media (max-width: 768px) {
-    .particle {
-        display: none;
-    }
-}
-</style>
 
 <!-- Hero Section -->
 <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600">

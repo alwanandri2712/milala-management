@@ -77,6 +77,10 @@
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom Animations for Home -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/home-animations.css') ?>">
 
     <!-- Custom Styles -->
     <style>
