@@ -8,20 +8,6 @@
     </div>
 
     <div class="relative container mx-auto px-6 py-20 mt-20">
-        <!-- Breadcrumb -->
-        <nav class="mb-8" data-aos="fade-right">
-            <div class="flex items-center space-x-2 text-sm">
-                <a href="<?= base_url() ?>" class="text-gray-500 hover:text-primary transition-colors">Beranda</a>
-                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <a href="<?= base_url('workshop') ?>" class="text-gray-500 hover:text-primary transition-colors">Workshop</a>
-                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-primary font-semibold"><?= $selected_workshop['name'] ?></span>
-            </div>
-        </nav>
 
         <!-- Workshop Header -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
