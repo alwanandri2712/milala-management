@@ -60,6 +60,10 @@ $route['services'] = 'Landing/services';
 $route['artikel']  = 'Landing/artikel';
 $route['contact']  = 'Landing/contact';
 $route['reservation'] = 'Landing/reservation';
+$route['workshop'] = 'Landing/workshop';
+
+// Workshop routes
+$route['workshop/(:any)'] = 'Landing/workshop/$1';
 
 // Artikel routes
 $route['artikel'] = 'Landing/artikel';
