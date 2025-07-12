@@ -109,12 +109,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #FFD32E;
+            background: #FCFB0B;
             border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #e6be29;
+            background: #e6e009;
         }
     </style>
 
@@ -150,26 +150,26 @@
 </head>
 <body class="bg-white">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+    <nav class="fixed w-full z-50 shadow-lg" style="background-color: #FCFB0B;">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <div class="bg-primary p-2 rounded-lg">
+                    <div class="bg-black p-2 rounded-lg">
                         <img src="<?= base_url('assets/img/milala_logo_v2.png') ?>" alt="Logo Milala Auto Service" class="w-10 h-10">
                     </div>
-                    <span class="text-2xl font-bold text-dark">Milala Auto Service</span>
+                    <span class="text-2xl font-bold text-black">Milala Auto Service</span>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="<?= base_url(); ?>" class="font-medium <?= ($active == 'home') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Beranda</a>
-                    <a href="<?= base_url('about'); ?>" class="font-medium <?= ($active == 'about') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Tentang Kami</a>
-                    <a href="<?= base_url('services'); ?>" class="font-medium <?= ($active == 'services') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Layanan</a>
+                    <a href="<?= base_url(); ?>" class="font-medium <?= ($active == 'home') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Beranda</a>
+                    <a href="<?= base_url('about'); ?>" class="font-medium <?= ($active == 'about') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Tentang Kami</a>
+                    <a href="<?= base_url('services'); ?>" class="font-medium <?= ($active == 'services') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Layanan</a>
                     
                     <!-- Workshop Dropdown -->
                     <div class="relative group">
-                        <a href="#" class="font-medium <?= ($active == 'workshop') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors flex items-center">
+                        <a href="#" class="font-medium <?= ($active == 'workshop') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors flex items-center">
                             Workshop
                             <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -179,31 +179,31 @@
                         <!-- Dropdown Menu -->
                         <div class="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
                             <div class="p-6">
-                                <h3 class="text-lg font-bold text-dark mb-4 border-b border-gray-200 pb-2">Cabang Workshop Kami</h3>
+                                <h3 class="text-lg font-bold text-black mb-4 border-b border-gray-200 pb-2">Cabang Workshop Kami</h3>
                                 
                                 <!-- Ampera Branch -->
-                                <a href="<?= base_url('workshop/ampera') ?>" class="block mb-6 p-4 bg-gradient-to-r from-primary/10 to-yellow-50 rounded-xl hover:shadow-md transition-all duration-300">
+                                <a href="<?= base_url('workshop/ampera') ?>" class="block mb-6 p-4 bg-gradient-to-r from-yellow-100 to-yellow-50 rounded-xl hover:shadow-md transition-all duration-300">
                                     <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-gradient-to-r from-primary to-yellow-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
                                             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                             </svg>
                                         </div>
                                         <div class="flex-1">
-                                            <h4 class="font-bold text-dark text-sm mb-1">Cabang Ampera</h4>
-                                            <p class="text-xs text-gray-600 mb-2">Jl. Madrasah Raya No.3a, Ampera</p>
+                                            <h4 class="font-bold text-black text-sm mb-1">Cabang Ampera</h4>
+                                            <p class="text-xs text-gray-700 mb-2">Jl. Madrasah Raya No.3a, Ampera</p>
                                             <div class="text-xs">
                                                 <div class="flex items-center mb-1">
                                                     <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                                    <span class="font-semibold text-dark">Manager: Budi Santoso</span>
+                                                    <span class="font-semibold text-black">Manager: Budi Santoso</span>
                                                 </div>
                                                 <div class="flex items-center mb-1">
                                                     <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                                                    <span class="text-gray-600">Supervisor: Ahmad Rahman</span>
+                                                    <span class="text-gray-700">Supervisor: Ahmad Rahman</span>
                                                 </div>
                                                 <div class="flex items-center">
                                                     <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                                                    <span class="text-gray-600">Head Mechanic: Dedi Kurniawan</span>
+                                                    <span class="text-gray-700">Head Mechanic: Dedi Kurniawan</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -219,20 +219,20 @@
                                             </svg>
                                         </div>
                                         <div class="flex-1">
-                                            <h4 class="font-bold text-dark text-sm mb-1">Cabang Bekasi</h4>
-                                            <p class="text-xs text-gray-600 mb-2">Jl. RA Kartini No.9, Bekasi Timur</p>
+                                            <h4 class="font-bold text-black text-sm mb-1">Cabang Bekasi</h4>
+                                            <p class="text-xs text-gray-700 mb-2">Jl. RA Kartini No.9, Bekasi Timur</p>
                                             <div class="text-xs">
                                                 <div class="flex items-center mb-1">
                                                     <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                                    <span class="font-semibold text-dark">Manager: Sari Indrawati</span>
+                                                    <span class="font-semibold text-black">Manager: Sari Indrawati</span>
                                                 </div>
                                                 <div class="flex items-center mb-1">
                                                     <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                                                    <span class="text-gray-600">Supervisor: Rizky Pratama</span>
+                                                    <span class="text-gray-700">Supervisor: Rizky Pratama</span>
                                                 </div>
                                                 <div class="flex items-center">
                                                     <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                                                    <span class="text-gray-600">Head Mechanic: Eko Prasetyo</span>
+                                                    <span class="text-gray-700">Head Mechanic: Eko Prasetyo</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -248,20 +248,20 @@
                                             </svg>
                                         </div>
                                         <div class="flex-1">
-                                            <h4 class="font-bold text-dark text-sm mb-1">Cabang Antasari</h4>
-                                            <p class="text-xs text-gray-600 mb-2">Jl. Pangeran Antasari No.89</p>
+                                            <h4 class="font-bold text-black text-sm mb-1">Cabang Antasari</h4>
+                                            <p class="text-xs text-gray-700 mb-2">Jl. Pangeran Antasari No.89</p>
                                             <div class="text-xs">
                                                 <div class="flex items-center mb-1">
                                                     <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                                    <span class="font-semibold text-dark">Manager: Hendra Wijaya</span>
+                                                    <span class="font-semibold text-black">Manager: Hendra Wijaya</span>
                                                 </div>
                                                 <div class="flex items-center mb-1">
                                                     <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                                                    <span class="text-gray-600">Supervisor: Maya Sari</span>
+                                                    <span class="text-gray-700">Supervisor: Maya Sari</span>
                                                 </div>
                                                 <div class="flex items-center">
                                                     <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                                                    <span class="text-gray-600">Head Mechanic: Agus Setiawan</span>
+                                                    <span class="text-gray-700">Head Mechanic: Agus Setiawan</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -277,20 +277,20 @@
                                             </svg>
                                         </div>
                                         <div class="flex-1">
-                                            <h4 class="font-bold text-dark text-sm mb-1">Cabang Bogor</h4>
-                                            <p class="text-xs text-gray-600 mb-2">Jl. Raya Bogor No.45, Bogor</p>
+                                            <h4 class="font-bold text-black text-sm mb-1">Cabang Bogor</h4>
+                                            <p class="text-xs text-gray-700 mb-2">Jl. Raya Bogor No.45, Bogor</p>
                                             <div class="text-xs">
                                                 <div class="flex items-center mb-1">
                                                     <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                                    <span class="font-semibold text-dark">Manager: Dewi Lestari</span>
+                                                    <span class="font-semibold text-black">Manager: Dewi Lestari</span>
                                                 </div>
                                                 <div class="flex items-center mb-1">
                                                     <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                                                    <span class="text-gray-600">Supervisor: Fajar Nugroho</span>
+                                                    <span class="text-gray-700">Supervisor: Fajar Nugroho</span>
                                                 </div>
                                                 <div class="flex items-center">
                                                     <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                                                    <span class="text-gray-600">Head Mechanic: Irwan Setiadi</span>
+                                                    <span class="text-gray-700">Head Mechanic: Irwan Setiadi</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -300,16 +300,16 @@
                         </div>
                     </div>
                     
-                    <a href="<?= base_url('artikel'); ?>" class="font-medium <?= ($active == 'artikel') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Artikel</a>
-                    <a href="<?= base_url('contact'); ?>" class="font-medium <?= ($active == 'contact') ? 'text-dark font-bold border-b-2 border-primary' : 'text-dark hover:text-primary' ?> transition-colors">Kontak</a>
-                    <a href="<?= base_url('reservation'); ?>" class="<?= ($active == 'reservation') ? 'bg-dark text-primary border-2 border-primary' : 'bg-primary text-dark hover:bg-dark hover:text-primary' ?> px-6 py-2 rounded-full font-bold transition-colors">
+                    <a href="<?= base_url('artikel'); ?>" class="font-medium <?= ($active == 'artikel') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Artikel</a>
+                    <a href="<?= base_url('contact'); ?>" class="font-medium <?= ($active == 'contact') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Kontak</a>
+                    <a href="<?= base_url('reservation'); ?>" class="<?= ($active == 'reservation') ? 'bg-black text-white border-2 border-black' : 'bg-black text-white hover:bg-gray-800 hover:text-white' ?> px-6 py-2 rounded-full font-bold transition-colors">
                         Reservasi
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-dark focus:outline-none">
+                    <button id="mobile-menu-button" class="text-black focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -319,45 +319,45 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden hidden py-4">
-                <a href="<?= base_url(); ?>" class="block py-2 font-medium <?= ($active == 'home') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Beranda</a>
-                <a href="<?= base_url('about'); ?>" class="block py-2 font-medium <?= ($active == 'about') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Tentang Kami</a>
-                <a href="<?= base_url('services'); ?>" class="block py-2 font-medium <?= ($active == 'services') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Layanan</a>
+                <a href="<?= base_url(); ?>" class="block py-2 font-medium <?= ($active == 'home') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Beranda</a>
+                <a href="<?= base_url('about'); ?>" class="block py-2 font-medium <?= ($active == 'about') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Tentang Kami</a>
+                <a href="<?= base_url('services'); ?>" class="block py-2 font-medium <?= ($active == 'services') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Layanan</a>
                 
                 <!-- Mobile Workshop Menu -->
                 <div class="block py-2">
-                    <button id="mobile-workshop-toggle" class="flex items-center justify-between w-full font-medium <?= ($active == 'workshop') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">
+                    <button id="mobile-workshop-toggle" class="flex items-center justify-between w-full font-medium <?= ($active == 'workshop') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">
                         Workshop
                         <svg id="mobile-workshop-arrow" class="w-4 h-4 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                         </svg>
                     </button>
                     <div id="mobile-workshop-menu" class="mt-2 ml-4 space-y-2 hidden">
-                        <div class="p-2 bg-gradient-to-r from-primary/10 to-yellow-50 rounded-lg">
-                            <h5 class="font-bold text-xs text-dark mb-1">Cabang Ampera</h5>
-                            <p class="text-xs text-gray-600 mb-1">Manager: Budi Santoso</p>
-                            <p class="text-xs text-gray-500">Jl. Madrasah Raya No.3a</p>
+                        <div class="p-2 bg-gradient-to-r from-yellow-100 to-yellow-50 rounded-lg">
+                            <h5 class="font-bold text-xs text-black mb-1">Cabang Ampera</h5>
+                            <p class="text-xs text-gray-700 mb-1">Manager: Budi Santoso</p>
+                            <p class="text-xs text-gray-600">Jl. Madrasah Raya No.3a</p>
                         </div>
                         <div class="p-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
-                            <h5 class="font-bold text-xs text-dark mb-1">Cabang Bekasi</h5>
-                            <p class="text-xs text-gray-600 mb-1">Manager: Sari Indrawati</p>
-                            <p class="text-xs text-gray-500">Jl. RA Kartini No.9</p>
+                            <h5 class="font-bold text-xs text-black mb-1">Cabang Bekasi</h5>
+                            <p class="text-xs text-gray-700 mb-1">Manager: Sari Indrawati</p>
+                            <p class="text-xs text-gray-600">Jl. RA Kartini No.9</p>
                         </div>
                         <div class="p-2 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg">
-                            <h5 class="font-bold text-xs text-dark mb-1">Cabang Antasari</h5>
-                            <p class="text-xs text-gray-600 mb-1">Manager: Hendra Wijaya</p>
-                            <p class="text-xs text-gray-500">Jl. Pangeran Antasari No.89</p>
+                            <h5 class="font-bold text-xs text-black mb-1">Cabang Antasari</h5>
+                            <p class="text-xs text-gray-700 mb-1">Manager: Hendra Wijaya</p>
+                            <p class="text-xs text-gray-600">Jl. Pangeran Antasari No.89</p>
                         </div>
                         <div class="p-2 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg">
-                            <h5 class="font-bold text-xs text-dark mb-1">Cabang Bogor</h5>
-                            <p class="text-xs text-gray-600 mb-1">Manager: Dewi Lestari</p>
-                            <p class="text-xs text-gray-500">Jl. Raya Bogor No.45</p>
+                            <h5 class="font-bold text-xs text-black mb-1">Cabang Bogor</h5>
+                            <p class="text-xs text-gray-700 mb-1">Manager: Dewi Lestari</p>
+                            <p class="text-xs text-gray-600">Jl. Raya Bogor No.45</p>
                         </div>
                     </div>
                 </div>
                 
-                <a href="<?= base_url('artikel'); ?>" class="block py-2 font-medium <?= ($active == 'artikel') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Artikel</a>
-                <a href="<?= base_url('contact'); ?>" class="block py-2 font-medium <?= ($active == 'contact') ? 'text-dark font-bold border-l-4 border-primary pl-2' : 'text-dark hover:text-primary' ?>">Kontak</a>
-                <a href="<?= base_url('reservation'); ?>" class="inline-block mt-2 <?= ($active == 'reservation') ? 'bg-dark text-primary border-2 border-primary' : 'bg-primary text-dark hover:bg-dark hover:text-primary' ?> px-6 py-2 rounded-full font-bold transition-colors">
+                <a href="<?= base_url('artikel'); ?>" class="block py-2 font-medium <?= ($active == 'artikel') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Artikel</a>
+                <a href="<?= base_url('contact'); ?>" class="block py-2 font-medium <?= ($active == 'contact') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Kontak</a>
+                <a href="<?= base_url('reservation'); ?>" class="inline-block mt-2 <?= ($active == 'reservation') ? 'bg-black text-white border-2 border-black' : 'bg-black text-white hover:bg-gray-800 hover:text-white' ?> px-6 py-2 rounded-full font-bold transition-colors">
                     Reservasi
                 </a>
             </div>
