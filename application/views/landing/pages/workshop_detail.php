@@ -82,7 +82,7 @@
                         <!-- Workshop Illustration -->
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="w-32 h-32 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-16 h-16 text-black" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
@@ -253,7 +253,7 @@
                 <div class="h-48 bg-gradient-to-br from-primary/20 to-primary/20 relative overflow-hidden">
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                             </svg>
                         </div>

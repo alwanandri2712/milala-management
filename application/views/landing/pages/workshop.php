@@ -42,7 +42,7 @@
                     <!-- Workshop Icon -->
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8z" clip-rule="evenodd"/>
                             </svg>
                         </div>
