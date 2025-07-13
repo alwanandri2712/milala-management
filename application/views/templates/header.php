@@ -151,25 +151,28 @@
 <body class="bg-white">
     <!-- Navigation -->
     <nav class="fixed w-full z-50 shadow-lg" style="background-color: #FCFB0B;">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
+        <div class="container mx-auto px-2 sm:px-4">
+            <div class="flex justify-between items-center py-2 sm:py-4">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <div class="bg-black p-2 rounded-full">
-                        <img src="<?= base_url('assets/img/logo-milala-white.jpeg') ?>" alt="Logo Milala Auto Service" class="w-10 h-10 rounded-full">
+                    <div class="bg-black p-1 sm:p-2 rounded-full">
+                        <img src="<?= base_url('assets/img/logo-milala-white.jpeg') ?>" alt="Logo Milala Auto Service" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full">
                     </div>
-                    <span class="text-2xl font-bold text-black">SPECIALIS POWER STEERING<br>DAN KAKI - KAKI MOBIL</span>
+                    <span class="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold text-black leading-tight">
+                        <span class="block">SPECIALIS POWER STEERING</span>
+                        <span class="block">DAN KAKI - KAKI MOBIL</span>
+                    </span>
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="<?= base_url(); ?>" class="font-medium <?= ($active == 'home') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Beranda</a>
-                    <a href="<?= base_url('about'); ?>" class="font-medium <?= ($active == 'about') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Tentang Kami</a>
-                    <a href="<?= base_url('services'); ?>" class="font-medium <?= ($active == 'services') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Layanan</a>
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
+                    <a href="<?= base_url(); ?>" class="font-medium text-sm lg:text-base <?= ($active == 'home') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Beranda</a>
+                    <a href="<?= base_url('about'); ?>" class="font-medium text-sm lg:text-base <?= ($active == 'about') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Tentang Kami</a>
+                    <a href="<?= base_url('services'); ?>" class="font-medium text-sm lg:text-base <?= ($active == 'services') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Layanan</a>
                     
                     <!-- Workshop Dropdown -->
                     <div class="relative group">
-                        <a href="#" class="font-medium <?= ($active == 'workshop') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors flex items-center">
+                        <a href="#" class="font-medium text-sm lg:text-base <?= ($active == 'workshop') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors flex items-center">
                             Workshop
                             <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -300,9 +303,9 @@
                         </div>
                     </div>
                     
-                    <a href="<?= base_url('artikel'); ?>" class="font-medium <?= ($active == 'artikel') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Artikel</a>
-                    <a href="<?= base_url('contact'); ?>" class="font-medium <?= ($active == 'contact') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Kontak</a>
-                    <a href="<?= base_url('reservation'); ?>" class="<?= ($active == 'reservation') ? 'bg-black text-white border-2 border-black' : 'bg-black text-white hover:bg-gray-800 hover:text-white' ?> px-6 py-2 rounded-full font-bold transition-colors">
+                    <a href="<?= base_url('artikel'); ?>" class="font-medium text-sm lg:text-base <?= ($active == 'artikel') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Artikel</a>
+                    <a href="<?= base_url('contact'); ?>" class="font-medium text-sm lg:text-base <?= ($active == 'contact') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Kontak</a>
+                    <a href="<?= base_url('reservation'); ?>" class="<?= ($active == 'reservation') ? 'bg-black text-white border-2 border-black' : 'bg-black text-white hover:bg-gray-800 hover:text-white' ?> px-4 lg:px-6 py-2 rounded-full font-bold text-sm lg:text-base transition-colors">
                         Reservasi
                     </a>
                 </div>
@@ -318,20 +321,20 @@
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden py-4">
-                <a href="<?= base_url(); ?>" class="block py-2 font-medium <?= ($active == 'home') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Beranda</a>
-                <a href="<?= base_url('about'); ?>" class="block py-2 font-medium <?= ($active == 'about') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Tentang Kami</a>
-                <a href="<?= base_url('services'); ?>" class="block py-2 font-medium <?= ($active == 'services') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Layanan</a>
+            <div id="mobile-menu" class="md:hidden hidden py-2 px-2">
+                <a href="<?= base_url(); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'home') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Beranda</a>
+                <a href="<?= base_url('about'); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'about') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Tentang Kami</a>
+                <a href="<?= base_url('services'); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'services') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Layanan</a>
                 
                 <!-- Mobile Workshop Menu -->
-                <div class="block py-2">
-                    <button id="mobile-workshop-toggle" class="flex items-center justify-between w-full font-medium <?= ($active == 'workshop') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">
+                <div class="block py-3 px-2">
+                    <button id="mobile-workshop-toggle" class="flex items-center justify-between w-full font-medium text-sm <?= ($active == 'workshop') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">
                         Workshop
                         <svg id="mobile-workshop-arrow" class="w-4 h-4 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                         </svg>
                     </button>
-                    <div id="mobile-workshop-menu" class="mt-2 ml-4 space-y-2 hidden">
+                    <div id="mobile-workshop-menu" class="mt-2 ml-2 space-y-2 hidden">
                         <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Ampera</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Budi Santoso</p>
@@ -355,9 +358,9 @@
                     </div>
                 </div>
                 
-                <a href="<?= base_url('artikel'); ?>" class="block py-2 font-medium <?= ($active == 'artikel') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Artikel</a>
-                <a href="<?= base_url('contact'); ?>" class="block py-2 font-medium <?= ($active == 'contact') ? 'text-black font-bold border-l-4 border-black pl-2' : 'text-black hover:text-gray-700' ?>">Kontak</a>
-                <a href="<?= base_url('reservation'); ?>" class="inline-block mt-2 <?= ($active == 'reservation') ? 'bg-black text-white border-2 border-black' : 'bg-black text-white hover:bg-gray-800 hover:text-white' ?> px-6 py-2 rounded-full font-bold transition-colors">
+                <a href="<?= base_url('artikel'); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'artikel') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Artikel</a>
+                <a href="<?= base_url('contact'); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'contact') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Kontak</a>
+                <a href="<?= base_url('reservation'); ?>" class="inline-block mt-3 mx-2 <?= ($active == 'reservation') ? 'bg-black text-white border-2 border-black' : 'bg-black text-white hover:bg-gray-800 hover:text-white' ?> px-4 py-2 rounded-full font-bold text-sm transition-colors">
                     Reservasi
                 </a>
             </div>
