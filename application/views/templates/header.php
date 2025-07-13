@@ -182,10 +182,10 @@
                                 <h3 class="text-lg font-bold text-black mb-4 border-b border-gray-200 pb-2">Cabang Workshop Kami</h3>
                                 
                                 <!-- Ampera Branch -->
-                                <a href="<?= base_url('workshop/ampera') ?>" class="block mb-6 p-4 bg-gradient-to-r from-yellow-100 to-yellow-50 rounded-xl hover:shadow-md transition-all duration-300">
+                                <a href="<?= base_url('workshop/ampera') ?>" class="block mb-6 p-4 bg-gradient-to-r from-primary to-primary rounded-xl hover:shadow-md transition-all duration-300">
                                     <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <div class="w-12 h-12 bg-gradient-to-r from-primary to-primary rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                             </svg>
                                         </div>
@@ -194,15 +194,15 @@
                                             <p class="text-xs text-gray-700 mb-2">Jl. Madrasah Raya No.3a, Ampera</p>
                                             <div class="text-xs">
                                                 <div class="flex items-center mb-1">
-                                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="font-semibold text-black">Manager: Budi Santoso</span>
                                                 </div>
                                                 <div class="flex items-center mb-1">
-                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="text-gray-700">Supervisor: Ahmad Rahman</span>
                                                 </div>
                                                 <div class="flex items-center">
-                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="text-gray-700">Head Mechanic: Dedi Kurniawan</span>
                                                 </div>
                                             </div>
@@ -211,10 +211,10 @@
                                 </a>
                                 
                                 <!-- Bekasi Branch -->
-                                <a href="<?= base_url('workshop/bekasi') ?>" class="block mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl hover:shadow-md transition-all duration-300">
+                                <a href="<?= base_url('workshop/bekasi') ?>" class="block mb-6 p-4 bg-gradient-to-r from-primary to-primary rounded-xl hover:shadow-md transition-all duration-300">
                                     <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <div class="w-12 h-12 bg-gradient-to-r from-primary to-primary rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                             </svg>
                                         </div>
@@ -223,15 +223,15 @@
                                             <p class="text-xs text-gray-700 mb-2">Jl. RA Kartini No.9, Bekasi Timur</p>
                                             <div class="text-xs">
                                                 <div class="flex items-center mb-1">
-                                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="font-semibold text-black">Manager: Sari Indrawati</span>
                                                 </div>
                                                 <div class="flex items-center mb-1">
-                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="text-gray-700">Supervisor: Rizky Pratama</span>
                                                 </div>
                                                 <div class="flex items-center">
-                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="text-gray-700">Head Mechanic: Eko Prasetyo</span>
                                                 </div>
                                             </div>
@@ -240,10 +240,10 @@
                                 </a>
                                 
                                 <!-- Antasari Branch -->
-                                <a href="<?= base_url('workshop/antasari') ?>" class="block mb-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl hover:shadow-md transition-all duration-300">
+                                <a href="<?= base_url('workshop/antasari') ?>" class="block mb-6 p-4 bg-gradient-to-r from-primary to-primary rounded-xl hover:shadow-md transition-all duration-300">
                                     <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <div class="w-12 h-12 bg-gradient-to-r from-primary to-primary rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                             </svg>
                                         </div>
@@ -252,15 +252,15 @@
                                             <p class="text-xs text-gray-700 mb-2">Jl. Pangeran Antasari No.89</p>
                                             <div class="text-xs">
                                                 <div class="flex items-center mb-1">
-                                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="font-semibold text-black">Manager: Hendra Wijaya</span>
                                                 </div>
                                                 <div class="flex items-center mb-1">
-                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="text-gray-700">Supervisor: Maya Sari</span>
                                                 </div>
                                                 <div class="flex items-center">
-                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="text-gray-700">Head Mechanic: Agus Setiawan</span>
                                                 </div>
                                             </div>
@@ -269,10 +269,10 @@
                                 </a>
                                 
                                 <!-- Bogor Branch -->
-                                <a href="<?= base_url('workshop/bogor') ?>" class="block p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl hover:shadow-md transition-all duration-300">
+                                <a href="<?= base_url('workshop/bogor') ?>" class="block p-4 bg-gradient-to-r from-primary to-primary rounded-xl hover:shadow-md transition-all duration-300">
                                     <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <div class="w-12 h-12 bg-gradient-to-r from-primary to-primary rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                             </svg>
                                         </div>
@@ -281,15 +281,15 @@
                                             <p class="text-xs text-gray-700 mb-2">Jl. Raya Bogor No.45, Bogor</p>
                                             <div class="text-xs">
                                                 <div class="flex items-center mb-1">
-                                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="font-semibold text-black">Manager: Dewi Lestari</span>
                                                 </div>
                                                 <div class="flex items-center mb-1">
-                                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="text-gray-700">Supervisor: Fajar Nugroho</span>
                                                 </div>
                                                 <div class="flex items-center">
-                                                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+                                                    <div class="w-2 h-2 bg-primary rounded-full mr-2"></div>
                                                     <span class="text-gray-700">Head Mechanic: Irwan Setiadi</span>
                                                 </div>
                                             </div>
@@ -332,22 +332,22 @@
                         </svg>
                     </button>
                     <div id="mobile-workshop-menu" class="mt-2 ml-4 space-y-2 hidden">
-                        <div class="p-2 bg-gradient-to-r from-yellow-100 to-yellow-50 rounded-lg">
+                        <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Ampera</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Budi Santoso</p>
                             <p class="text-xs text-gray-600">Jl. Madrasah Raya No.3a</p>
                         </div>
-                        <div class="p-2 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
+                        <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Bekasi</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Sari Indrawati</p>
                             <p class="text-xs text-gray-600">Jl. RA Kartini No.9</p>
                         </div>
-                        <div class="p-2 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg">
+                        <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Antasari</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Hendra Wijaya</p>
                             <p class="text-xs text-gray-600">Jl. Pangeran Antasari No.89</p>
                         </div>
-                        <div class="p-2 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg">
+                        <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Bogor</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Dewi Lestari</p>
                             <p class="text-xs text-gray-600">Jl. Raya Bogor No.45</p>
