@@ -1,10 +1,10 @@
 <!-- Workshop Overview Section -->
-<section class="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-hidden">
+<section class="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
     <!-- Background Elements -->
     <div class="absolute inset-0">
         <div class="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
-        <div class="absolute bottom-20 right-10 w-40 h-40 bg-yellow-400/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-        <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-blue-400/10 rounded-full blur-xl animate-pulse delay-500"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 bg-primary/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-primary/10 rounded-full blur-xl animate-pulse delay-500"></div>
     </div>
 
     <div class="relative container mx-auto px-6 py-20">
@@ -16,10 +16,10 @@
                 </svg>
                 Workshop Kami
             </div>
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Jaringan <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-500">Workshop</span> Terpercaya
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                Jaringan <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">Workshop</span> Terpercaya
             </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
                 Dengan 4 cabang strategis di Jakarta, Bekasi, dan Bogor, kami siap melayani kebutuhan perawatan kendaraan Anda dengan tim profesional dan fasilitas modern.
             </p>
         </div>
@@ -27,9 +27,9 @@
         <!-- Workshop Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <?php foreach($workshops as $workshop): ?>
-            <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="<?= array_search($workshop, $workshops) * 100 ?>">
+            <div class="group bg-white/10 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-white/20" data-aos="fade-up" data-aos-delay="<?= array_search($workshop, $workshops) * 100 ?>">
                 <!-- Workshop Image -->
-                <div class="relative h-64 bg-gradient-to-br from-primary/20 to-yellow-400/20 overflow-hidden">
+                <div class="relative h-64 bg-gradient-to-br from-primary/20 to-primary/20 overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                         <div class="flex items-center">
@@ -53,14 +53,14 @@
                 <div class="p-8">
                     <div class="flex items-start justify-between mb-4">
                         <div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2"><?= $workshop['name'] ?></h3>
-                            <div class="flex items-center text-gray-600 mb-2">
+                            <h3 class="text-2xl font-bold text-white mb-2"><?= $workshop['name'] ?></h3>
+                            <div class="flex items-center text-white/80 mb-2">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                                 </svg>
                                 <span class="text-sm"><?= $workshop['address'] ?></span>
                             </div>
-                            <div class="flex items-center text-gray-600">
+                            <div class="flex items-center text-white/80">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                                 </svg>
@@ -74,14 +74,14 @@
                         </div>
                     </div>
 
-                    <p class="text-gray-600 mb-6 leading-relaxed"><?= $workshop['description'] ?></p>
+                    <p class="text-white/80 mb-6 leading-relaxed"><?= $workshop['description'] ?></p>
 
                     <!-- Team Preview -->
                     <div class="mb-6">
-                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Tim Profesional</h4>
+                        <h4 class="text-lg font-semibold text-white mb-3">Tim Profesional</h4>
                         <div class="flex -space-x-2">
                             <?php foreach(array_slice($workshop['team'], 0, 3) as $member): ?>
-                            <div class="w-10 h-10 bg-gradient-to-br from-primary to-yellow-500 rounded-full flex items-center justify-center text-white font-semibold text-sm border-2 border-white">
+                            <div class="w-10 h-10 bg-gradient-to-br from-primary to-primary rounded-full flex items-center justify-center text-black font-semibold text-sm border-2 border-white">
                                 <?= substr($member['name'], 0, 1) ?>
                             </div>
                             <?php endforeach; ?>
@@ -93,10 +93,10 @@
 
                     <!-- Services Preview -->
                     <div class="mb-6">
-                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Layanan Unggulan</h4>
+                        <h4 class="text-lg font-semibold text-white mb-3">Layanan Unggulan</h4>
                         <div class="flex flex-wrap gap-2">
                             <?php foreach(array_slice($workshop['services'], 0, 2) as $service): ?>
-                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"><?= $service ?></span>
+                            <span class="bg-white/20 text-white px-3 py-1 rounded-full text-sm"><?= $service ?></span>
                             <?php endforeach; ?>
                             <?php if(count($workshop['services']) > 2): ?>
                             <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">+<?= count($workshop['services']) - 2 ?> lainnya</span>
@@ -106,10 +106,10 @@
 
                     <!-- Action Buttons -->
                     <div class="flex gap-3">
-                        <a href="<?= base_url('workshop/' . $workshop['slug']) ?>" class="flex-1 bg-gradient-to-r from-primary to-yellow-500 text-white px-6 py-3 rounded-xl font-semibold text-center hover:shadow-lg transition-all duration-300 group">
+                        <a href="<?= base_url('workshop/' . $workshop['slug']) ?>" class="flex-1 bg-gradient-to-r from-primary to-primary text-black px-6 py-3 rounded-xl font-semibold text-center hover:shadow-lg transition-all duration-300 group">
                             <span class="group-hover:translate-x-1 transition-transform duration-300 inline-block">Lihat Detail</span>
                         </a>
-                        <a href="<?= base_url('reservation') ?>" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-xl font-semibold transition-colors duration-300">
+                        <a href="<?= base_url('reservation') ?>" class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300">
                             Reservasi
                         </a>
                     </div>
@@ -119,14 +119,14 @@
         </div>
 
         <!-- Call to Action -->
-        <div class="text-center bg-gradient-to-r from-primary to-yellow-500 rounded-3xl p-12 text-white" data-aos="fade-up">
+        <div class="text-center bg-gradient-to-r from-primary to-primary rounded-3xl p-12 text-black" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Siap Melayani Kendaraan Anda</h2>
             <p class="text-xl mb-8 opacity-90">Pilih cabang terdekat dan rasakan pelayanan terbaik dari tim profesional kami</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="<?= base_url('reservation') ?>" class="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <a href="<?= base_url('reservation') ?>" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all duration-300 hover:scale-105">
                     Buat Reservasi Sekarang
                 </a>
-                <a href="<?= base_url('contact') ?>" class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all duration-300">
+                <a href="<?= base_url('contact') ?>" class="border-2 border-black text-black px-8 py-4 rounded-xl font-bold hover:bg-black hover:text-primary transition-all duration-300">
                     Hubungi Kami
                 </a>
             </div>
