@@ -628,7 +628,7 @@
                     
                     <a href="<?= base_url('artikel'); ?>" class="font-medium text-sm lg:text-base <?= ($active == 'artikel') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Artikel</a>
                     <a href="<?= base_url('contact'); ?>" class="font-medium text-sm lg:text-base <?= ($active == 'contact') ? 'text-black font-bold border-b-2 border-black' : 'text-black hover:text-gray-700' ?> transition-colors">Kontak</a>
-                    <a href="<?= base_url('reservation'); ?>" class="<?= ($active == 'reservation') ? 'bg-black text-white border-2 border-black' : 'bg-black text-white hover:bg-gray-800 hover:text-white' ?> px-4 lg:px-6 py-2 rounded-full font-bold text-sm lg:text-base transition-colors">
+                    <a href="<?= base_url('reservation'); ?>" class="<?= ($active == 'reservation') ? 'bg-black text-white border-2 border-yellow-400' : 'bg-black text-white hover:bg-gray-800 hover:text-white border-2 border-yellow-400 hover:border-yellow-300' ?> px-4 lg:px-6 py-2 rounded-full font-bold text-sm lg:text-base transition-colors">
                         Reservasi
                     </a>
                 </div>
@@ -683,7 +683,7 @@
                 
                 <a href="<?= base_url('artikel'); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'artikel') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Artikel</a>
                 <a href="<?= base_url('contact'); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'contact') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Kontak</a>
-                <a href="<?= base_url('reservation'); ?>" class="inline-block mt-3 mx-2 <?= ($active == 'reservation') ? 'bg-black text-white border-2 border-black' : 'bg-black text-white hover:bg-gray-800 hover:text-white' ?> px-4 py-2 rounded-full font-bold text-sm transition-colors">
+                <a href="<?= base_url('reservation'); ?>" class="inline-block mt-3 mx-2 <?= ($active == 'reservation') ? 'bg-black text-white border-2 border-yellow-400' : 'bg-black text-white hover:bg-gray-800 hover:text-white border-2 border-yellow-400 hover:border-yellow-300' ?> px-4 py-2 rounded-full font-bold text-sm transition-colors">
                     Reservasi
                 </a>
             </div>
