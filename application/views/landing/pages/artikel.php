@@ -54,7 +54,7 @@
                 </div>
                 <div class="lg:w-1/2 p-8 md:p-12">
                     <div class="flex items-center mb-4">
-                        <span class="bg-primary/20 text-black px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
+                        <span class="bg-primary text-black px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
                         <span class="ml-4 text-white/60 text-sm"><?= date('d M Y', strtotime($featured_article->created_date)) ?></span>
                     </div>
                     <h2 class="text-3xl font-bold mb-4 text-white"><?= $featured_article->artikel_title ?></h2>
@@ -94,7 +94,7 @@
                          class="w-full h-56 object-cover">
                     <div class="p-6">
                         <div class="flex items-center mb-4">
-                            <span class="bg-primary/20 text-black px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
+                            <span class="bg-primary text-black px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
                             <span class="ml-4 text-white/60 text-sm"><?= date('d M Y', strtotime($article->created_date)) ?></span>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white"><?= $article->artikel_title ?></h3>
@@ -232,7 +232,7 @@
                                         <img src="${article.image}" alt="${safeTitle}" class="w-full h-56 object-cover">
                                         <div class="p-6">
                                             <div class="flex items-center mb-4">
-                                                <span class="bg-primary/20 text-dark px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
+                                                <span class="bg-primary text-dark px-3 py-1 rounded-full text-sm font-medium">Artikel</span>
                                                 <span class="ml-4 text-gray-500 text-sm">${safeDate}</span>
                                             </div>
                                             <h3 class="text-xl font-bold mb-3">${safeTitle}</h3>
