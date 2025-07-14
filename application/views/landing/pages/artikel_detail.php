@@ -41,7 +41,30 @@
                 </div>
 
                 <!-- Article Content -->
-                <div class="prose prose-lg max-w-none mb-12 prose-invert">
+                <div class="prose prose-lg max-w-none mb-12 prose-invert text-white">
+                    <style>
+                        .prose-invert p, 
+                        .prose-invert h1, 
+                        .prose-invert h2, 
+                        .prose-invert h3, 
+                        .prose-invert h4, 
+                        .prose-invert h5, 
+                        .prose-invert h6,
+                        .prose-invert li,
+                        .prose-invert span,
+                        .prose-invert div,
+                        .prose-invert strong,
+                        .prose-invert em,
+                        .prose-invert blockquote {
+                            color: white !important;
+                        }
+                        .prose-invert a {
+                            color: #FCFB0B !important;
+                        }
+                        .prose-invert a:hover {
+                            color: #e6e009 !important;
+                        }
+                    </style>
                     <?= $article->artikel_content ?>
                 </div>
 
