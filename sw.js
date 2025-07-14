@@ -1,12 +1,12 @@
 /**
- * Service Worker for Auto Reneo Landing Page
- * Provides offline functionality and caching strategies
+ * Service Worker for Milala Auto Service Landing Page
+ * Handles caching, offline functionality, and push notifications
  */
 
-const CACHE_NAME = 'auto-reneo-v1.0.0';
-const STATIC_CACHE = 'auto-reneo-static-v1.0.0';
-const DYNAMIC_CACHE = 'auto-reneo-dynamic-v1.0.0';
-const IMAGE_CACHE = 'auto-reneo-images-v1.0.0';
+const CACHE_NAME = 'milala-auto-service-v1.0.0';
+const STATIC_CACHE = 'milala-auto-service-static-v1.0.0';
+const DYNAMIC_CACHE = 'milala-auto-service-dynamic-v1.0.0';
+const IMAGE_CACHE = 'milala-auto-service-images-v1.0.0';
 
 // Assets to cache immediately
 const STATIC_ASSETS = [
