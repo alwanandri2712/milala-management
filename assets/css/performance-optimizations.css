@@ -1,0 +1,218 @@
+/**
+ * Performance Optimizations CSS
+ * Contains CSS optimizations for better performance and loading speed
+ */
+
+/* Critical CSS - Above the fold content */
+.critical-content {
+    /* Ensure critical content loads first */
+    contain: layout style paint;
+}
+
+/* Lazy loading optimizations */
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+}
+
+/* Image optimization */
+img {
+    /* Prevent layout shift */
+    height: auto;
+    max-width: 100%;
+}
+
+.img-placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* GPU acceleration for smooth animations */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Optimize font loading */
+@font-face {
+    font-display: swap; /* Ensure text remains visible during font load */
+}
+
+/* Optimize scroll performance */
+.scroll-optimized {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* Reduce paint and layout thrashing */
+.no-layout-thrash {
+    contain: layout;
+}
+
+.no-paint-thrash {
+    contain: paint;
+}
+
+/* Optimize hover states for touch devices */
+@media (hover: hover) {
+    .hover-optimized:hover {
+        /* Hover styles only for devices that support hover */
+    }
+}
+
+/* Critical resource hints */
+.preload-hint {
+    /* Use with link rel="preload" for critical resources */
+}
+
+/* Optimize background images */
+.bg-optimized {
+    background-attachment: scroll; /* Better performance than fixed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Optimize transforms */
+.transform-optimized {
+    transform: translate3d(0, 0, 0); /* Force hardware acceleration */
+    backface-visibility: hidden;
+}
+
+/* Optimize opacity changes */
+.opacity-optimized {
+    will-change: opacity;
+}
+
+/* Optimize for mobile performance */
+@media (max-width: 768px) {
+    .mobile-optimized {
+        /* Reduce complexity on mobile */
+        box-shadow: none;
+        border-radius: 8px; /* Simpler border radius */
+    }
+    
+    .mobile-hidden {
+        display: none; /* Hide non-essential elements on mobile */
+    }
+}
+
+/* Optimize CSS Grid and Flexbox */
+.grid-optimized {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.flex-optimized {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Optimize animations */
+.animation-optimized {
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}
+
+.animation-optimized.in-view {
+    animation-play-state: running;
+}
+
+/* Optimize for print */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .print-optimized {
+        color: black !important;
+        background: white !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Optimize focus states for accessibility */
+.focus-optimized:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Optimize for high contrast mode */
+@media (prefers-contrast: high) {
+    .high-contrast-optimized {
+        border: 2px solid;
+        background: transparent;
+    }
+}
+
+/* Optimize for dark mode preference */
+@media (prefers-color-scheme: dark) {
+    .auto-dark-mode {
+        background-color: var(--dark-bg);
+        color: var(--text-primary);
+    }
+}
+
+/* Resource loading optimization */
+.resource-optimized {
+    /* Use for elements that should load after critical content */
+    loading: lazy;
+}
+
+/* Intersection Observer optimization */
+.observe-optimized {
+    /* Elements to be observed for lazy loading or animations */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.observe-optimized.observed {
+    opacity: 1;
+    transform: translateY(0);
+}

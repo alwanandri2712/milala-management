@@ -1,0 +1,145 @@
+/* Auto Reneo Theme Colors and Variables */
+:root {
+  /* Primary Colors */
+  --primary-yellow: #FCFB0B;
+  --primary-yellow-dark: #e6e009;
+  --primary-yellow-rgb: 252, 251, 11;
+  
+  /* Background Colors */
+  --dark-bg-primary: rgba(17, 24, 39, 1); /* gray-900 */
+  --dark-bg-secondary: rgba(0, 0, 0, 1); /* black */
+  --dark-bg-tertiary: rgba(31, 41, 55, 1); /* gray-800 */
+  --card-bg: rgba(31, 41, 55, 0.5); /* gray-800/50 */
+  --card-border: rgba(55, 65, 81, 0.5); /* gray-700/50 */
+  
+  /* Text Colors */
+  --text-white: rgba(255, 255, 255, 1);
+  --text-white-80: rgba(255, 255, 255, 0.8);
+  --text-gray-300: rgba(209, 213, 219, 1);
+  --text-gray-400: rgba(156, 163, 175, 1);
+  
+  /* Border Colors */
+  --border-gray-600: rgba(75, 85, 99, 0.5);
+  --border-gray-700: rgba(55, 65, 81, 0.5);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(to right, var(--primary-yellow), var(--primary-yellow-dark));
+  --gradient-bg: linear-gradient(to bottom right, var(--dark-bg-primary), var(--dark-bg-secondary), var(--dark-bg-tertiary));
+  --gradient-yellow: linear-gradient(to bottom right, var(--primary-yellow), var(--primary-yellow-dark));
+  
+  /* Animation */
+  --animation-duration: 0.3s;
+  --animation-ease: ease-in-out;
+}
+
+/* Utility Classes */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-dark {
+  background: var(--gradient-bg);
+}
+
+.bg-gradient-yellow {
+  background: var(--gradient-yellow);
+}
+
+.text-gradient-primary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-dark {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-yellow);
+  color: var(--text-white);
+  transition: background-color var(--animation-duration) var(--animation-ease);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-yellow-dark);
+}
+
+.text-primary {
+  color: var(--primary-yellow);
+}
+
+.text-primary:hover {
+  color: var(--primary-yellow-dark);
+}
+
+/* Background Animation Elements */
+.bg-animation-element {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pulse 3s ease-in-out infinite;
+  opacity: 0.01;
+}
+
+.bg-animation-element.yellow {
+  background-color: var(--primary-yellow);
+}
+
+.bg-animation-element.orange {
+  background-color: #fb923c; /* orange-400 */
+}
+
+.bg-animation-element.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.bg-animation-element.delay-1000 {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.01;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.02;
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --animation-duration: 0.2s;
+  }
+  
+  .bg-animation-element {
+    display: none; /* Hide animations on mobile for performance */
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --card-bg: rgba(31, 41, 55, 0.8);
+    --card-border: rgba(55, 65, 81, 0.8);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .bg-animation-element {
+    animation: none;
+  }
+  
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

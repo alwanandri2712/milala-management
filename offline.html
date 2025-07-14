@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Auto Reneo</title>
+    <meta name="description" content="Anda sedang offline. Silakan periksa koneksi internet Anda.">
+    
+    <!-- Inline CSS for offline page -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .offline-container {
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .offline-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: rgba(252, 251, 11, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(252, 251, 11, 0.3);
+        }
+        
+        .offline-icon svg {
+            width: 60px;
+            height: 60px;
+            color: #FCFB0B;
+        }
+        
+        .offline-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #FCFB0B;
+        }
+        
+        .offline-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #E5E7EB;
+        }
+        
+        .offline-description {
+            font-size: 1rem;
+            color: #9CA3AF;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .offline-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FCFB0B 0%, #F59E0B 100%);
+            color: #1F2937;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(252, 251, 11, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #E5E7EB;
+            border: 2px solid #374151;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #FCFB0B;
+            color: #FCFB0B;
+        }
+        
+        .connection-status {
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(55, 65, 81, 0.5);
+            border: 1px solid #374151;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            background: #EF4444;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-indicator.online {
+            background: #10B981;
+        }
+        
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .tips {
+            margin-top: 30px;
+            text-align: left;
+            background: rgba(55, 65, 81, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FCFB0B;
+        }
+        
+        .tips h3 {
+            color: #FCFB0B;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tips li {
+            margin-bottom: 8px;
+            color: #D1D5DB;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .tips li:before {
+            content: '•';
+            color: #FCFB0B;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .offline-title {
+                font-size: 2rem;
+            }
+            
+            .offline-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .offline-icon {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .offline-icon svg {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <!-- Offline Icon -->
+        <div class="offline-icon">
+            <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.64 7c-.45-.34-4.93-4-11.64-4-1.5 0-2.89.19-4.15.48L18.18 13.8 23.64 7zm-6.6 8.22L3.27 1.44 2 2.72l2.05 2.06C1.91 5.76.59 6.82.36 7l11.63 14.49.01.01.01-.01L16.17 16l1.42 1.42 1.27-1.27z"/>
+            </svg>
+        </div>
+        
+        <!-- Content -->
+        <h1 class="offline-title">Anda Offline</h1>
+        <h2 class="offline-subtitle">Tidak Ada Koneksi Internet</h2>
+        <p class="offline-description">
+            Maaf, sepertinya Anda sedang offline. Silakan periksa koneksi internet Anda dan coba lagi.
+        </p>
+        
+        <!-- Actions -->
+        <div class="offline-actions">
+            <button class="btn btn-primary" onclick="checkConnection()">
+                Coba Lagi
+            </button>
+            <a href="/" class="btn btn-secondary">
+                Kembali ke Beranda
+            </a>
+        </div>
+        
+        <!-- Connection Status -->
+        <div class="connection-status">
+            <span class="status-indicator" id="statusIndicator"></span>
+            <span id="connectionStatus">Status: Offline</span>
+        </div>
+        
+        <!-- Tips -->
+        <div class="tips">
+            <h3>Tips Mengatasi Masalah Koneksi:</h3>
+            <ul>
+                <li>Periksa koneksi WiFi atau data seluler Anda</li>
+                <li>Pastikan mode pesawat tidak aktif</li>
+                <li>Restart router atau modem Anda</li>
+                <li>Coba pindah ke lokasi dengan sinyal yang lebih baik</li>
+                <li>Hubungi penyedia layanan internet Anda</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Check connection status
+        function updateConnectionStatus() {
+            const statusIndicator = document.getElementById('statusIndicator');
+            const connectionStatus = document.getElementById('connectionStatus');
+            
+            if (navigator.onLine) {
+                statusIndicator.classList.add('online');
+                connectionStatus.textContent = 'Status: Online';
+            } else {
+                statusIndicator.classList.remove('online');
+                connectionStatus.textContent = 'Status: Offline';
+            }
+        }
+        
+        // Check connection and reload if online
+        function checkConnection() {
+            if (navigator.onLine) {
+                // Try to fetch a small resource to verify connection
+                fetch('/favicon.ico', { 
+                    method: 'HEAD',
+                    cache: 'no-cache'
+                })
+                .then(() => {
+                    window.location.reload();
+                })
+                .catch(() => {
+                    alert('Masih tidak dapat terhubung. Silakan coba lagi.');
+                });
+            } else {
+                alert('Tidak ada koneksi internet. Silakan periksa koneksi Anda.');
+            }
+        }
+        
+        // Listen for connection changes
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+        
+        // Initial status check
+        updateConnectionStatus();
+        
+        // Auto-retry connection every 30 seconds
+        setInterval(() => {
+            if (navigator.onLine) {
+                fetch('/favicon.ico', { 
+                    method: 'HEAD',
+                    cache: 'no-cache'
+                })
+                .then(() => {
+                    // Connection restored, show notification
+                    if ('serviceWorker' in navigator && 'Notification' in window) {
+                        new Notification('Koneksi Pulih', {
+                            body: 'Koneksi internet telah pulih. Halaman akan dimuat ulang.',
+                            icon: '/assets/images/icons/icon-192x192.png'
+                        });
+                    }
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                })
+                .catch(() => {
+                    // Still offline
+                });
+            }
+        }, 30000);
+        
+        // Register service worker if available
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('Service Worker registered successfully');
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed');
+                });
+        }
+    </script>
+</body>
+</html>
