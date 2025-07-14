@@ -116,6 +116,183 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #e6e009;
         }
+            /* Mobile Menu Styles */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+            max-height: 100vh;
+            overflow-y: auto;
+            background: rgba(31, 41, 55, 0.95);
+            backdrop-filter: blur(8px);
+        }
+        
+        #mobile-menu.hidden {
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        /* Mobile menu links styling */
+        #mobile-menu a {
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+        
+        #mobile-menu a:hover {
+            color: #FCFB0B; /* Primary yellow */
+            background-color: rgba(252, 251, 11, 0.1);
+        }
+        
+        /* Active menu item styling */
+        #mobile-menu a.active,
+        #mobile-menu a[aria-current="page"] {
+            color: #FCFB0B; /* Primary yellow for active state */
+            background-color: rgba(252, 251, 11, 0.15);
+            border-left: 3px solid #FCFB0B;
+            font-weight: 600;
+        }
+
+        /* Mobile Menu Button Active State */
+        #mobile-menu-button {
+            transition: all 0.3s ease;
+            color: #1F2937;
+        }
+        
+        #mobile-menu-button.active {
+            background-color: #FCFB0B;
+            color: #1F2937;
+            transform: scale(1.05);
+        }
+        
+        #mobile-menu-button:hover {
+            background-color: rgba(252, 251, 11, 0.1);
+            color: #FCFB0B;
+        }
+
+        /* Mobile Workshop Arrow Rotation */
+        #mobile-workshop-arrow {
+            transition: transform 0.3s ease;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        #mobile-workshop-arrow.rotate-180 {
+            transform: rotate(180deg);
+            color: #FCFB0B;
+        }
+        
+        /* Mobile workshop submenu */
+        #mobile-workshop-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 500px;
+            overflow: hidden;
+            background-color: rgba(17, 24, 39, 0.8);
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        #mobile-workshop-menu.hidden {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+        }
+        
+        #mobile-workshop-menu a {
+            color: rgba(255, 255, 255, 0.8);
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        #mobile-workshop-menu a:hover {
+            color: #FCFB0B;
+            background-color: rgba(252, 251, 11, 0.05);
+            border-left-color: #FCFB0B;
+        }
+        
+        /* Workshop toggle button */
+        #mobile-workshop-toggle {
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+        
+        #mobile-workshop-toggle:hover {
+            color: #FCFB0B;
+            background-color: rgba(252, 251, 11, 0.1);
+        }
+
+        /* Mobile menu animation */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #mobile-menu:not(.hidden) {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        /* Ensure mobile menu is properly positioned */
+        @media (max-width: 767px) {
+            #mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                z-index: 50;
+                border-top: 1px solid rgba(252, 251, 11, 0.2);
+                box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            }
+            
+            /* Add subtle glow effect */
+            #mobile-menu::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(to right, transparent, #FCFB0B, transparent);
+                opacity: 0.5;
+            }
+        }
+        
+        /* Hide mobile menu on desktop */
+        @media (min-width: 768px) {
+            #mobile-menu {
+                display: none !important;
+            }
+        }
+        
+        /* Smooth scrolling for mobile menu */
+        #mobile-menu {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(252, 251, 11, 0.3) transparent;
+        }
+        
+        #mobile-menu::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        #mobile-menu::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        #mobile-menu::-webkit-scrollbar-thumb {
+            background-color: rgba(252, 251, 11, 0.3);
+            border-radius: 2px;
+        }
+        
+        #mobile-menu::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(252, 251, 11, 0.5);
+        }
     </style>
 
     <!-- Tailwind Config -->
@@ -133,19 +310,165 @@
         }
     </script>
 
-    <!-- Mobile Menu Toggle Script -->
+    <!-- Simple Mobile Menu Script -->
     <script>
-        $(document).ready(function() {
-            $('#mobile-menu-button').on('click', function() {
-                $('#mobile-menu').toggleClass('hidden');
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-button');
+            
+            console.log('Toggle mobile menu called');
+            console.log('Menu element:', menu);
+            console.log('Button element:', button);
+            
+            if (menu) {
+                const isHidden = menu.classList.contains('hidden');
+                console.log('Menu is currently hidden:', isHidden);
+                
+                if (isHidden) {
+                    menu.classList.remove('hidden');
+                    console.log('Menu shown');
+                } else {
+                    menu.classList.add('hidden');
+                    console.log('Menu hidden');
+                }
+            }
+            
+            if (button) {
+                button.classList.toggle('active');
+            }
+        }
+        
+        // Mobile workshop submenu toggle
+        function toggleMobileWorkshop() {
+            const workshopMenu = document.getElementById('mobile-workshop-menu');
+            const arrow = document.getElementById('mobile-workshop-arrow');
+            
+            if (workshopMenu) {
+                workshopMenu.classList.toggle('hidden');
+            }
+            
+            if (arrow) {
+                arrow.classList.toggle('rotate-180');
+            }
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing mobile menu...');
+            
+            // Set active menu item based on current URL
+            setActiveMenuItem();
+            
+            // Mobile menu button
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton) {
+                console.log('Mobile menu button found, adding event listeners');
+                
+                // Remove any existing event listeners
+                mobileMenuButton.onclick = null;
+                
+                // Add click event
+                mobileMenuButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Mobile menu button clicked');
+                    toggleMobileMenu();
+                });
+                
+                // Add touch event for better mobile support
+                mobileMenuButton.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Mobile menu button touched');
+                    toggleMobileMenu();
+                });
+            } else {
+                console.error('Mobile menu button not found!');
+            }
+            
+            // Mobile workshop toggle
+            const mobileWorkshopToggle = document.getElementById('mobile-workshop-toggle');
+            if (mobileWorkshopToggle) {
+                mobileWorkshopToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleMobileWorkshop();
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                const menu = document.getElementById('mobile-menu');
+                const button = document.getElementById('mobile-menu-button');
+                
+                if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                        button.classList.remove('active');
+                    }
+                }
             });
             
-            // Mobile Workshop Menu Toggle
-            $('#mobile-workshop-toggle').on('click', function() {
-                $('#mobile-workshop-menu').toggleClass('hidden');
-                $('#mobile-workshop-arrow').toggleClass('rotate-180');
+            // Close mobile menu when window is resized to desktop
+            window.addEventListener('resize', function() {
+                const menu = document.getElementById('mobile-menu');
+                const button = document.getElementById('mobile-menu-button');
+                
+                if (window.innerWidth >= 768) { // md breakpoint
+                    if (menu && !menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                    if (button) {
+                        button.classList.remove('active');
+                    }
+                }
             });
         });
+        
+        // Function to set active menu item
+        function setActiveMenuItem() {
+            const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop() || 'index';
+            
+            // Remove active class from all menu items
+            const menuItems = document.querySelectorAll('#mobile-menu a');
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+                item.removeAttribute('aria-current');
+            });
+            
+            // Set active class based on current page
+            let activeFound = false;
+            menuItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (href) {
+                    const linkPage = href.split('/').pop() || 'index';
+                    
+                    // Check for exact match or home page
+                    if (linkPage === currentPage || 
+                        (currentPage === 'index' && (href === '/' || href === '' || linkPage === 'index')) ||
+                        (currentPath.includes('landing') && href.includes('landing')) ||
+                        (currentPath.includes('about') && href.includes('about')) ||
+                        (currentPath.includes('services') && href.includes('services')) ||
+                        (currentPath.includes('artikel') && href.includes('artikel')) ||
+                        (currentPath.includes('contact') && href.includes('contact'))) {
+                        
+                        item.classList.add('active');
+                        item.setAttribute('aria-current', 'page');
+                        activeFound = true;
+                    }
+                }
+            });
+            
+            // If no specific match found, highlight home for landing page
+            if (!activeFound && (currentPath === '/' || currentPath.includes('landing') || currentPath.includes('index'))) {
+                const homeLink = document.querySelector('#mobile-menu a[href*="landing"], #mobile-menu a[href="/"], #mobile-menu a[href=""]');
+                if (homeLink) {
+                    homeLink.classList.add('active');
+                    homeLink.setAttribute('aria-current', 'page');
+                }
+            }
+        }
     </script>
 </head>
 <body class="bg-white">
@@ -312,7 +635,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-black focus:outline-none">
+                    <button id="mobile-menu-button" class="relative z-50 text-black focus:outline-none p-3 hover:bg-gray-100 rounded-lg transition-colors duration-200 border border-gray-300 bg-white shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -321,7 +644,7 @@
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden py-2 px-2">
+            <div id="mobile-menu" class="md:hidden hidden py-2 px-2 bg-white border-t border-gray-200 relative z-40">
                 <a href="<?= base_url(); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'home') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Beranda</a>
                 <a href="<?= base_url('about'); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'about') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Tentang Kami</a>
                 <a href="<?= base_url('services'); ?>" class="block py-3 px-2 font-medium text-sm <?= ($active == 'services') ? 'text-black font-bold border-l-4 border-black pl-4' : 'text-black hover:text-gray-700' ?>">Layanan</a>
