@@ -174,14 +174,14 @@
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-4xl font-black text-white mb-6">
-                Mengapa Memilih <span style="color: #FCFB0B;">Auto Reneo</span>?
+                Mengapa Memilih <span style="color: #FCFB0B;">MILALA AUTO SERVICE</span>?
             </h2>
             <p class="text-lg text-white/80 max-w-2xl mx-auto">
                 Mengapa banyak pelanggan mempercayakan perawatan dan perbaikan mobil mereka kepada kami? Berikut keunggulan utama bengkel kami:
             </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12" data-aos="fade-up">
-            <!-- Keunggulan 1 -->
+        <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-12" data-aos="fade-up">
+            <!-- Keunggulan 1: SDM Yang Berkompeten -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 flex flex-col items-center text-center hover:shadow-2xl transition-all group border-gray-700/50">
                 <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(to bottom right, #FCFB0B, #e6e009);">
                     <!-- Expert Technician Icon -->
@@ -189,16 +189,10 @@
                         <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 5.5V6.5L21 8.5V9ZM3 9V7L9 5.5V6.5L3 8.5V9ZM15 9.5V8L21 9.5V11L15 9.5ZM9 9.5V8L3 9.5V11L9 9.5ZM12 7.5C13.66 7.5 15 8.84 15 10.5V11.5C15 12.33 14.33 13 13.5 13H10.5C9.67 13 9 12.33 9 11.5V10.5C9 8.84 10.34 7.5 12 7.5ZM12 15C14.67 15 19 16.33 19 19V21H5V19C5 16.33 9.33 15 12 15Z"/>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Teknisi Berpengalaman</h3>
-                <p class="text-white/80 leading-relaxed">Tim kami terdiri dari teknisi ahli yang sudah berpengalaman lebih dari 10 tahun di bidang perawatan dan perbaikan mobil.</p>
-                <div class="mt-4 flex items-center font-semibold" style="color: #FCFB0B;">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    10+ Tahun Pengalaman
-                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">SDM YANG BERKOMPETEN</h3>
+                <p class="text-white leading-relaxed">Teknisi sudah menguasai kompetensi-kompetensi yang dibutuhkan sehingga dapat bekerja rapi, tepat, dan cepat serta menjadi quality control dan analisator dalam setiap pengerjaan agar proses pengerjaan optimal dan tidak ada human error.</p>
             </div>
-            <!-- Keunggulan 2 -->
+            <!-- Keunggulan 2: Sperpart Yang Berkualitas Baik -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 flex flex-col items-center text-center hover:shadow-2xl transition-all group border-gray-700/50">
                 <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(to bottom right, #FCFB0B, #e6e009);">
                     <!-- Original Parts Icon -->
@@ -206,83 +200,20 @@
                         <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C14.8,12.3 14.1,13 13.3,13H10.7C9.9,13 9.2,12.3 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11.8H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"/>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Suku Cadang Original</h3>
-                <p class="text-white/80 leading-relaxed">Kami hanya menggunakan suku cadang original dan bergaransi untuk memastikan ketahanan dan keamanan kendaraan Anda.</p>
-                <div class="mt-4 flex items-center font-semibold" style="color: #FCFB0B;">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    100% Original & Bergaransi
-                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">SPAREPART YANG BERKUALITAS BAIK</h3>
+                <h4 class="text-lg font-bold mb-2 text-white">[GARANSI HINGGA 2 TAHUN]</h4>
+                <p class="text-white leading-relaxed">Sparepart yang ditawarkan berupa original, aftermarket, dan bekas (second) dengan garansi hingga 2 tahun sehingga memberikan banyak pilihan bagi pelanggan.</p>
             </div>
-            <!-- Keunggulan 3 -->
+            <!-- Keunggulan 3: Harga Yang Kompetitif -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 flex flex-col items-center text-center hover:shadow-2xl transition-all group border-gray-700/50">
                 <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(to bottom right, #FCFB0B, #e6e009);">
-                    <!-- Warranty Icon -->
+                    <!-- Price Icon -->
                     <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                        <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Garansi Pengerjaan</h3>
-                <p class="text-white/80 leading-relaxed">Setiap pengerjaan dilengkapi garansi sehingga Anda tidak perlu khawatir dengan hasil servis kami.</p>
-                <div class="mt-4 flex items-center font-semibold" style="color: #FCFB0B;">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-                    </svg>
-                    Garansi 6 Bulan
-                </div>
-            </div>
-            <!-- Keunggulan 4 -->
-            <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 flex flex-col items-center text-center hover:shadow-2xl transition-all group border-gray-700/50">
-                <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(to bottom right, #FCFB0B, #e6e009);">
-                    <!-- Consultation Icon -->
-                    <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
-                        <path d="M12,0C18.63,0 24,5.37 24,12C24,18.63 18.63,24 12,24C5.37,24 0,18.63 0,12C0,5.37 5.37,0 12,0ZM12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2Z"/>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Layanan Konsultasi</h3>
-                <p class="text-white/80 leading-relaxed">Konsultasikan masalah mobil Anda secara gratis dengan teknisi kami sebelum melakukan perbaikan.</p>
-                <div class="mt-4 flex items-center font-semibold" style="color: #FCFB0B;">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
-                    </svg>
-                    Konsultasi Gratis
-                </div>
-            </div>
-            <!-- Keunggulan 5 -->
-            <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 flex flex-col items-center text-center hover:shadow-2xl transition-all group border-gray-700/50">
-                <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(to bottom right, #FCFB0B, #e6e009);">
-                    <!-- Modern Equipment Icon -->
-                    <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2M7.5,13A0.5,0.5 0 0,0 7,13.5A0.5,0.5 0 0,0 7.5,14A0.5,0.5 0 0,0 8,13.5A0.5,0.5 0 0,0 7.5,13M16.5,13A0.5,0.5 0 0,0 16,13.5A0.5,0.5 0 0,0 16.5,14A0.5,0.5 0 0,0 17,13.5A0.5,0.5 0 0,0 16.5,13Z"/>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Peralatan Modern</h3>
-                <p class="text-white/80 leading-relaxed">Bengkel kami dilengkapi scanner OBD2 professional dan peralatan modern untuk hasil diagnosa yang akurat.</p>
-                <div class="mt-4 flex items-center font-semibold" style="color: #FCFB0B;">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-                    </svg>
-                    Scanner Professional
-                </div>
-            </div>
-            <!-- Keunggulan 6 -->
-            <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 flex flex-col items-center text-center hover:shadow-2xl transition-all group border-gray-700/50">
-                <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(to bottom right, #FCFB0B, #e6e009);">
-                    <!-- Happy Customers Icon -->
-                    <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12,17.5C14.33,17.5 16.3,16.04 17.11,14H6.89C7.69,16.04 9.67,17.5 12,17.5M8.5,11A1.5,1.5 0 0,0 10,9.5A1.5,1.5 0 0,0 8.5,8A1.5,1.5 0 0,0 7,9.5A1.5,1.5 0 0,0 8.5,11M15.5,11A1.5,1.5 0 0,0 17,9.5A1.5,1.5 0 0,0 15.5,8A1.5,1.5 0 0,0 14,9.5A1.5,1.5 0 0,0 15.5,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Ribuan Pelanggan Puas</h3>
-                <p class="text-white/80 leading-relaxed">Lebih dari 1000 mobil telah ditangani dengan rating kepuasan pelanggan 4.9 bintang.</p>
-                <div class="mt-4 flex items-center font-semibold" style="color: #FCFB0B;">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                    </svg>
-                    10.000+ Pelanggan
-                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">HARGA YANG KOMPETITIF</h3>
+                <p class="text-white leading-relaxed">Harga sparepart dan jasa bengkel yang kompetitif, tidak asal murah namun tetap mengutamakan kualitas sehingga pelanggan dapat menghemat biaya.</p>
             </div>
         </div>
     </div>
@@ -720,7 +651,7 @@
         </div>
 
         <!-- Cabang Lokasi -->
-        <div class="mt-12 grid md:grid-cols-2 gap-8" data-aos="fade-up">
+        <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
             <!-- Cabang Ampera -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50">
                 <div class="flex items-start mb-6">
@@ -730,12 +661,12 @@
                         </svg>
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold mb-2 text-white">Auto Reneo Pusat</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white">Milala Ampera</h3>
                         <div class="flex items-center mb-2">
                             <svg class="w-4 h-4 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22S19,14.25 19,9A7,7 0 0,0 12,2Z"/>
                             </svg>
-                            <p class="text-white/80 text-sm">Jl. Raya Utama No. 123, Jakarta Pusat</p>
+                            <p class="text-white/80 text-sm">Jl. Madrasah Raya No. 3A, Ampera, Jakarta Selatan</p>
                         </div>
                         <div class="flex items-center mb-4">
                             <svg class="w-4 h-4 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -746,7 +677,7 @@
                     </div>
                 </div>
                 <div class="flex justify-between items-center pt-4 border-t border-gray-600/50">
-                    <a href="https://maps.app.goo.gl/ampera" target="_blank" style="color: #FCFB0B;" class="font-bold transition-colors flex items-center" onmouseover="this.style.color='#e6e009'" onmouseout="this.style.color='#FCFB0B'">
+                    <a href="https://maps.google.com/maps?q=Jl.+Madrasah+Raya+No.3A,+Ampera,+Jakarta+Selatan" target="_blank" style="color: #FCFB0B;" class="font-bold transition-colors flex items-center" onmouseover="this.style.color='#e6e009'" onmouseout="this.style.color='#FCFB0B'">
                         <span>Lihat di Maps</span>
                         <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
@@ -784,12 +715,12 @@
                         </svg>
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold mb-2 text-white">Auto Reneo Bekasi</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white">Milala Bekasi</h3>
                         <div class="flex items-center mb-2">
                             <svg class="w-4 h-4 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22S19,14.25 19,9A7,7 0 0,0 12,2Z"/>
                             </svg>
-                            <p class="text-white/80 text-sm">Jl. Ahmad Yani No. 45, Bekasi Timur</p>
+                            <p class="text-white/80 text-sm">Jl. RA Kartini No. 9, Margahayu, Bekasi Timur</p>
                         </div>
                         <div class="flex items-center mb-4">
                             <svg class="w-4 h-4 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -800,7 +731,7 @@
                     </div>
                 </div>
                 <div class="flex justify-between items-center pt-4 border-t border-gray-600/50">
-                    <a href="https://maps.app.goo.gl/bekasi" target="_blank" style="color: #FCFB0B;" class="font-bold transition-colors flex items-center" onmouseover="this.style.color='#e6e009'" onmouseout="this.style.color='#FCFB0B'">
+                    <a href="https://maps.google.com/maps?q=Jl.+RA+Kartini+No.9,+Margahayu,+Bekasi+Timur" target="_blank" style="color: #FCFB0B;" class="font-bold transition-colors flex items-center" onmouseover="this.style.color='#e6e009'" onmouseout="this.style.color='#FCFB0B'">
                         <span>Lihat di Maps</span>
                         <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
@@ -838,12 +769,12 @@
                         </svg>
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold mb-2 text-white">Auto Reneo Tangerang</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white">Milala Antasari</h3>
                         <div class="flex items-center mb-2">
                             <svg class="w-4 h-4 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22S19,14.25 19,9A7,7 0 0,0 12,2Z"/>
                             </svg>
-                            <p class="text-white/80 text-sm">Jl. BSD Raya No. 88, Tangerang Selatan</p>
+                            <p class="text-white/80 text-sm">Jl. Pangeran Antasari No. 89, Jakarta Selatan</p>
                         </div>
                         <div class="flex items-center mb-4">
                             <svg class="w-4 h-4 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -854,7 +785,7 @@
                     </div>
                 </div>
                 <div class="flex justify-between items-center pt-4 border-t border-gray-600/50">
-                    <a href="https://maps.app.goo.gl/antasari" target="_blank" style="color: #FCFB0B;" class="font-bold transition-colors flex items-center" onmouseover="this.style.color='#e6e009'" onmouseout="this.style.color='#FCFB0B'">
+                    <a href="https://maps.google.com/maps?q=Jl.+Pangeran+Antasari+No.89,+Jakarta+Selatan" target="_blank" style="color: #FCFB0B;" class="font-bold transition-colors flex items-center" onmouseover="this.style.color='#e6e009'" onmouseout="this.style.color='#FCFB0B'">
                         <span>Lihat di Maps</span>
                         <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
@@ -892,23 +823,23 @@
                         </svg>
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold mb-2 text-white">Auto Reneo Depok</h3>
+                        <h3 class="text-xl font-bold mb-2 text-white">Milala Bogor</h3>
                         <div class="flex items-center mb-2">
                             <svg class="w-4 h-4 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22S19,14.25 19,9A7,7 0 0,0 12,2Z"/>
                             </svg>
-                            <p class="text-white/80 text-sm">Jl. Margonda Raya No. 77, Depok</p>
+                            <p class="text-white/80 text-sm">Perumahan Good Year Blok J No. 18, Ciomas, Kabupaten Bogor</p>
                         </div>
                         <div class="flex items-center mb-4">
                             <svg class="w-4 h-4 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
                             </svg>
-                            <p class="text-white/80 text-sm">Telp: (021) 234-5678</p>
+                            <p class="text-white/80 text-sm">Telp: 0811-1167-366</p>
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-between items-center pt-4 border-t border-gray-600/50">
-                    <a href="https://maps.app.goo.gl/bogor" target="_blank" style="color: #FCFB0B;" class="font-bold transition-colors flex items-center" onmouseover="this.style.color='#e6e009'" onmouseout="this.style.color='#FCFB0B'">
+                    <a href="https://maps.google.com/maps?q=Perumahan+Good+Year+Blok+J+No.18,+Ciomas,+Kabupaten+Bogor" target="_blank" style="color: #FCFB0B;" class="font-bold transition-colors flex items-center" onmouseover="this.style.color='#e6e009'" onmouseout="this.style.color='#FCFB0B'">
                         <span>Lihat di Maps</span>
                         <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
@@ -929,13 +860,14 @@
                             <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                             </svg>
-                            <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                             </svg>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
