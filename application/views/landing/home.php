@@ -1,7 +1,7 @@
 
 
 <!-- Hero Section -->
-<section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-800">
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-800 pt-20 md:pt-0">
     <!-- Animated Background Elements -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-20 left-10 w-32 h-32 rounded-full blur-xl animate-pulse opacity-10" style="background-color: #FCFB0B;"></div>
