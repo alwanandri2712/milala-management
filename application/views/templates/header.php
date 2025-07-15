@@ -79,6 +79,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <!-- Font Awesome Icons -->
+    <link href="<?= base_url('lib/@fortawesome/fontawesome-free/css/all.min.css') ?>" rel="stylesheet">
+
     <!-- Custom Animations for Home -->
     <link rel="stylesheet" href="<?= base_url('assets/css/home-animations.css') ?>">
 
