@@ -74,7 +74,7 @@
             </div>
 
             <!-- Service Showcase - Minimalist Design -->
-            <div class="lg:w-1/2 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <div class="lg:w-1/2 relative mb-8 md:mb-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                 <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 shadow-lg">
                     <div class="mb-6">
                         <div class="flex items-center mb-4">
