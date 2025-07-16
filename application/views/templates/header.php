@@ -638,7 +638,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="relative z-50 text-black focus:outline-none p-3 hover:bg-gray-100 rounded-lg transition-colors duration-200 border border-gray-300 bg-white shadow-sm">
+                    <button id="mobile-menu-button" class="relative z-50 text-gray-700 focus:outline-none p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200 border border-gray-300 bg-white shadow-md">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -661,26 +661,26 @@
                         </svg>
                     </button>
                     <div id="mobile-workshop-menu" class="mt-2 ml-2 space-y-2 hidden">
-                        <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
+                        <a href="<?= base_url('workshop/ampera') ?>" class="block p-2 bg-gradient-to-r from-primary to-primary rounded-lg hover:shadow-md transition-all duration-300">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Ampera</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Budi Santoso</p>
                             <p class="text-xs text-gray-600">Jl. Madrasah Raya No.3a</p>
-                        </div>
-                        <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
+                        </a>
+                        <a href="<?= base_url('workshop/bekasi') ?>" class="block p-2 bg-gradient-to-r from-primary to-primary rounded-lg hover:shadow-md transition-all duration-300">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Bekasi</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Sari Indrawati</p>
                             <p class="text-xs text-gray-600">Jl. RA Kartini No.9</p>
-                        </div>
-                        <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
+                        </a>
+                        <a href="<?= base_url('workshop/antasari') ?>" class="block p-2 bg-gradient-to-r from-primary to-primary rounded-lg hover:shadow-md transition-all duration-300">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Antasari</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Hendra Wijaya</p>
                             <p class="text-xs text-gray-600">Jl. Pangeran Antasari No.89</p>
-                        </div>
-                        <div class="p-2 bg-gradient-to-r from-primary to-primary rounded-lg">
+                        </a>
+                        <a href="<?= base_url('workshop/bogor') ?>" class="block p-2 bg-gradient-to-r from-primary to-primary rounded-lg hover:shadow-md transition-all duration-300">
                             <h5 class="font-bold text-xs text-black mb-1">Cabang Bogor</h5>
                             <p class="text-xs text-gray-700 mb-1">Manager: Dewi Lestari</p>
                             <p class="text-xs text-gray-600">Jl. Raya Bogor No.45</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 
