@@ -13,7 +13,7 @@ jobs:
     - name: "Update Codebase"
       uses: appleboy/ssh-action@master
       with:
-          host: "103.147.245.30"
+          host: "103.171.85.97"
           username: "root"
           # Hapus baris 'password'
           key: ${{ secrets.SSH_PRIVATE_KEY }} # Gunakan secret untuk kunci privat
