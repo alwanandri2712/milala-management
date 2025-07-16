@@ -33,11 +33,7 @@
                 <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 hover:shadow-2xl transition-all group border-gray-700/50 flex flex-col"
                      data-aos="fade-up"
                      data-aos-delay="50">
-                <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #FCFB0B, #e6e009);">
-                    <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                </div>
+
                 <div class="mb-4">
                     <h3 class="text-2xl font-bold text-white mb-2">Pemasangan Power Steering Hidrolik</h3>
                     <div class="flex items-center text-sm text-gray-300 mb-3">
@@ -64,25 +60,14 @@
                         <span>Dan Lain - Lain</span>
                     </li>
                 </ul>
-                    <div class="text-right mt-auto">
-                        <a href="#" class="inline-flex items-center font-bold hover:text-dark transition-colors" style="color: #FCFB0B;">
-                            Selengkapnya 
-                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
+
             </div>
 
             <!-- Power Steering Hidrolik -->
                 <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 hover:shadow-2xl transition-all group border-gray-700/50 flex flex-col"
                      data-aos="fade-up"
                      data-aos-delay="150">
-                <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #FCFB0B, #e6e009);">
-                    <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                    </svg>
-                </div>
+
                 <div class="mb-4">
                     <h3 class="text-2xl font-bold text-white mb-2">Power Steering Hidrolik</h3>
                     <div class="flex items-center text-sm text-gray-300 mb-3">
@@ -113,25 +98,14 @@
                         <span>Joint Steer</span>
                     </li>
                 </ul>
-                    <div class="text-right mt-auto">
-                        <a href="#" class="inline-flex items-center font-bold hover:text-dark transition-colors" style="color: #FCFB0B;">
-                            Selengkapnya 
-                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
+
             </div>
 
             <!-- Power Steering Elektrik -->
                 <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 hover:shadow-2xl transition-all group border-gray-700/50 flex flex-col"
                      data-aos="fade-up"
                      data-aos-delay="250">
-                <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #FCFB0B, #e6e009);">
-                    <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                    </svg>
-                </div>
+
                 <div class="mb-4">
                     <h3 class="text-2xl font-bold text-white mb-2">Power Steering Elektrik</h3>
                     <div class="flex items-center text-sm text-gray-300 mb-3">
@@ -158,14 +132,7 @@
                         <span>Joint Steer</span>
                     </li>
                 </ul>
-                    <div class="text-right mt-auto">
-                        <a href="#" class="inline-flex items-center font-bold hover:text-dark transition-colors" style="color: #FCFB0B;">
-                            Selengkapnya 
-                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
+
             </div>
         </div>
 
@@ -187,12 +154,7 @@
                 <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 hover:shadow-2xl transition-all group border-gray-700/50 flex flex-col"
                      data-aos="fade-up"
                      data-aos-delay="50">
-                    <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #FCFB0B, #e6e009);">
-                        <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                    </div>
+
                     <div class="mb-4">
                         <h3 class="text-2xl font-bold text-white mb-2">Rekondisi/Perbaikan</h3>
                         <div class="flex items-center text-sm text-gray-300 mb-3">
@@ -223,25 +185,14 @@
                             <span>Shock Breaker</span>
                         </li>
                     </ul>
-                    <div class="text-right mt-auto">
-                        <a href="#" class="inline-flex items-center font-bold hover:text-dark transition-colors" style="color: #FCFB0B;">
-                            Selengkapnya 
-                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
+
                 </div>
 
                 <!-- Pergantian -->
                 <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 hover:shadow-2xl transition-all group border-gray-700/50 flex flex-col"
                      data-aos="fade-up"
                      data-aos-delay="150">
-                    <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #FCFB0B, #e6e009);">
-                        <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                        </svg>
-                    </div>
+
                     <div class="mb-4">
                         <h3 class="text-2xl font-bold text-white mb-2">Pergantian</h3>
                         <div class="flex items-center text-sm text-gray-300 mb-3">
@@ -284,25 +235,14 @@
                             <span>Dan Lain-Lain</span>
                         </li>
                     </ul>
-                    <div class="text-right mt-auto">
-                        <a href="#" class="inline-flex items-center font-bold hover:text-dark transition-colors" style="color: #FCFB0B;">
-                            Selengkapnya 
-                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
+
                 </div>
 
                 <!-- Bubut -->
                 <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 hover:shadow-2xl transition-all group border-gray-700/50 flex flex-col"
                      data-aos="fade-up"
                      data-aos-delay="250">
-                    <div class="w-20 h-20 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform" style="background: linear-gradient(135deg, #FCFB0B, #e6e009);">
-                        <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                        </svg>
-                    </div>
+
                     <div class="mb-4">
                         <h3 class="text-2xl font-bold text-white mb-2">Bubut</h3>
                         <div class="flex items-center text-sm text-gray-300 mb-3">
@@ -325,14 +265,7 @@
                             <span>Tromol</span>
                         </li>
                     </ul>
-                    <div class="text-right mt-auto">
-                        <a href="#" class="inline-flex items-center font-bold hover:text-dark transition-colors" style="color: #FCFB0B;">
-                            Selengkapnya 
-                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
+
                 </div>
             </div>
         </div>
