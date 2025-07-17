@@ -249,13 +249,8 @@
             <!-- Step 1 -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50" data-aos="fade-up" data-aos-delay="50">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full mb-4 flex items-center justify-center text-white font-black text-2xl group-hover:scale-110 transition-transform">
-                        1
-                    </div>
-                    <div class="w-12 h-12 mb-4">
-                        <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12,2A3,3 0 0,1 15,5V7H9V5A3,3 0 0,1 12,2M19,8V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V8A2,2 0 0,1 7,6H9V7H15V6H17A2,2 0 0,1 19,8M12,17A2,2 0 0,0 14,15A2,2 0 0,0 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17Z"/>
-                        </svg>
+                    <div class="w-20 h-20 mb-4 group-hover:scale-110 transition-transform">
+                        <img src="<?= base_url('assets/img/icon_8_langkah_super/icon_8_langkah_super/1.png') ?>" alt="Step 1" class="w-full h-full">
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">Registrasi Pelanggan</h4>
                     <p class="text-sm text-white/80">Data lengkap kendaraan dan keluhan</p>
@@ -265,13 +260,8 @@
             <!-- Step 2 -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50" data-aos="fade-up" data-aos-delay="100">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full mb-4 flex items-center justify-center text-white font-black text-2xl group-hover:scale-110 transition-transform">
-                        2
-                    </div>
-                    <div class="w-12 h-12 mb-4">
-                        <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
-                        </svg>
+                    <div class="w-20 h-20 mb-4 group-hover:scale-110 transition-transform">
+                        <img src="<?= base_url('assets/img/icon_8_langkah_super/icon_8_langkah_super/2.png') ?>" alt="Step 2" class="w-full h-full">
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">Test Drive dan Analisis Masalah</h4>
                     <p class="text-sm text-white/80">Identifikasi masalah secara detail</p>
@@ -281,13 +271,8 @@
             <!-- Step 3 -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50" data-aos="fade-up" data-aos-delay="150">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full mb-4 flex items-center justify-center text-white font-black text-2xl group-hover:scale-110 transition-transform">
-                        3
-                    </div>
-                    <div class="w-12 h-12 mb-4">
-                        <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,7V13H13V7H11M11,15V17H13V15H11Z"/>
-                        </svg>
+                    <div class="w-20 h-20 mb-4 group-hover:scale-110 transition-transform">
+                        <img src="<?= base_url('assets/img/icon_8_langkah_super/icon_8_langkah_super/3.png') ?>" alt="Step 3" class="w-full h-full">
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">General Check Up</h4>
                     <p class="text-sm text-white/80">Transparansi dan edukasi lengkap</p>
@@ -297,13 +282,8 @@
             <!-- Step 4 -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50" data-aos="fade-up" data-aos-delay="200">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full mb-4 flex items-center justify-center text-white font-black text-2xl group-hover:scale-110 transition-transform">
-                        4
-                    </div>
-                    <div class="w-12 h-12 mb-4">
-                        <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19M16.5,16L13.5,12.5L11.5,15L9.5,13L7.5,16H16.5Z"/>
-                        </svg>
+                    <div class="w-20 h-20 mb-4 group-hover:scale-110 transition-transform">
+                        <img src="<?= base_url('assets/img/icon_8_langkah_super/icon_8_langkah_super/4.png') ?>" alt="Step 4" class="w-full h-full">
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">Estimasi Perbaikan</h4>
                     <p class="text-sm text-white/80">Kalkulasi biaya yang transparan</p>
@@ -313,13 +293,8 @@
             <!-- Step 5 -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50" data-aos="fade-up" data-aos-delay="250">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full mb-4 flex items-center justify-center text-white font-black text-2xl group-hover:scale-110 transition-transform">
-                        5
-                    </div>
-                    <div class="w-12 h-12 mb-4">
-                        <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6Z"/>
-                        </svg>
+                    <div class="w-20 h-20 mb-4 group-hover:scale-110 transition-transform">
+                        <img src="<?= base_url('assets/img/icon_8_langkah_super/icon_8_langkah_super/5.png') ?>" alt="Step 5" class="w-full h-full">
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">Proses Perbaikan</h4>
                     <p class="text-sm text-white/80">Pengerjaan oleh teknisi ahli</p>
@@ -329,13 +304,8 @@
             <!-- Step 6 -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50" data-aos="fade-up" data-aos-delay="300">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full mb-4 flex items-center justify-center text-white font-black text-2xl group-hover:scale-110 transition-transform">
-                        6
-                    </div>
-                    <div class="w-12 h-12 mb-4">
-                        <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
-                        </svg>
+                    <div class="w-20 h-20 mb-4 group-hover:scale-110 transition-transform">
+                        <img src="<?= base_url('assets/img/icon_8_langkah_super/icon_8_langkah_super/6.png') ?>" alt="Step 6" class="w-full h-full">
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">Finishing dan Test Drive Akhir</h4>
                     <p class="text-sm text-white/80">Quality control menyeluruh</p>
@@ -345,13 +315,8 @@
             <!-- Step 7 -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50" data-aos="fade-up" data-aos-delay="350">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full mb-4 flex items-center justify-center text-white font-black text-2xl group-hover:scale-110 transition-transform">
-                        7
-                    </div>
-                    <div class="w-12 h-12 mb-4">
-                        <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
-                        </svg>
+                    <div class="w-20 h-20 mb-4 group-hover:scale-110 transition-transform">
+                        <img src="<?= base_url('assets/img/icon_8_langkah_super/icon_8_langkah_super/7.png') ?>" alt="Step 7" class="w-full h-full">
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">Pembayaran</h4>
                     <p class="text-sm text-white/80">Proses pembayaran yang mudah</p>
@@ -361,13 +326,8 @@
             <!-- Step 8 -->
             <div class="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all group border border-gray-700/50" data-aos="fade-up" data-aos-delay="400">
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-red-500 rounded-full mb-4 flex items-center justify-center text-white font-black text-2xl group-hover:scale-110 transition-transform">
-                        8
-                    </div>
-                    <div class="w-12 h-12 mb-4">
-                        <svg class="w-full h-full text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19M17,17H7V15H17V17M17,13H7V11H17V13M17,9H7V7H17V9Z"/>
-                        </svg>
+                    <div class="w-20 h-20 mb-4 group-hover:scale-110 transition-transform">
+                        <img src="<?= base_url('assets/img/icon_8_langkah_super/icon_8_langkah_super/8.png') ?>" alt="Step 8" class="w-full h-full">
                     </div>
                     <h4 class="text-lg font-bold text-white mb-2">Pengiriman Hasil</h4>
                     <p class="text-sm text-white/80">General check up dan dokumentasi</p>
