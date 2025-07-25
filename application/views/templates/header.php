@@ -481,9 +481,7 @@
             <div class="flex justify-between items-center py-2 sm:py-4">
                 <!-- Logo -->
                 <div class="flex items-center space-x-2">
-                    <div class="bg-black p-1 sm:p-2 rounded-full">
-                        <img src="<?= base_url('assets/img/logo-milala-white.jpeg') ?>" alt="Logo Milala Auto Service" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full">
-                    </div>
+                    <img src="<?= base_url('assets/img/logo-milala-white.jpeg') ?>" alt="Logo Milala Auto Service" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full">
                     <span class="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold text-black leading-tight">
                         <span class="block">SPECIALIS POWER STEERING</span>
                         <span class="block">DAN KAKI - KAKI MOBIL</span>
