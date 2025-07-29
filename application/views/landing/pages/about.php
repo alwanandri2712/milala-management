@@ -255,6 +255,310 @@
             </div>
         </div>
 
+        <!-- Organization Structure -->
+        <div class="mb-24" data-aos="fade-up">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Struktur Organisasi</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-primary mx-auto rounded-full mb-6"></div>
+                <p class="text-white/80 max-w-2xl mx-auto">
+                    Tim profesional yang berpengalaman dan terorganisir untuk memberikan pelayanan terbaik
+                </p>
+            </div>
+            
+            <div class="bg-primary/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/20">
+                <!-- Organization Chart -->
+                <div class="flex flex-col items-center space-y-8">
+                    <!-- Level 1: Super -->
+                    <div class="text-center" data-aos="fade-down" data-aos-delay="100">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-primary/30 hover:shadow-xl transition-all duration-300">
+                            <!-- Photo Placeholder -->
+                            <div class="w-28 h-28 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center border-4 border-primary/50">
+                                <svg class="w-14 h-14 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <!-- Title -->
+                            <div class="bg-gradient-to-r from-primary to-primary text-black px-4 py-2 rounded-xl font-bold text-lg">
+                                Owner
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Connector Line -->
+                    <div class="w-px h-8 bg-primary/50"></div>
+                    
+                    <!-- Level 2: Direktur & Manajer -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Direktur Card -->
+                        <div class="text-center">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-primary/30 hover:shadow-xl transition-all duration-300">
+                                <!-- Photo Placeholder -->
+                                <div class="w-28 h-28 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full mx-auto mb-4 flex items-center justify-center border-3 border-primary/40">
+                                    <svg class="w-14 h-14 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <!-- Title -->
+                                <div class="text-white font-semibold text-lg">
+                                    Konsultan
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Manajer Card -->
+                        <div class="text-center">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-primary/30 hover:shadow-xl transition-all duration-300">
+                                <!-- Photo Placeholder -->
+                                <div class="w-28 h-28 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full mx-auto mb-4 flex items-center justify-center border-3 border-primary/40">
+                                    <svg class="w-14 h-14 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <!-- Title -->
+                                <div class="text-white font-semibold text-lg">
+                                    Manajer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Connector Lines -->
+                    <div class="flex flex-col items-center space-y-4">
+                        <div class="w-px h-8 bg-primary/50"></div>
+                        <div class="w-32 h-px bg-primary/50"></div>
+                        <div class="flex space-x-16">
+                            <div class="w-px h-8 bg-primary/50"></div>
+                            <div class="w-px h-8 bg-primary/50"></div>
+                            <div class="w-px h-8 bg-primary/50"></div>
+                            <div class="w-px h-8 bg-primary/50"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Level 3: Kepala Cabang -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl" data-aos="fade-up" data-aos-delay="300">
+                        <!-- Kepala Cabang Bogor -->
+                        <div class="text-center">
+                            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 shadow-md border border-primary/20 hover:shadow-lg transition-all duration-300">
+                                <!-- Real Photo -->
+                                <div class="w-28 h-28 rounded-full mx-auto mb-3 overflow-hidden border-2 border-primary/30 bg-gradient-to-br from-primary/15 to-primary/5">
+                                    <img src="<?= base_url('assets/img/pimpinan/Puput Maryanto (1).png') ?>" 
+                                         alt="Puput Maryanto" 
+                                         class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-300"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <!-- Fallback SVG if image fails to load -->
+                                    <div class="w-full h-full bg-gradient-to-br from-primary/15 to-primary/5 rounded-full flex items-center justify-center border-2 border-primary/30" style="display: none;">
+                                        <svg class="w-14 h-14 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- Title -->
+                                <div class="text-primary font-semibold mb-1">Kepala Cabang Bogor</div>
+                                <div class="text-sm text-white/70">Puput Maryanto</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kepala Cabang Antasari -->
+                        <div class="text-center">
+                            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 shadow-md border border-primary/20 hover:shadow-lg transition-all duration-300">
+                                <!-- Real Photo -->
+                                <div class="w-28 h-28 rounded-full mx-auto mb-3 overflow-hidden border-2 border-primary/30 bg-gradient-to-br from-primary/15 to-primary/5">
+                                    <img src="<?= base_url('assets/img/pimpinan/Yayan Sopiyan.png') ?>" 
+                                         alt="Yayan Sopyan" 
+                                         class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-300"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <!-- Fallback SVG if image fails to load -->
+                                    <div class="w-full h-full bg-gradient-to-br from-primary/15 to-primary/5 rounded-full flex items-center justify-center border-2 border-primary/30" style="display: none;">
+                                        <svg class="w-14 h-14 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- Title -->
+                                <div class="text-primary font-semibold mb-1">Kepala Cabang Antasari</div>
+                                <div class="text-sm text-white/70">Yayan Sopyan</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kepala Cabang Ampera -->
+                        <div class="text-center">
+                            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 shadow-md border border-primary/20 hover:shadow-lg transition-all duration-300">
+                                <!-- Real Photo -->
+                                <div class="w-28 h-28 rounded-full mx-auto mb-3 overflow-hidden border-2 border-primary/30 bg-gradient-to-br from-primary/15 to-primary/5">
+                                    <img src="<?= base_url('assets/img/pimpinan/Rosidin Ahyar.png') ?>" 
+                                         alt="Rosidin Ahyar" 
+                                         class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-300"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <!-- Fallback SVG if image fails to load -->
+                                    <div class="w-full h-full bg-gradient-to-br from-primary/15 to-primary/5 rounded-full flex items-center justify-center border-2 border-primary/30" style="display: none;">
+                                        <svg class="w-14 h-14 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- Title -->
+                                <div class="text-primary font-semibold mb-1">Kepala Cabang Ampera</div>
+                                <div class="text-sm text-white/70">Rosidin Ahyar</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Kepala Cabang Bekasi -->
+                        <div class="text-center">
+                            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 shadow-md border border-primary/20 hover:shadow-lg transition-all duration-300">
+                                <!-- Real Photo -->
+                                <div class="w-28 h-28 rounded-full mx-auto mb-3 overflow-hidden border-2 border-primary/30 bg-gradient-to-br from-primary/15 to-primary/5">
+                                    <img src="<?= base_url('assets/img/pimpinan/Bayu S Tresnadi (1).png') ?>" 
+                                         alt="Bayu S Tresnadi" 
+                                         class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-300"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <!-- Fallback SVG if image fails to load -->
+                                    <div class="w-full h-full bg-gradient-to-br from-primary/15 to-primary/5 rounded-full flex items-center justify-center border-2 border-primary/30" style="display: none;">
+                                        <svg class="w-14 h-14 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- Title -->
+                                <div class="text-primary font-semibold mb-1">Kepala Cabang Bekasi</div>
+                                <div class="text-sm text-white/70">Bayu S Tresnadi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us Description -->
+        <div class="mb-24" data-aos="fade-up">
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-2xl border border-white/20">
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="lg:w-2/3">
+                        <h2 class="text-3xl font-bold text-white mb-6">TENTANG KAMI</h2>
+                        <p class="text-white/80 leading-relaxed mb-6">
+                            Milala Auto Service adalah bengkel spesialis power steering dan kaki-kaki mobil yang berdiri sejak 2004. 
+                            Bengkel tersebar di 3 kota besar (Jakarta, Bekasi, dan Bogor) dan memiliki motto "Kerja Keras, 
+                            Kerja Cerdas, Kerja Ikhlas". 3 unsur ini bengkel yang selalu kami jaga yaitu SDM yang berkompeten, 
+                            harga yang kompetitif, dan kualitas sparepart yang baik dengan garansi hingga 2 tahun.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                                ✓ Berdiri sejak 2004
+                            </div>
+                            <div class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                                ✓ 3 Kota Besar
+                            </div>
+                            <div class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                                ✓ Garansi 2 Tahun
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3">
+                        <div class="bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl p-6 text-center">
+                            <div class="text-primary text-4xl font-bold mb-2">20+</div>
+                            <div class="text-white font-semibold mb-4">Tahun Pengalaman</div>
+                            <div class="text-white/70 text-sm">
+                                Melayani ribuan pelanggan dengan dedikasi tinggi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Process Flow -->
+        <div class="mb-24" data-aos="fade-up">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Proses Pelayanan Kami</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-primary mx-auto rounded-full mb-6"></div>
+                <p class="text-white/80 max-w-2xl mx-auto">
+                    Alur kerja yang terstruktur untuk memberikan hasil terbaik bagi kendaraan Anda
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Process Steps -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-r from-primary to-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Analisis Masalah</h3>
+                        <h4 class="text-primary font-semibold mb-3">Tepat</h4>
+                        <p class="text-white/70 text-sm">
+                            Diagnosis menyeluruh untuk mengidentifikasi masalah dengan akurat
+                        </p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-r from-primary to-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Proses Perbaikan</h3>
+                        <h4 class="text-primary font-semibold mb-3">Cepat & Akurat</h4>
+                        <p class="text-white/70 text-sm">
+                            Perbaikan menggunakan teknologi modern dan sparepart berkualitas
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-r from-primary to-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Hasil</h3>
+                        <h4 class="text-primary font-semibold mb-3">Mobil Tuntas</h4>
+                        <p class="text-white/70 text-sm">
+                            Kendaraan siap digunakan dengan performa optimal dan garansi
+                        </p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-r from-primary to-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Pelanggan</h3>
+                        <h4 class="text-primary font-semibold mb-3">Puas</h4>
+                        <p class="text-white/70 text-sm">
+                            Kepuasan pelanggan adalah prioritas utama dengan layanan after-sales
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Connecting Lines (Hidden on mobile) -->
+                <div class="hidden lg:block absolute top-10 left-0 right-0">
+                    <div class="flex justify-between items-center px-20">
+                        <div class="flex-1 h-0.5 bg-gradient-to-r from-primary/50 to-primary/30"></div>
+                        <div class="w-4 h-4 bg-primary rounded-full mx-4"></div>
+                        <div class="flex-1 h-0.5 bg-gradient-to-r from-primary/30 to-primary/50"></div>
+                        <div class="w-4 h-4 bg-primary rounded-full mx-4"></div>
+                        <div class="flex-1 h-0.5 bg-gradient-to-r from-primary/50 to-primary/30"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Call to Action -->
         <div class="text-center" data-aos="fade-up">
             <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/20">

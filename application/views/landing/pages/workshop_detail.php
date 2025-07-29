@@ -1,10 +1,4 @@
 <!-- Workshop Detail Hero Section -->
-<style>
-    html, body {
-        overflow-x: hidden !important;
-        max-width: 100vw !important;
-    }
-</style>
 <section class="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden pt-16 md:pt-20">
     <!-- Background Elements -->
     <div class="absolute inset-0">
@@ -13,10 +7,10 @@
         <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-primary/10 rounded-full blur-xl animate-pulse delay-500"></div>
     </div>
 
-    <div class="relative container mx-auto px-4 sm:px-6 pb-20 overflow-hidden">
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
 
         <!-- Workshop Header -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center my-32 sm:my-40">
             <!-- Workshop Info -->
             <div data-aos="fade-right">
                 <div class="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold text-sm mb-6">
@@ -25,10 +19,10 @@
                     </svg>
                     Sejak <?= $selected_workshop['established'] ?>
                 </div>
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                     <?= $selected_workshop['name'] ?>
                 </h1>
-                <p class="text-xl text-white/80 mb-8 leading-relaxed">
+                <p class="text-lg sm:text-xl text-white/80 mb-8 leading-relaxed">
                     <?= $selected_workshop['description'] ?>
                 </p>
 
@@ -70,11 +64,11 @@
                 </div>
 
                 <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="<?= base_url('reservation') ?>" class="bg-gradient-to-r from-primary to-primary text-black px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all duration-300 hover:scale-105 text-center">
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
+                    <a href="<?= base_url('reservation') ?>" class="bg-gradient-to-r from-primary to-primary text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:shadow-lg transition-all duration-300 hover:scale-105 text-center text-sm sm:text-base">
                         Reservasi Sekarang
                     </a>
-                    <a href="https://maps.google.com/?q=<?= urlencode($selected_workshop['address']) ?>" target="_blank" class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary hover:text-black transition-all duration-300 text-center">
+                    <a href="https://maps.google.com/?q=<?= urlencode($selected_workshop['address']) ?>" target="_blank" class="border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:bg-primary hover:text-black transition-all duration-300 text-center text-sm sm:text-base">
                         Lihat di Maps
                     </a>
                 </div>
@@ -82,23 +76,30 @@
 
             <!-- Workshop Visual -->
             <div data-aos="fade-left">
-                <div class="relative overflow-hidden">
-                    <div class="w-full h-96 bg-gradient-to-br from-primary/20 to-primary/20 rounded-3xl overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                        <!-- Workshop Illustration -->
+                <div class="relative">
+                    <div class="w-full h-80 sm:h-96 bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl relative overflow-hidden border border-primary/20">
+                        <!-- Background Pattern -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        
+                        <!-- Main Workshop Icon -->
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-32 h-32 bg-gray-800/80 backdrop-blur-sm rounded-3xl flex items-center justify-center border border-primary/30">
-                                <svg class="w-16 h-16 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8z" clip-rule="evenodd"/>
+                            <div class="w-24 sm:w-32 h-24 sm:h-32 bg-gray-800/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl flex items-center justify-center border-2 border-primary/40 shadow-2xl">
+                                <svg class="w-12 sm:w-16 h-12 sm:h-16 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
                                 </svg>
                             </div>
                         </div>
-                        <!-- Floating Elements - moved inside container -->
-                        <div class="absolute top-4 right-4 w-16 h-16 bg-primary rounded-2xl flex items-center justify-center animate-bounce">
-                            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        
+                        <!-- Floating Success Badge -->
+                        <div class="absolute top-4 right-4 w-12 sm:w-16 h-12 sm:h-16 bg-primary rounded-xl sm:rounded-2xl flex items-center justify-center animate-pulse shadow-lg">
+                            <svg class="w-5 sm:w-6 h-5 sm:h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                         </div>
+                        
+                        <!-- Decorative Elements -->
+                        <div class="absolute bottom-4 left-4 w-8 h-8 bg-primary/30 rounded-lg animate-bounce" style="animation-delay: 0.5s;"></div>
+                        <div class="absolute top-1/2 left-4 w-6 h-6 bg-primary/20 rounded-full animate-ping" style="animation-delay: 1s;"></div>
                     </div>
                 </div>
             </div>
@@ -107,22 +108,22 @@
 </section>
 
 <!-- Team Section -->
-<section class="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800">
-    <div class="container mx-auto px-4 sm:px-6">
+<section class="py-16 sm:py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
                 Tim <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">Profesional</span>
             </h2>
-            <p class="text-xl text-white/80 max-w-3xl mx-auto">
+            <p class="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
                 Bertemu dengan tim ahli kami yang siap memberikan pelayanan terbaik untuk kendaraan Anda
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <?php foreach($selected_workshop['team'] as $index => $member): ?>
-            <div class="group bg-gray-800/50 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-primary/30" data-aos="fade-up" data-aos-delay="<?= $index * 100 ?>">
+            <div class="group bg-gray-800/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-primary/30" data-aos="fade-up" data-aos-delay="<?= $index * 100 ?>">
                 <!-- Member Photo -->
-                <div class="relative h-64 bg-gradient-to-br from-primary/20 to-primary/20 overflow-hidden">
+                <div class="relative h-48 sm:h-64 bg-gradient-to-br from-primary/20 to-primary/20 overflow-hidden">
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="w-24 h-24 bg-gradient-to-br from-primary to-primary rounded-full flex items-center justify-center text-black text-3xl font-bold group-hover:scale-110 transition-transform duration-300">
                             <?= substr($member['name'], 0, 1) ?>
@@ -135,7 +136,7 @@
                 </div>
 
                 <!-- Member Info -->
-                <div class="p-6">
+                <div class="p-4 sm:p-6">
                     <h3 class="text-xl font-bold text-white mb-2"><?= $member['name'] ?></h3>
                     <p class="text-primary font-semibold mb-3"><?= $member['position'] ?></p>
                     
@@ -167,12 +168,12 @@
 </section>
 
 <!-- Services & Facilities Section -->
-<section class="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800">
-    <div class="container mx-auto px-4 sm:px-6">
+<section class="py-16 sm:py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <!-- Services -->
             <div data-aos="fade-right">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8">
                     Layanan <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">Unggulan</span>
                 </h2>
                 <div class="space-y-4">
@@ -194,7 +195,7 @@
 
             <!-- Facilities -->
             <div data-aos="fade-left">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8">
                     Fasilitas <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">Modern</span>
                 </h2>
                 <div class="space-y-4">
@@ -218,20 +219,20 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-20 bg-gradient-to-r from-primary to-primary">
-    <div class="container mx-auto px-4 sm:px-6 text-center text-black" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Siap Melayani Kendaraan Anda</h2>
-        <p class="text-xl mb-8 opacity-90">Hubungi kami sekarang untuk reservasi atau konsultasi gratis</p>
+<section class="py-16 sm:py-20 bg-gradient-to-r from-primary to-primary">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-black" data-aos="fade-up">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Siap Melayani Kendaraan Anda</h2>
+        <p class="text-lg sm:text-xl mb-8 opacity-90">Hubungi kami sekarang untuk reservasi atau konsultasi gratis</p>
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:<?= $selected_workshop['phone'] ?>" class="bg-black text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition-colors inline-flex items-center justify-center">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md sm:max-w-none mx-auto">
+            <a href="tel:<?= $selected_workshop['phone'] ?>" class="bg-black text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-gray-800 transition-colors inline-flex items-center justify-center">
+                <svg class="w-4 sm:w-5 h-4 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
                 Hubungi Sekarang
             </a>
-            <a href="https://maps.google.com/?q=<?= urlencode($selected_workshop['address']) ?>" target="_blank" class="bg-transparent border-2 border-black text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-black hover:text-primary transition-colors inline-flex items-center justify-center">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <a href="https://maps.google.com/?q=<?= urlencode($selected_workshop['address']) ?>" target="_blank" class="bg-transparent border-2 border-black text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-black hover:text-primary transition-colors inline-flex items-center justify-center">
+                <svg class="w-4 sm:w-5 h-4 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                 </svg>
                 Lihat di Maps
@@ -241,14 +242,14 @@
 </section>
 
 <!-- Other Workshops -->
-<section class="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800">
-    <div class="container mx-auto px-4 sm:px-6">
+<section class="py-16 sm:py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Cabang Workshop Lainnya</h2>
-            <p class="text-xl text-white/80">Kunjungi cabang terdekat lainnya untuk pelayanan yang sama baiknya</p>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Cabang Workshop Lainnya</h2>
+            <p class="text-lg sm:text-xl text-white/80">Kunjungi cabang terdekat lainnya untuk pelayanan yang sama baiknya</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <?php 
             $other_workshops = array_filter($workshops, function($workshop) use ($selected_workshop) {
                 return $workshop['slug'] !== $selected_workshop['slug'];
