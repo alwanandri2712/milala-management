@@ -281,6 +281,7 @@
                             <div class="bg-gradient-to-r from-primary to-primary text-black px-4 py-2 rounded-xl font-bold text-lg">
                                 Owner
                             </div>
+                            <div class="text-sm text-white/70">Purnama Sembiring</div>
                         </div>
                     </div>
                     
@@ -302,6 +303,7 @@
                                 <div class="text-white font-semibold text-lg">
                                     Konsultan
                                 </div>
+                                <div class="text-sm text-white/70">Andrew Irfano S S.Pd</div>
                             </div>
                         </div>
                         
@@ -318,6 +320,7 @@
                                 <div class="text-white font-semibold text-lg">
                                     Manajer
                                 </div>
+                                <div class="text-sm text-white/70">Annisa Derana S S.T MBA</div>
                             </div>
                         </div>
                     </div>
